@@ -34,8 +34,9 @@ Header:
 ;
 
 Name:
-	(ModuleName '.')? Name // TODO: Descobrir o que é ModuleName
+	(mn+=ModuleName '.')* id=ID | id=ID // TODO: Descobrir o que é ModuleName
 ;
+
 
 Result:
 	TypeName | '(' Params ')'
@@ -50,7 +51,7 @@ Binding:
 ;
 
 TypeName:
-	ScalarType | ColumnType | ':' any=ID ('_' digit=ID)? // TODO: any e digit são ID???? 
+	ScalarType | ColumnType | ':' at=AnyType // TODO: any e digit são ID???? 
 ;
 
 ScalarType:
@@ -62,7 +63,11 @@ ColumnType:
 ;
 
 ColElmType:
-	ScalarType | AnyType // TODO: Descobrir o que é AnyType
+	ScalarType | at=AnyType // TODO: Descobrir o que é AnyType
+;
+
+AnyType:
+	'any' ('_' digit=ID)?
 ;
 
 Stmt:
@@ -90,8 +95,15 @@ Factor:
 ;
 
 Fcncall:
-	ModuleName '.' Name '(' (Args)? ')' // TODO: Descobrir o que é ModuleName
+	ModuleName '.' name=Name '(' (args=Args)? ')' // TODO: Descobrir o que é ModuleName
 ;
+
 Args:
 	Factor (',' factor=Factor)*
 ;
+
+ModuleName:
+	identifier=ID
+;
+
+

@@ -7,5 +7,20 @@ Bundle-SymbolicName: org.xtext.trabalho.mal; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0"
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.trabalho.generator,
+ org.xtext.trabalho.mAL,
+ org.xtext.trabalho.services,
+ org.xtext.trabalho.serializer,
+ org.xtext.trabalho.validation,
+ org.xtext.trabalho.mAL.impl,
+ org.xtext.trabalho,
+ org.xtext.trabalho.scoping,
+ org.xtext.trabalho.mAL.util
+Import-Package: org.apache.log4j
