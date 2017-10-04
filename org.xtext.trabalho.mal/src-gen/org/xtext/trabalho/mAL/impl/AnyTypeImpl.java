@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.trabalho.mAL.AnyType;
 import org.xtext.trabalho.mAL.MALPackage;
@@ -21,13 +20,34 @@ import org.xtext.trabalho.mAL.MALPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.AnyTypeImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.AnyTypeImpl#getDigit <em>Digit</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
+public class AnyTypeImpl extends TypeNameImpl implements AnyType
 {
+  /**
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDigit() <em>Digit</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +94,29 @@ public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(String newType)
+  {
+    String oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.ANY_TYPE__TYPE, oldType, type));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getDigit()
   {
     return digit;
@@ -102,6 +145,8 @@ public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
   {
     switch (featureID)
     {
+      case MALPackage.ANY_TYPE__TYPE:
+        return getType();
       case MALPackage.ANY_TYPE__DIGIT:
         return getDigit();
     }
@@ -118,6 +163,9 @@ public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
   {
     switch (featureID)
     {
+      case MALPackage.ANY_TYPE__TYPE:
+        setType((String)newValue);
+        return;
       case MALPackage.ANY_TYPE__DIGIT:
         setDigit((String)newValue);
         return;
@@ -135,6 +183,9 @@ public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
   {
     switch (featureID)
     {
+      case MALPackage.ANY_TYPE__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
       case MALPackage.ANY_TYPE__DIGIT:
         setDigit(DIGIT_EDEFAULT);
         return;
@@ -152,6 +203,8 @@ public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
   {
     switch (featureID)
     {
+      case MALPackage.ANY_TYPE__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case MALPackage.ANY_TYPE__DIGIT:
         return DIGIT_EDEFAULT == null ? digit != null : !DIGIT_EDEFAULT.equals(digit);
     }
@@ -169,7 +222,9 @@ public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (digit: ");
+    result.append(" (type: ");
+    result.append(type);
+    result.append(", digit: ");
     result.append(digit);
     result.append(')');
     return result.toString();

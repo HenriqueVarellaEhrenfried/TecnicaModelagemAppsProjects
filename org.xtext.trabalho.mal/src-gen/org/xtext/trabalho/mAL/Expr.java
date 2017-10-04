@@ -14,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Expr#getFactor <em>Factor</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Expr#getLeft_factor <em>Left factor</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Expr#getOperator <em>Operator</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Expr#getRight_factor <em>Right factor</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getExpr()
@@ -24,29 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface Expr extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Factor</b></em>' containment reference.
+   * Returns the value of the '<em><b>Left factor</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Factor</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Left factor</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Factor</em>' containment reference.
-   * @see #setFactor(Factor)
-   * @see org.xtext.trabalho.mAL.MALPackage#getExpr_Factor()
+   * @return the value of the '<em>Left factor</em>' containment reference.
+   * @see #setLeft_factor(Factor)
+   * @see org.xtext.trabalho.mAL.MALPackage#getExpr_Left_factor()
    * @model containment="true"
    * @generated
    */
-  Factor getFactor();
+  Factor getLeft_factor();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Expr#getFactor <em>Factor</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Expr#getLeft_factor <em>Left factor</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Factor</em>' containment reference.
-   * @see #getFactor()
+   * @param value the new value of the '<em>Left factor</em>' containment reference.
+   * @see #getLeft_factor()
    * @generated
    */
-  void setFactor(Factor value);
+  void setLeft_factor(Factor value);
+
+  /**
+   * Returns the value of the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Operator</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operator</em>' attribute.
+   * @see #setOperator(String)
+   * @see org.xtext.trabalho.mAL.MALPackage#getExpr_Operator()
+   * @model
+   * @generated
+   */
+  String getOperator();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Expr#getOperator <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Operator</em>' attribute.
+   * @see #getOperator()
+   * @generated
+   */
+  void setOperator(String value);
+
+  /**
+   * Returns the value of the '<em><b>Right factor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Right factor</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right factor</em>' containment reference.
+   * @see #setRight_factor(Factor)
+   * @see org.xtext.trabalho.mAL.MALPackage#getExpr_Right_factor()
+   * @model containment="true"
+   * @generated
+   */
+  Factor getRight_factor();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Expr#getRight_factor <em>Right factor</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right factor</em>' containment reference.
+   * @see #getRight_factor()
+   * @generated
+   */
+  void setRight_factor(Factor value);
 
 } // Expr

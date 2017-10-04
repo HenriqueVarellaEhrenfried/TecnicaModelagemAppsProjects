@@ -3,8 +3,19 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.xtext.trabalho.mAL.Binding;
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.Params;
 
@@ -12,11 +23,27 @@ import org.xtext.trabalho.mAL.Params;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Params</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ParamsImpl#getBind <em>Bind</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class ParamsImpl extends ResultImpl implements Params
 {
+  /**
+   * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBind()
+   * @generated
+   * @ordered
+   */
+  protected EList<Binding> bind;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +63,104 @@ public class ParamsImpl extends ResultImpl implements Params
   protected EClass eStaticClass()
   {
     return MALPackage.Literals.PARAMS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Binding> getBind()
+  {
+    if (bind == null)
+    {
+      bind = new EObjectContainmentEList<Binding>(Binding.class, this, MALPackage.PARAMS__BIND);
+    }
+    return bind;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MALPackage.PARAMS__BIND:
+        return ((InternalEList<?>)getBind()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case MALPackage.PARAMS__BIND:
+        return getBind();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case MALPackage.PARAMS__BIND:
+        getBind().clear();
+        getBind().addAll((Collection<? extends Binding>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case MALPackage.PARAMS__BIND:
+        getBind().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case MALPackage.PARAMS__BIND:
+        return bind != null && !bind.isEmpty();
+    }
+    return super.eIsSet(featureID);
   }
 
 } //ParamsImpl

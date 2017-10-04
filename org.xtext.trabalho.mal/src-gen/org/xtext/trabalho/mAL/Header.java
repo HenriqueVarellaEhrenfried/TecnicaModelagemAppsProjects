@@ -3,7 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,100 +14,93 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Header#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.Header#getStm1 <em>Stm1</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.Header#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.Header#getStm2 <em>Stm2</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Header#getHeader_name <em>Header name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Header#getParams <em>Params</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Header#getReturn_type <em>Return type</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getHeader()
  * @model
  * @generated
  */
-public interface Header extends Definition
+public interface Header extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Identifier</b></em>' attribute.
+   * Returns the value of the '<em><b>Header name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Identifier</em>' attribute isn't clear,
+   * If the meaning of the '<em>Header name</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Identifier</em>' attribute.
-   * @see #setIdentifier(String)
-   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Identifier()
-   * @model
-   * @generated
-   */
-  String getIdentifier();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Header#getIdentifier <em>Identifier</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Identifier</em>' attribute.
-   * @see #getIdentifier()
-   * @generated
-   */
-  void setIdentifier(String value);
-
-  /**
-   * Returns the value of the '<em><b>Stm1</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.trabalho.mAL.Statement}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Stm1</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Stm1</em>' containment reference list.
-   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Stm1()
+   * @return the value of the '<em>Header name</em>' containment reference.
+   * @see #setHeader_name(Name)
+   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Header_name()
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getStm1();
+  Name getHeader_name();
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Header#getHeader_name <em>Header name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Header name</em>' containment reference.
+   * @see #getHeader_name()
+   * @generated
+   */
+  void setHeader_name(Name value);
+
+  /**
+   * Returns the value of the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Params</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Name)
-   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Name()
+   * @return the value of the '<em>Params</em>' containment reference.
+   * @see #setParams(Params)
+   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Params()
    * @model containment="true"
    * @generated
    */
-  Name getName();
+  Params getParams();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Header#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Header#getParams <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Params</em>' containment reference.
+   * @see #getParams()
    * @generated
    */
-  void setName(Name value);
+  void setParams(Params value);
 
   /**
-   * Returns the value of the '<em><b>Stm2</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.trabalho.mAL.Statement}.
+   * Returns the value of the '<em><b>Return type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Stm2</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Return type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stm2</em>' containment reference list.
-   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Stm2()
+   * @return the value of the '<em>Return type</em>' containment reference.
+   * @see #setReturn_type(Result)
+   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Return_type()
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getStm2();
+  Result getReturn_type();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Header#getReturn_type <em>Return type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Return type</em>' containment reference.
+   * @see #getReturn_type()
+   * @generated
+   */
+  void setReturn_type(Result value);
 
 } // Header

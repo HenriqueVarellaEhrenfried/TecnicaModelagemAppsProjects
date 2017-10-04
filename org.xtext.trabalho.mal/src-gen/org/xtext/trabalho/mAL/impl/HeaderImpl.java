@@ -3,25 +3,20 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.trabalho.mAL.Header;
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.Name;
-import org.xtext.trabalho.mAL.Statement;
+import org.xtext.trabalho.mAL.Params;
+import org.xtext.trabalho.mAL.Result;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,65 +26,44 @@ import org.xtext.trabalho.mAL.Statement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getStm1 <em>Stm1</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getStm2 <em>Stm2</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getHeader_name <em>Header name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getReturn_type <em>Return type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class HeaderImpl extends DefinitionImpl implements Header
+public class HeaderImpl extends MinimalEObjectImpl.Container implements Header
 {
   /**
-   * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
+   * The cached value of the '{@link #getHeader_name() <em>Header name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifier()
+   * @see #getHeader_name()
    * @generated
    * @ordered
    */
-  protected static final String IDENTIFIER_EDEFAULT = null;
+  protected Name header_name;
 
   /**
-   * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdentifier()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected String identifier = IDENTIFIER_EDEFAULT;
+  protected Params params;
 
   /**
-   * The cached value of the '{@link #getStm1() <em>Stm1</em>}' containment reference list.
+   * The cached value of the '{@link #getReturn_type() <em>Return type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStm1()
+   * @see #getReturn_type()
    * @generated
    * @ordered
    */
-  protected EList<Statement> stm1;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected Name name;
-
-  /**
-   * The cached value of the '{@link #getStm2() <em>Stm2</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStm2()
-   * @generated
-   * @ordered
-   */
-  protected EList<Statement> stm2;
+  protected Result return_type;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,9 +91,9 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIdentifier()
+  public Name getHeader_name()
   {
-    return identifier;
+    return header_name;
   }
 
   /**
@@ -127,50 +101,13 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIdentifier(String newIdentifier)
+  public NotificationChain basicSetHeader_name(Name newHeader_name, NotificationChain msgs)
   {
-    String oldIdentifier = identifier;
-    identifier = newIdentifier;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__IDENTIFIER, oldIdentifier, identifier));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Statement> getStm1()
-  {
-    if (stm1 == null)
-    {
-      stm1 = new EObjectContainmentEList<Statement>(Statement.class, this, MALPackage.HEADER__STM1);
-    }
-    return stm1;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Name getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetName(Name newName, NotificationChain msgs)
-  {
-    Name oldName = name;
-    name = newName;
+    Name oldHeader_name = header_name;
+    header_name = newHeader_name;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__NAME, oldName, newName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__HEADER_NAME, oldHeader_name, newHeader_name);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -181,20 +118,20 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(Name newName)
+  public void setHeader_name(Name newHeader_name)
   {
-    if (newName != name)
+    if (newHeader_name != header_name)
     {
       NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
+      if (header_name != null)
+        msgs = ((InternalEObject)header_name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__HEADER_NAME, null, msgs);
+      if (newHeader_name != null)
+        msgs = ((InternalEObject)newHeader_name).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__HEADER_NAME, null, msgs);
+      msgs = basicSetHeader_name(newHeader_name, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__HEADER_NAME, newHeader_name, newHeader_name));
   }
 
   /**
@@ -202,13 +139,95 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Statement> getStm2()
+  public Params getParams()
   {
-    if (stm2 == null)
+    return params;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetParams(Params newParams, NotificationChain msgs)
+  {
+    Params oldParams = params;
+    params = newParams;
+    if (eNotificationRequired())
     {
-      stm2 = new EObjectContainmentEList<Statement>(Statement.class, this, MALPackage.HEADER__STM2);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__PARAMS, oldParams, newParams);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return stm2;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setParams(Params newParams)
+  {
+    if (newParams != params)
+    {
+      NotificationChain msgs = null;
+      if (params != null)
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__PARAMS, null, msgs);
+      if (newParams != null)
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__PARAMS, null, msgs);
+      msgs = basicSetParams(newParams, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__PARAMS, newParams, newParams));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Result getReturn_type()
+  {
+    return return_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetReturn_type(Result newReturn_type, NotificationChain msgs)
+  {
+    Result oldReturn_type = return_type;
+    return_type = newReturn_type;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__RETURN_TYPE, oldReturn_type, newReturn_type);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReturn_type(Result newReturn_type)
+  {
+    if (newReturn_type != return_type)
+    {
+      NotificationChain msgs = null;
+      if (return_type != null)
+        msgs = ((InternalEObject)return_type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__RETURN_TYPE, null, msgs);
+      if (newReturn_type != null)
+        msgs = ((InternalEObject)newReturn_type).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__RETURN_TYPE, null, msgs);
+      msgs = basicSetReturn_type(newReturn_type, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__RETURN_TYPE, newReturn_type, newReturn_type));
   }
 
   /**
@@ -221,12 +240,12 @@ public class HeaderImpl extends DefinitionImpl implements Header
   {
     switch (featureID)
     {
-      case MALPackage.HEADER__STM1:
-        return ((InternalEList<?>)getStm1()).basicRemove(otherEnd, msgs);
-      case MALPackage.HEADER__NAME:
-        return basicSetName(null, msgs);
-      case MALPackage.HEADER__STM2:
-        return ((InternalEList<?>)getStm2()).basicRemove(otherEnd, msgs);
+      case MALPackage.HEADER__HEADER_NAME:
+        return basicSetHeader_name(null, msgs);
+      case MALPackage.HEADER__PARAMS:
+        return basicSetParams(null, msgs);
+      case MALPackage.HEADER__RETURN_TYPE:
+        return basicSetReturn_type(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -241,14 +260,12 @@ public class HeaderImpl extends DefinitionImpl implements Header
   {
     switch (featureID)
     {
-      case MALPackage.HEADER__IDENTIFIER:
-        return getIdentifier();
-      case MALPackage.HEADER__STM1:
-        return getStm1();
-      case MALPackage.HEADER__NAME:
-        return getName();
-      case MALPackage.HEADER__STM2:
-        return getStm2();
+      case MALPackage.HEADER__HEADER_NAME:
+        return getHeader_name();
+      case MALPackage.HEADER__PARAMS:
+        return getParams();
+      case MALPackage.HEADER__RETURN_TYPE:
+        return getReturn_type();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -258,25 +275,19 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MALPackage.HEADER__IDENTIFIER:
-        setIdentifier((String)newValue);
+      case MALPackage.HEADER__HEADER_NAME:
+        setHeader_name((Name)newValue);
         return;
-      case MALPackage.HEADER__STM1:
-        getStm1().clear();
-        getStm1().addAll((Collection<? extends Statement>)newValue);
+      case MALPackage.HEADER__PARAMS:
+        setParams((Params)newValue);
         return;
-      case MALPackage.HEADER__NAME:
-        setName((Name)newValue);
-        return;
-      case MALPackage.HEADER__STM2:
-        getStm2().clear();
-        getStm2().addAll((Collection<? extends Statement>)newValue);
+      case MALPackage.HEADER__RETURN_TYPE:
+        setReturn_type((Result)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -292,17 +303,14 @@ public class HeaderImpl extends DefinitionImpl implements Header
   {
     switch (featureID)
     {
-      case MALPackage.HEADER__IDENTIFIER:
-        setIdentifier(IDENTIFIER_EDEFAULT);
+      case MALPackage.HEADER__HEADER_NAME:
+        setHeader_name((Name)null);
         return;
-      case MALPackage.HEADER__STM1:
-        getStm1().clear();
+      case MALPackage.HEADER__PARAMS:
+        setParams((Params)null);
         return;
-      case MALPackage.HEADER__NAME:
-        setName((Name)null);
-        return;
-      case MALPackage.HEADER__STM2:
-        getStm2().clear();
+      case MALPackage.HEADER__RETURN_TYPE:
+        setReturn_type((Result)null);
         return;
     }
     super.eUnset(featureID);
@@ -318,33 +326,14 @@ public class HeaderImpl extends DefinitionImpl implements Header
   {
     switch (featureID)
     {
-      case MALPackage.HEADER__IDENTIFIER:
-        return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
-      case MALPackage.HEADER__STM1:
-        return stm1 != null && !stm1.isEmpty();
-      case MALPackage.HEADER__NAME:
-        return name != null;
-      case MALPackage.HEADER__STM2:
-        return stm2 != null && !stm2.isEmpty();
+      case MALPackage.HEADER__HEADER_NAME:
+        return header_name != null;
+      case MALPackage.HEADER__PARAMS:
+        return params != null;
+      case MALPackage.HEADER__RETURN_TYPE:
+        return return_type != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (identifier: ");
-    result.append(identifier);
-    result.append(')');
-    return result.toString();
   }
 
 } //HeaderImpl

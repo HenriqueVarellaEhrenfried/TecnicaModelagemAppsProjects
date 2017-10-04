@@ -3,6 +3,9 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,39 +16,29 @@ package org.xtext.trabalho.mAL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Varlist#getExp <em>Exp</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Varlist#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getVarlist()
  * @model
  * @generated
  */
-public interface Varlist extends Stmt
+public interface Varlist extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
+   * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Variable}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Exp</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(Expr)
-   * @see org.xtext.trabalho.mAL.MALPackage#getVarlist_Exp()
+   * @return the value of the '<em>Variables</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getVarlist_Variables()
    * @model containment="true"
    * @generated
    */
-  Expr getExp();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Varlist#getExp <em>Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exp</em>' containment reference.
-   * @see #getExp()
-   * @generated
-   */
-  void setExp(Expr value);
+  EList<Variable> getVariables();
 
 } // Varlist

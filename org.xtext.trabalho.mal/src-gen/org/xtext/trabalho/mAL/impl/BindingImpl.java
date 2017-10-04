@@ -3,20 +3,14 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.trabalho.mAL.Binding;
 import org.xtext.trabalho.mAL.MALPackage;
@@ -30,25 +24,14 @@ import org.xtext.trabalho.mAL.TypeName;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.BindingImpl#getBind <em>Bind</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.BindingImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.BindingImpl#getTn <em>Tn</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.BindingImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BindingImpl extends ParamsImpl implements Binding
+public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 {
-  /**
-   * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBind()
-   * @generated
-   * @ordered
-   */
-  protected EList<Binding> bind;
-
   /**
    * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -70,14 +53,14 @@ public class BindingImpl extends ParamsImpl implements Binding
   protected String identifier = IDENTIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTn() <em>Tn</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTn()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected TypeName tn;
+  protected TypeName type;
 
   /**
    * <!-- begin-user-doc -->
@@ -98,20 +81,6 @@ public class BindingImpl extends ParamsImpl implements Binding
   protected EClass eStaticClass()
   {
     return MALPackage.Literals.BINDING;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Binding> getBind()
-  {
-    if (bind == null)
-    {
-      bind = new EObjectContainmentEList<Binding>(Binding.class, this, MALPackage.BINDING__BIND);
-    }
-    return bind;
   }
 
   /**
@@ -142,9 +111,9 @@ public class BindingImpl extends ParamsImpl implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeName getTn()
+  public TypeName getType()
   {
-    return tn;
+    return type;
   }
 
   /**
@@ -152,13 +121,13 @@ public class BindingImpl extends ParamsImpl implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTn(TypeName newTn, NotificationChain msgs)
+  public NotificationChain basicSetType(TypeName newType, NotificationChain msgs)
   {
-    TypeName oldTn = tn;
-    tn = newTn;
+    TypeName oldType = type;
+    type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.BINDING__TN, oldTn, newTn);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.BINDING__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -169,20 +138,20 @@ public class BindingImpl extends ParamsImpl implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTn(TypeName newTn)
+  public void setType(TypeName newType)
   {
-    if (newTn != tn)
+    if (newType != type)
     {
       NotificationChain msgs = null;
-      if (tn != null)
-        msgs = ((InternalEObject)tn).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.BINDING__TN, null, msgs);
-      if (newTn != null)
-        msgs = ((InternalEObject)newTn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.BINDING__TN, null, msgs);
-      msgs = basicSetTn(newTn, msgs);
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.BINDING__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.BINDING__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.BINDING__TN, newTn, newTn));
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.BINDING__TYPE, newType, newType));
   }
 
   /**
@@ -195,10 +164,8 @@ public class BindingImpl extends ParamsImpl implements Binding
   {
     switch (featureID)
     {
-      case MALPackage.BINDING__BIND:
-        return ((InternalEList<?>)getBind()).basicRemove(otherEnd, msgs);
-      case MALPackage.BINDING__TN:
-        return basicSetTn(null, msgs);
+      case MALPackage.BINDING__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -213,12 +180,10 @@ public class BindingImpl extends ParamsImpl implements Binding
   {
     switch (featureID)
     {
-      case MALPackage.BINDING__BIND:
-        return getBind();
       case MALPackage.BINDING__IDENTIFIER:
         return getIdentifier();
-      case MALPackage.BINDING__TN:
-        return getTn();
+      case MALPackage.BINDING__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -228,21 +193,16 @@ public class BindingImpl extends ParamsImpl implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MALPackage.BINDING__BIND:
-        getBind().clear();
-        getBind().addAll((Collection<? extends Binding>)newValue);
-        return;
       case MALPackage.BINDING__IDENTIFIER:
         setIdentifier((String)newValue);
         return;
-      case MALPackage.BINDING__TN:
-        setTn((TypeName)newValue);
+      case MALPackage.BINDING__TYPE:
+        setType((TypeName)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -258,14 +218,11 @@ public class BindingImpl extends ParamsImpl implements Binding
   {
     switch (featureID)
     {
-      case MALPackage.BINDING__BIND:
-        getBind().clear();
-        return;
       case MALPackage.BINDING__IDENTIFIER:
         setIdentifier(IDENTIFIER_EDEFAULT);
         return;
-      case MALPackage.BINDING__TN:
-        setTn((TypeName)null);
+      case MALPackage.BINDING__TYPE:
+        setType((TypeName)null);
         return;
     }
     super.eUnset(featureID);
@@ -281,12 +238,10 @@ public class BindingImpl extends ParamsImpl implements Binding
   {
     switch (featureID)
     {
-      case MALPackage.BINDING__BIND:
-        return bind != null && !bind.isEmpty();
       case MALPackage.BINDING__IDENTIFIER:
         return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
-      case MALPackage.BINDING__TN:
-        return tn != null;
+      case MALPackage.BINDING__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }

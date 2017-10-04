@@ -3,20 +3,11 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.Variable;
@@ -29,24 +20,13 @@ import org.xtext.trabalho.mAL.Variable;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.VariableImpl#getVar1 <em>Var1</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.VariableImpl#getIdentifier <em>Identifier</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VariableImpl extends VarlistImpl implements Variable
+public class VariableImpl extends FactorImpl implements Variable
 {
-  /**
-   * The cached value of the '{@link #getVar1() <em>Var1</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVar1()
-   * @generated
-   * @ordered
-   */
-  protected EList<Variable> var1;
-
   /**
    * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -93,20 +73,6 @@ public class VariableImpl extends VarlistImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVar1()
-  {
-    if (var1 == null)
-    {
-      var1 = new EObjectContainmentEList<Variable>(Variable.class, this, MALPackage.VARIABLE__VAR1);
-    }
-    return var1;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getIdentifier()
   {
     return identifier;
@@ -131,28 +97,10 @@ public class VariableImpl extends VarlistImpl implements Variable
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MALPackage.VARIABLE__VAR1:
-        return ((InternalEList<?>)getVar1()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case MALPackage.VARIABLE__VAR1:
-        return getVar1();
       case MALPackage.VARIABLE__IDENTIFIER:
         return getIdentifier();
     }
@@ -164,16 +112,11 @@ public class VariableImpl extends VarlistImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MALPackage.VARIABLE__VAR1:
-        getVar1().clear();
-        getVar1().addAll((Collection<? extends Variable>)newValue);
-        return;
       case MALPackage.VARIABLE__IDENTIFIER:
         setIdentifier((String)newValue);
         return;
@@ -191,9 +134,6 @@ public class VariableImpl extends VarlistImpl implements Variable
   {
     switch (featureID)
     {
-      case MALPackage.VARIABLE__VAR1:
-        getVar1().clear();
-        return;
       case MALPackage.VARIABLE__IDENTIFIER:
         setIdentifier(IDENTIFIER_EDEFAULT);
         return;
@@ -211,8 +151,6 @@ public class VariableImpl extends VarlistImpl implements Variable
   {
     switch (featureID)
     {
-      case MALPackage.VARIABLE__VAR1:
-        return var1 != null && !var1.isEmpty();
       case MALPackage.VARIABLE__IDENTIFIER:
         return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
     }

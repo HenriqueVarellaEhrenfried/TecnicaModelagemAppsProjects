@@ -13,10 +13,9 @@ package org.xtext.trabalho.mAL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getHelp <em>Help</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#isHelp <em>Help</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent <em>Ident</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent1 <em>Ident1</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent2 <em>Ident2</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#isSecond_ident <em>Second ident</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt()
@@ -26,30 +25,30 @@ package org.xtext.trabalho.mAL;
 public interface ModuleStmt extends Statement
 {
   /**
-   * Returns the value of the '<em><b>Help</b></em>' containment reference.
+   * Returns the value of the '<em><b>Help</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Help</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Help</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Help</em>' containment reference.
-   * @see #setHelp(Helpinfo)
+   * @return the value of the '<em>Help</em>' attribute.
+   * @see #setHelp(boolean)
    * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt_Help()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Helpinfo getHelp();
+  boolean isHelp();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleStmt#getHelp <em>Help</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleStmt#isHelp <em>Help</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Help</em>' containment reference.
-   * @see #getHelp()
+   * @param value the new value of the '<em>Help</em>' attribute.
+   * @see #isHelp()
    * @generated
    */
-  void setHelp(Helpinfo value);
+  void setHelp(boolean value);
 
   /**
    * Returns the value of the '<em><b>Ident</b></em>' attribute.
@@ -78,55 +77,29 @@ public interface ModuleStmt extends Statement
   void setIdent(String value);
 
   /**
-   * Returns the value of the '<em><b>Ident1</b></em>' attribute.
+   * Returns the value of the '<em><b>Second ident</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ident1</em>' attribute isn't clear,
+   * If the meaning of the '<em>Second ident</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ident1</em>' attribute.
-   * @see #setIdent1(String)
-   * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt_Ident1()
+   * @return the value of the '<em>Second ident</em>' attribute.
+   * @see #setSecond_ident(boolean)
+   * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt_Second_ident()
    * @model
    * @generated
    */
-  String getIdent1();
+  boolean isSecond_ident();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent1 <em>Ident1</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleStmt#isSecond_ident <em>Second ident</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ident1</em>' attribute.
-   * @see #getIdent1()
+   * @param value the new value of the '<em>Second ident</em>' attribute.
+   * @see #isSecond_ident()
    * @generated
    */
-  void setIdent1(String value);
-
-  /**
-   * Returns the value of the '<em><b>Ident2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Ident2</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Ident2</em>' attribute.
-   * @see #setIdent2(String)
-   * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt_Ident2()
-   * @model
-   * @generated
-   */
-  String getIdent2();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent2 <em>Ident2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ident2</em>' attribute.
-   * @see #getIdent2()
-   * @generated
-   */
-  void setIdent2(String value);
+  void setSecond_ident(boolean value);
 
 } // ModuleStmt

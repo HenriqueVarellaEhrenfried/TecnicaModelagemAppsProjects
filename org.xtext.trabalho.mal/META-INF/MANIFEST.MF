@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib,
- org.eclipse.emf.common
+ org.eclipse.emf.common,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.xtext.trabalho.generator,
  org.xtext.trabalho.mAL,
@@ -22,5 +23,7 @@ Export-Package: org.xtext.trabalho.generator,
  org.xtext.trabalho.mAL.impl,
  org.xtext.trabalho,
  org.xtext.trabalho.scoping,
- org.xtext.trabalho.mAL.util
+ org.xtext.trabalho.mAL.util,
+ org.xtext.trabalho.parser.antlr,
+ org.xtext.trabalho.parser.antlr.internal
 Import-Package: org.apache.log4j

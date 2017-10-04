@@ -3,20 +3,76 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.trabalho.mAL.Fcncall;
 import org.xtext.trabalho.mAL.MALPackage;
+import org.xtext.trabalho.mAL.ModuleName;
+import org.xtext.trabalho.mAL.Name;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Fcncall</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.FcncallImpl#getModule <em>Module</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.FcncallImpl#getFunction_name <em>Function name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.FcncallImpl#isArgs <em>Args</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class FcncallImpl extends ExprImpl implements Fcncall
 {
+  /**
+   * The cached value of the '{@link #getModule() <em>Module</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModule()
+   * @generated
+   * @ordered
+   */
+  protected ModuleName module;
+
+  /**
+   * The cached value of the '{@link #getFunction_name() <em>Function name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunction_name()
+   * @generated
+   * @ordered
+   */
+  protected Name function_name;
+
+  /**
+   * The default value of the '{@link #isArgs() <em>Args</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isArgs()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ARGS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isArgs() <em>Args</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isArgs()
+   * @generated
+   * @ordered
+   */
+  protected boolean args = ARGS_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +92,246 @@ public class FcncallImpl extends ExprImpl implements Fcncall
   protected EClass eStaticClass()
   {
     return MALPackage.Literals.FCNCALL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModuleName getModule()
+  {
+    return module;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetModule(ModuleName newModule, NotificationChain msgs)
+  {
+    ModuleName oldModule = module;
+    module = newModule;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.FCNCALL__MODULE, oldModule, newModule);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setModule(ModuleName newModule)
+  {
+    if (newModule != module)
+    {
+      NotificationChain msgs = null;
+      if (module != null)
+        msgs = ((InternalEObject)module).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.FCNCALL__MODULE, null, msgs);
+      if (newModule != null)
+        msgs = ((InternalEObject)newModule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.FCNCALL__MODULE, null, msgs);
+      msgs = basicSetModule(newModule, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.FCNCALL__MODULE, newModule, newModule));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Name getFunction_name()
+  {
+    return function_name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFunction_name(Name newFunction_name, NotificationChain msgs)
+  {
+    Name oldFunction_name = function_name;
+    function_name = newFunction_name;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.FCNCALL__FUNCTION_NAME, oldFunction_name, newFunction_name);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFunction_name(Name newFunction_name)
+  {
+    if (newFunction_name != function_name)
+    {
+      NotificationChain msgs = null;
+      if (function_name != null)
+        msgs = ((InternalEObject)function_name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.FCNCALL__FUNCTION_NAME, null, msgs);
+      if (newFunction_name != null)
+        msgs = ((InternalEObject)newFunction_name).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.FCNCALL__FUNCTION_NAME, null, msgs);
+      msgs = basicSetFunction_name(newFunction_name, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.FCNCALL__FUNCTION_NAME, newFunction_name, newFunction_name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isArgs()
+  {
+    return args;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArgs(boolean newArgs)
+  {
+    boolean oldArgs = args;
+    args = newArgs;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.FCNCALL__ARGS, oldArgs, args));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MALPackage.FCNCALL__MODULE:
+        return basicSetModule(null, msgs);
+      case MALPackage.FCNCALL__FUNCTION_NAME:
+        return basicSetFunction_name(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case MALPackage.FCNCALL__MODULE:
+        return getModule();
+      case MALPackage.FCNCALL__FUNCTION_NAME:
+        return getFunction_name();
+      case MALPackage.FCNCALL__ARGS:
+        return isArgs();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case MALPackage.FCNCALL__MODULE:
+        setModule((ModuleName)newValue);
+        return;
+      case MALPackage.FCNCALL__FUNCTION_NAME:
+        setFunction_name((Name)newValue);
+        return;
+      case MALPackage.FCNCALL__ARGS:
+        setArgs((Boolean)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case MALPackage.FCNCALL__MODULE:
+        setModule((ModuleName)null);
+        return;
+      case MALPackage.FCNCALL__FUNCTION_NAME:
+        setFunction_name((Name)null);
+        return;
+      case MALPackage.FCNCALL__ARGS:
+        setArgs(ARGS_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case MALPackage.FCNCALL__MODULE:
+        return module != null;
+      case MALPackage.FCNCALL__FUNCTION_NAME:
+        return function_name != null;
+      case MALPackage.FCNCALL__ARGS:
+        return args != ARGS_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (args: ");
+    result.append(args);
+    result.append(')');
+    return result.toString();
   }
 
 } //FcncallImpl

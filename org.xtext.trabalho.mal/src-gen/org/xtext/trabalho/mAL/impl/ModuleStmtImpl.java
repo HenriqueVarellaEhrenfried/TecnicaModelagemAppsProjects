@@ -4,14 +4,11 @@
 package org.xtext.trabalho.mAL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.xtext.trabalho.mAL.Helpinfo;
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.ModuleStmt;
 
@@ -23,10 +20,9 @@ import org.xtext.trabalho.mAL.ModuleStmt;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getHelp <em>Help</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#isHelp <em>Help</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getIdent <em>Ident</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getIdent1 <em>Ident1</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getIdent2 <em>Ident2</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#isSecond_ident <em>Second ident</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,14 +30,24 @@ import org.xtext.trabalho.mAL.ModuleStmt;
 public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
 {
   /**
-   * The cached value of the '{@link #getHelp() <em>Help</em>}' containment reference.
+   * The default value of the '{@link #isHelp() <em>Help</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHelp()
+   * @see #isHelp()
    * @generated
    * @ordered
    */
-  protected Helpinfo help;
+  protected static final boolean HELP_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHelp() <em>Help</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHelp()
+   * @generated
+   * @ordered
+   */
+  protected boolean help = HELP_EDEFAULT;
 
   /**
    * The default value of the '{@link #getIdent() <em>Ident</em>}' attribute.
@@ -64,44 +70,24 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
   protected String ident = IDENT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getIdent1() <em>Ident1</em>}' attribute.
+   * The default value of the '{@link #isSecond_ident() <em>Second ident</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdent1()
+   * @see #isSecond_ident()
    * @generated
    * @ordered
    */
-  protected static final String IDENT1_EDEFAULT = null;
+  protected static final boolean SECOND_IDENT_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getIdent1() <em>Ident1</em>}' attribute.
+   * The cached value of the '{@link #isSecond_ident() <em>Second ident</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdent1()
+   * @see #isSecond_ident()
    * @generated
    * @ordered
    */
-  protected String ident1 = IDENT1_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getIdent2() <em>Ident2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIdent2()
-   * @generated
-   * @ordered
-   */
-  protected static final String IDENT2_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getIdent2() <em>Ident2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIdent2()
-   * @generated
-   * @ordered
-   */
-  protected String ident2 = IDENT2_EDEFAULT;
+  protected boolean second_ident = SECOND_IDENT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,7 +115,7 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public Helpinfo getHelp()
+  public boolean isHelp()
   {
     return help;
   }
@@ -139,37 +125,12 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetHelp(Helpinfo newHelp, NotificationChain msgs)
+  public void setHelp(boolean newHelp)
   {
-    Helpinfo oldHelp = help;
+    boolean oldHelp = help;
     help = newHelp;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__HELP, oldHelp, newHelp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setHelp(Helpinfo newHelp)
-  {
-    if (newHelp != help)
-    {
-      NotificationChain msgs = null;
-      if (help != null)
-        msgs = ((InternalEObject)help).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.MODULE_STMT__HELP, null, msgs);
-      if (newHelp != null)
-        msgs = ((InternalEObject)newHelp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.MODULE_STMT__HELP, null, msgs);
-      msgs = basicSetHelp(newHelp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__HELP, newHelp, newHelp));
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__HELP, oldHelp, help));
   }
 
   /**
@@ -200,9 +161,9 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIdent1()
+  public boolean isSecond_ident()
   {
-    return ident1;
+    return second_ident;
   }
 
   /**
@@ -210,51 +171,12 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIdent1(String newIdent1)
+  public void setSecond_ident(boolean newSecond_ident)
   {
-    String oldIdent1 = ident1;
-    ident1 = newIdent1;
+    boolean oldSecond_ident = second_ident;
+    second_ident = newSecond_ident;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__IDENT1, oldIdent1, ident1));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getIdent2()
-  {
-    return ident2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIdent2(String newIdent2)
-  {
-    String oldIdent2 = ident2;
-    ident2 = newIdent2;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__IDENT2, oldIdent2, ident2));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MALPackage.MODULE_STMT__HELP:
-        return basicSetHelp(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__SECOND_IDENT, oldSecond_ident, second_ident));
   }
 
   /**
@@ -268,13 +190,11 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
     switch (featureID)
     {
       case MALPackage.MODULE_STMT__HELP:
-        return getHelp();
+        return isHelp();
       case MALPackage.MODULE_STMT__IDENT:
         return getIdent();
-      case MALPackage.MODULE_STMT__IDENT1:
-        return getIdent1();
-      case MALPackage.MODULE_STMT__IDENT2:
-        return getIdent2();
+      case MALPackage.MODULE_STMT__SECOND_IDENT:
+        return isSecond_ident();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -290,16 +210,13 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
     switch (featureID)
     {
       case MALPackage.MODULE_STMT__HELP:
-        setHelp((Helpinfo)newValue);
+        setHelp((Boolean)newValue);
         return;
       case MALPackage.MODULE_STMT__IDENT:
         setIdent((String)newValue);
         return;
-      case MALPackage.MODULE_STMT__IDENT1:
-        setIdent1((String)newValue);
-        return;
-      case MALPackage.MODULE_STMT__IDENT2:
-        setIdent2((String)newValue);
+      case MALPackage.MODULE_STMT__SECOND_IDENT:
+        setSecond_ident((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -316,16 +233,13 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
     switch (featureID)
     {
       case MALPackage.MODULE_STMT__HELP:
-        setHelp((Helpinfo)null);
+        setHelp(HELP_EDEFAULT);
         return;
       case MALPackage.MODULE_STMT__IDENT:
         setIdent(IDENT_EDEFAULT);
         return;
-      case MALPackage.MODULE_STMT__IDENT1:
-        setIdent1(IDENT1_EDEFAULT);
-        return;
-      case MALPackage.MODULE_STMT__IDENT2:
-        setIdent2(IDENT2_EDEFAULT);
+      case MALPackage.MODULE_STMT__SECOND_IDENT:
+        setSecond_ident(SECOND_IDENT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -342,13 +256,11 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
     switch (featureID)
     {
       case MALPackage.MODULE_STMT__HELP:
-        return help != null;
+        return help != HELP_EDEFAULT;
       case MALPackage.MODULE_STMT__IDENT:
         return IDENT_EDEFAULT == null ? ident != null : !IDENT_EDEFAULT.equals(ident);
-      case MALPackage.MODULE_STMT__IDENT1:
-        return IDENT1_EDEFAULT == null ? ident1 != null : !IDENT1_EDEFAULT.equals(ident1);
-      case MALPackage.MODULE_STMT__IDENT2:
-        return IDENT2_EDEFAULT == null ? ident2 != null : !IDENT2_EDEFAULT.equals(ident2);
+      case MALPackage.MODULE_STMT__SECOND_IDENT:
+        return second_ident != SECOND_IDENT_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -364,12 +276,12 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ident: ");
+    result.append(" (help: ");
+    result.append(help);
+    result.append(", ident: ");
     result.append(ident);
-    result.append(", ident1: ");
-    result.append(ident1);
-    result.append(", ident2: ");
-    result.append(ident2);
+    result.append(", second_ident: ");
+    result.append(second_ident);
     result.append(')');
     return result.toString();
   }

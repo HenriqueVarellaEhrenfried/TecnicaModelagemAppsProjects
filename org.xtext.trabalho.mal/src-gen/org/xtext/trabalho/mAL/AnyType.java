@@ -3,7 +3,6 @@
  */
 package org.xtext.trabalho.mAL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.AnyType#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.AnyType#getDigit <em>Digit</em>}</li>
  * </ul>
  *
@@ -21,8 +21,34 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AnyType extends EObject
+public interface AnyType extends TypeName, ColElmType
 {
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
+   * @see org.xtext.trabalho.mAL.MALPackage#getAnyType_Type()
+   * @model
+   * @generated
+   */
+  String getType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.AnyType#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see #getType()
+   * @generated
+   */
+  void setType(String value);
+
   /**
    * Returns the value of the '<em><b>Digit</b></em>' attribute.
    * <!-- begin-user-doc -->

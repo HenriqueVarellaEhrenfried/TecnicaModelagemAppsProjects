@@ -122,8 +122,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         Header header = (Header)theEObject;
         T result = caseHeader(header);
-        if (result == null) result = caseDefinition(header);
-        if (result == null) result = caseStatement(header);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -131,9 +129,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         Name name = (Name)theEObject;
         T result = caseName(name);
-        if (result == null) result = caseHeader(name);
-        if (result == null) result = caseDefinition(name);
-        if (result == null) result = caseStatement(name);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,8 +151,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         Binding binding = (Binding)theEObject;
         T result = caseBinding(binding);
-        if (result == null) result = caseParams(binding);
-        if (result == null) result = caseResult(binding);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -203,6 +196,10 @@ public class MALSwitch<T> extends Switch<T>
       {
         AnyType anyType = (AnyType)theEObject;
         T result = caseAnyType(anyType);
+        if (result == null) result = caseColElmType(anyType);
+        if (result == null) result = caseResult(anyType);
+        if (result == null) result = caseColumnType(anyType);
+        if (result == null) result = caseTypeName(anyType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -218,8 +215,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         Varlist varlist = (Varlist)theEObject;
         T result = caseVarlist(varlist);
-        if (result == null) result = caseStmt(varlist);
-        if (result == null) result = caseStatement(varlist);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -227,9 +222,8 @@ public class MALSwitch<T> extends Switch<T>
       {
         Variable variable = (Variable)theEObject;
         T result = caseVariable(variable);
-        if (result == null) result = caseVarlist(variable);
-        if (result == null) result = caseStmt(variable);
-        if (result == null) result = caseStatement(variable);
+        if (result == null) result = caseFactor(variable);
+        if (result == null) result = caseArgs(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -244,7 +238,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         Factor factor = (Factor)theEObject;
         T result = caseFactor(factor);
-        if (result == null) result = caseExpr(factor);
         if (result == null) result = caseArgs(factor);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -268,8 +261,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         ModuleName moduleName = (ModuleName)theEObject;
         T result = caseModuleName(moduleName);
-        if (result == null) result = caseFcncall(moduleName);
-        if (result == null) result = caseExpr(moduleName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

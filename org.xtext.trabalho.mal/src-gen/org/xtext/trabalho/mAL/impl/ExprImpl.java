@@ -24,7 +24,9 @@ import org.xtext.trabalho.mAL.MALPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.ExprImpl#getFactor <em>Factor</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ExprImpl#getLeft_factor <em>Left factor</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ExprImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ExprImpl#getRight_factor <em>Right factor</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +34,44 @@ import org.xtext.trabalho.mAL.MALPackage;
 public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
 {
   /**
-   * The cached value of the '{@link #getFactor() <em>Factor</em>}' containment reference.
+   * The cached value of the '{@link #getLeft_factor() <em>Left factor</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFactor()
+   * @see #getLeft_factor()
    * @generated
    * @ordered
    */
-  protected Factor factor;
+  protected Factor left_factor;
+
+  /**
+   * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperator()
+   * @generated
+   * @ordered
+   */
+  protected static final String OPERATOR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperator()
+   * @generated
+   * @ordered
+   */
+  protected String operator = OPERATOR_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getRight_factor() <em>Right factor</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRight_factor()
+   * @generated
+   * @ordered
+   */
+  protected Factor right_factor;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +99,9 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Factor getFactor()
+  public Factor getLeft_factor()
   {
-    return factor;
+    return left_factor;
   }
 
   /**
@@ -77,13 +109,13 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFactor(Factor newFactor, NotificationChain msgs)
+  public NotificationChain basicSetLeft_factor(Factor newLeft_factor, NotificationChain msgs)
   {
-    Factor oldFactor = factor;
-    factor = newFactor;
+    Factor oldLeft_factor = left_factor;
+    left_factor = newLeft_factor;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__FACTOR, oldFactor, newFactor);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__LEFT_FACTOR, oldLeft_factor, newLeft_factor);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +126,91 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFactor(Factor newFactor)
+  public void setLeft_factor(Factor newLeft_factor)
   {
-    if (newFactor != factor)
+    if (newLeft_factor != left_factor)
     {
       NotificationChain msgs = null;
-      if (factor != null)
-        msgs = ((InternalEObject)factor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__FACTOR, null, msgs);
-      if (newFactor != null)
-        msgs = ((InternalEObject)newFactor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__FACTOR, null, msgs);
-      msgs = basicSetFactor(newFactor, msgs);
+      if (left_factor != null)
+        msgs = ((InternalEObject)left_factor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__LEFT_FACTOR, null, msgs);
+      if (newLeft_factor != null)
+        msgs = ((InternalEObject)newLeft_factor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__LEFT_FACTOR, null, msgs);
+      msgs = basicSetLeft_factor(newLeft_factor, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__FACTOR, newFactor, newFactor));
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__LEFT_FACTOR, newLeft_factor, newLeft_factor));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getOperator()
+  {
+    return operator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOperator(String newOperator)
+  {
+    String oldOperator = operator;
+    operator = newOperator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__OPERATOR, oldOperator, operator));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Factor getRight_factor()
+  {
+    return right_factor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight_factor(Factor newRight_factor, NotificationChain msgs)
+  {
+    Factor oldRight_factor = right_factor;
+    right_factor = newRight_factor;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__RIGHT_FACTOR, oldRight_factor, newRight_factor);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRight_factor(Factor newRight_factor)
+  {
+    if (newRight_factor != right_factor)
+    {
+      NotificationChain msgs = null;
+      if (right_factor != null)
+        msgs = ((InternalEObject)right_factor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__RIGHT_FACTOR, null, msgs);
+      if (newRight_factor != null)
+        msgs = ((InternalEObject)newRight_factor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__RIGHT_FACTOR, null, msgs);
+      msgs = basicSetRight_factor(newRight_factor, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__RIGHT_FACTOR, newRight_factor, newRight_factor));
   }
 
   /**
@@ -120,8 +223,10 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        return basicSetFactor(null, msgs);
+      case MALPackage.EXPR__LEFT_FACTOR:
+        return basicSetLeft_factor(null, msgs);
+      case MALPackage.EXPR__RIGHT_FACTOR:
+        return basicSetRight_factor(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +241,12 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        return getFactor();
+      case MALPackage.EXPR__LEFT_FACTOR:
+        return getLeft_factor();
+      case MALPackage.EXPR__OPERATOR:
+        return getOperator();
+      case MALPackage.EXPR__RIGHT_FACTOR:
+        return getRight_factor();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +261,14 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        setFactor((Factor)newValue);
+      case MALPackage.EXPR__LEFT_FACTOR:
+        setLeft_factor((Factor)newValue);
+        return;
+      case MALPackage.EXPR__OPERATOR:
+        setOperator((String)newValue);
+        return;
+      case MALPackage.EXPR__RIGHT_FACTOR:
+        setRight_factor((Factor)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +284,14 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        setFactor((Factor)null);
+      case MALPackage.EXPR__LEFT_FACTOR:
+        setLeft_factor((Factor)null);
+        return;
+      case MALPackage.EXPR__OPERATOR:
+        setOperator(OPERATOR_EDEFAULT);
+        return;
+      case MALPackage.EXPR__RIGHT_FACTOR:
+        setRight_factor((Factor)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,10 +307,31 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        return factor != null;
+      case MALPackage.EXPR__LEFT_FACTOR:
+        return left_factor != null;
+      case MALPackage.EXPR__OPERATOR:
+        return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
+      case MALPackage.EXPR__RIGHT_FACTOR:
+        return right_factor != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (operator: ");
+    result.append(operator);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExprImpl

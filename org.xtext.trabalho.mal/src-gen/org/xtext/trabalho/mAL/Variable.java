@@ -3,7 +3,6 @@
  */
 package org.xtext.trabalho.mAL;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Variable#getVar1 <em>Var1</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.Variable#getIdentifier <em>Identifier</em>}</li>
  * </ul>
  *
@@ -22,24 +20,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Variable extends Varlist
+public interface Variable extends Factor
 {
-  /**
-   * Returns the value of the '<em><b>Var1</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.trabalho.mAL.Variable}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Var1</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Var1</em>' containment reference list.
-   * @see org.xtext.trabalho.mAL.MALPackage#getVariable_Var1()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Variable> getVar1();
-
   /**
    * Returns the value of the '<em><b>Identifier</b></em>' attribute.
    * <!-- begin-user-doc -->

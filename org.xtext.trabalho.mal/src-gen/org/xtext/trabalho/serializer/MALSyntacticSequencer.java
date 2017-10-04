@@ -22,26 +22,30 @@ import org.xtext.trabalho.services.MALGrammarAccess;
 public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MALGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__;
 	protected AbstractElementAlias match_ColumnType___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__q;
-	protected AbstractElementAlias match_Definition_FACTORYKeyword_3_0_or___UNSAFEKeyword_0_0_q_COMMANDKeyword_0_1___or___UNSAFEKeyword_1_0_q_PATTERNKeyword_1_1___or_____INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q_FUNCTIONKeyword_2_1__;
-	protected AbstractElementAlias match_Factor_Literal_constantParserRuleCall_0_or_NILKeyword_1;
-	protected AbstractElementAlias match_Stmt_FlowParserRuleCall_0_q;
-	protected AbstractElementAlias match_Varlist_LeftParenthesisKeyword_1_0_q;
+	protected AbstractElementAlias match_Definition_UNSAFEKeyword_0_0_q;
+	protected AbstractElementAlias match_Definition_UNSAFEKeyword_1_0_q;
+	protected AbstractElementAlias match_Definition___INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q;
+	protected AbstractElementAlias match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MALGrammarAccess) access;
+		match_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_0()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBATKeyword_1()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getLeftSquareBracketKeyword_2()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_3())), new TokenAlias(false, false, grammarAccess.getTypeNameAccess().getColonKeyword_2_0()));
 		match_ColumnType___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_0()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBATKeyword_1()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getLeftSquareBracketKeyword_2()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_3()));
-		match_Definition_FACTORYKeyword_3_0_or___UNSAFEKeyword_0_0_q_COMMANDKeyword_0_1___or___UNSAFEKeyword_1_0_q_PATTERNKeyword_1_1___or_____INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q_FUNCTIONKeyword_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getINLINEKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_2_0_1())), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getFUNCTIONKeyword_2_1())), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getCOMMANDKeyword_0_1())), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getPATTERNKeyword_1_1())), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getFACTORYKeyword_3_0()));
-		match_Factor_Literal_constantParserRuleCall_0_or_NILKeyword_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getLiteral_constantParserRuleCall_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getNILKeyword_1()));
-		match_Stmt_FlowParserRuleCall_0_q = new TokenAlias(false, true, grammarAccess.getStmtAccess().getFlowParserRuleCall_0());
-		match_Varlist_LeftParenthesisKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getVarlistAccess().getLeftParenthesisKeyword_1_0());
+		match_Definition_UNSAFEKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_0_0());
+		match_Definition_UNSAFEKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_1_0());
+		match_Definition___INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getINLINEKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_2_0_1()));
+		match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getLiteral_constantParserRuleCall_0_1()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getNILKeyword_1_1()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getFlowRule())
 			return getFlowToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getIDRule())
+			return getIDToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getLiteral_constantRule())
 			return getLiteral_constantToken(semanticObject, ruleCall, node);
 		return "";
@@ -59,8 +63,17 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	 */
+	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
 	 * Literal_constant:
-	 * 	BIT | Bte | CHR | WRD | INT | LNG | OID | FLT | DBL | STR ;
+	 * 	BIT | Bte | CHR | WRD | INT | OID | FLT | STR ;
 	 */
 	protected String getLiteral_constantToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -74,20 +87,33 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ColumnType___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__q.equals(syntax))
+			if (match_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__.equals(syntax))
+				emit_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ColumnType___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__q.equals(syntax))
 				emit_ColumnType___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Definition_FACTORYKeyword_3_0_or___UNSAFEKeyword_0_0_q_COMMANDKeyword_0_1___or___UNSAFEKeyword_1_0_q_PATTERNKeyword_1_1___or_____INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q_FUNCTIONKeyword_2_1__.equals(syntax))
-				emit_Definition_FACTORYKeyword_3_0_or___UNSAFEKeyword_0_0_q_COMMANDKeyword_0_1___or___UNSAFEKeyword_1_0_q_PATTERNKeyword_1_1___or_____INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q_FUNCTIONKeyword_2_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Factor_Literal_constantParserRuleCall_0_or_NILKeyword_1.equals(syntax))
-				emit_Factor_Literal_constantParserRuleCall_0_or_NILKeyword_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Stmt_FlowParserRuleCall_0_q.equals(syntax))
-				emit_Stmt_FlowParserRuleCall_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Varlist_LeftParenthesisKeyword_1_0_q.equals(syntax))
-				emit_Varlist_LeftParenthesisKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Definition_UNSAFEKeyword_0_0_q.equals(syntax))
+				emit_Definition_UNSAFEKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Definition_UNSAFEKeyword_1_0_q.equals(syntax))
+				emit_Definition_UNSAFEKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Definition___INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q.equals(syntax))
+				emit_Definition___INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1.equals(syntax))
+				emit_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ':' | (':' 'BAT' '[' ':')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) type='any'
+	 */
+	protected void emit_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0_BATKeyword_1_LeftSquareBracketKeyword_2_ColonKeyword_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     (':' 'BAT' '[' ':')?
@@ -101,49 +127,46 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'FACTORY' | ('UNSAFE'? 'COMMAND') | ('UNSAFE'? 'PATTERN') | (('INLINE' | 'UNSAFE')? 'FUNCTION')
+	 *     'UNSAFE'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) id=ID
-	 *     (rule start) (ambiguity) mn+=ModuleName
+	 *     (rule start) (ambiguity) 'COMMAND' header=Header
 	 */
-	protected void emit_Definition_FACTORYKeyword_3_0_or___UNSAFEKeyword_0_0_q_COMMANDKeyword_0_1___or___UNSAFEKeyword_1_0_q_PATTERNKeyword_1_1___or_____INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q_FUNCTIONKeyword_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Definition_UNSAFEKeyword_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     Literal_constant | 'NIL'
+	 *     'UNSAFE'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'PATTERN' header=Header
+	 */
+	protected void emit_Definition_UNSAFEKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('INLINE' | 'UNSAFE')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'FUNCTION' header=Header
+	 */
+	protected void emit_Definition___INLINEKeyword_2_0_0_or_UNSAFEKeyword_2_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'NIL' | Literal_constant
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) ',' factor1+=Factor
 	 *     (rule start) (ambiguity) (rule start)
-	 *     (rule start) (ambiguity) operator=ID
 	 */
-	protected void emit_Factor_Literal_constantParserRuleCall_0_or_NILKeyword_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     Flow?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '('? identifier=ID
-	 */
-	protected void emit_Stmt_FlowParserRuleCall_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '('?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) identifier=ID
-	 *     (rule start) Flow? (ambiguity) identifier=ID
-	 */
-	protected void emit_Varlist_LeftParenthesisKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

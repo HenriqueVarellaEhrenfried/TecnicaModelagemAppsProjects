@@ -3,6 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,8 +14,6 @@ package org.xtext.trabalho.mAL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.ModuleName#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.ModuleName#getArgs <em>Args</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.ModuleName#getIdentifier <em>Identifier</em>}</li>
  * </ul>
  *
@@ -22,60 +21,8 @@ package org.xtext.trabalho.mAL;
  * @model
  * @generated
  */
-public interface ModuleName extends Fcncall
+public interface ModuleName extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Name)
-   * @see org.xtext.trabalho.mAL.MALPackage#getModuleName_Name()
-   * @model containment="true"
-   * @generated
-   */
-  Name getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleName#getName <em>Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
-   * @see #getName()
-   * @generated
-   */
-  void setName(Name value);
-
-  /**
-   * Returns the value of the '<em><b>Args</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Args</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Args</em>' containment reference.
-   * @see #setArgs(Args)
-   * @see org.xtext.trabalho.mAL.MALPackage#getModuleName_Args()
-   * @model containment="true"
-   * @generated
-   */
-  Args getArgs();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleName#getArgs <em>Args</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Args</em>' containment reference.
-   * @see #getArgs()
-   * @generated
-   */
-  void setArgs(Args value);
-
   /**
    * Returns the value of the '<em><b>Identifier</b></em>' attribute.
    * <!-- begin-user-doc -->

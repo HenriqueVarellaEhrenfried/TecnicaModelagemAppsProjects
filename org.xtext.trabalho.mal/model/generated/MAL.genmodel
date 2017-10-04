@@ -11,72 +11,78 @@
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Statement"/>
     <genClasses ecoreClass="MAL.ecore#//ModuleStmt">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//ModuleStmt/help"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//ModuleStmt/help"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//ModuleStmt/ident"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//ModuleStmt/ident1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//ModuleStmt/ident2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//ModuleStmt/second_ident"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//IncludeStmt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//IncludeStmt/identifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//IncludeStmt/string_literal"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Definition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Definition/help"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Definition/help"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Definition/header"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Definition/identifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Definition/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Definition/function_name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Definition/factory_name"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Helpinfo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Helpinfo/string_literal"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Header">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Header/identifier"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Header/stm1"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Header/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Header/stm2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Header/header_name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Header/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Header/return_type"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Name">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Name/param"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Name/result"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Name/mn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MAL.ecore#//Name/mn"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Name/id"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Result"/>
-    <genClasses ecoreClass="MAL.ecore#//Params"/>
+    <genClasses ecoreClass="MAL.ecore#//Params">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Params/bind"/>
+    </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Binding">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Binding/bind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Binding/identifier"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Binding/tn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Binding/type"/>
     </genClasses>
-    <genClasses ecoreClass="MAL.ecore#//TypeName">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//TypeName/at"/>
-    </genClasses>
+    <genClasses ecoreClass="MAL.ecore#//TypeName"/>
     <genClasses ecoreClass="MAL.ecore#//ScalarType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//ScalarType/identifier"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//ColumnType"/>
     <genClasses ecoreClass="MAL.ecore#//ColElmType"/>
     <genClasses ecoreClass="MAL.ecore#//AnyType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//AnyType/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//AnyType/digit"/>
     </genClasses>
-    <genClasses ecoreClass="MAL.ecore#//Stmt"/>
+    <genClasses ecoreClass="MAL.ecore#//Stmt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Stmt/flow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Stmt/list_of_variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Stmt/exp"/>
+    </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Varlist">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Varlist/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Varlist/variables"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Variable">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Variable/var1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Variable/identifier"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Expr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Expr/factor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Expr/left_factor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Expr/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Expr/right_factor"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Factor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Factor/operator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Factor/var"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Factor/factor1"/>
     </genClasses>
-    <genClasses ecoreClass="MAL.ecore#//Fcncall"/>
+    <genClasses ecoreClass="MAL.ecore#//Fcncall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Fcncall/module"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Fcncall/function_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Fcncall/args"/>
+    </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Args"/>
     <genClasses ecoreClass="MAL.ecore#//ModuleName">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//ModuleName/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//ModuleName/args"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//ModuleName/identifier"/>
     </genClasses>
   </genPackages>

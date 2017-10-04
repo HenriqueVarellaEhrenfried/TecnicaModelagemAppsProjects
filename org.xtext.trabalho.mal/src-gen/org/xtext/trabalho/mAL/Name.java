@@ -5,6 +5,8 @@ package org.xtext.trabalho.mAL;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Name</b></em>'.
@@ -14,8 +16,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Name#getParam <em>Param</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.Name#getResult <em>Result</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.Name#getMn <em>Mn</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.Name#getId <em>Id</em>}</li>
  * </ul>
@@ -24,72 +24,20 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Name extends Header
+public interface Name extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Param</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Param</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Param</em>' containment reference.
-   * @see #setParam(Params)
-   * @see org.xtext.trabalho.mAL.MALPackage#getName_Param()
-   * @model containment="true"
-   * @generated
-   */
-  Params getParam();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Name#getParam <em>Param</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Param</em>' containment reference.
-   * @see #getParam()
-   * @generated
-   */
-  void setParam(Params value);
-
-  /**
-   * Returns the value of the '<em><b>Result</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Result</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Result</em>' containment reference.
-   * @see #setResult(Result)
-   * @see org.xtext.trabalho.mAL.MALPackage#getName_Result()
-   * @model containment="true"
-   * @generated
-   */
-  Result getResult();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Name#getResult <em>Result</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Result</em>' containment reference.
-   * @see #getResult()
-   * @generated
-   */
-  void setResult(Result value);
-
-  /**
-   * Returns the value of the '<em><b>Mn</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Mn</b></em>' reference list.
    * The list contents are of type {@link org.xtext.trabalho.mAL.ModuleName}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Mn</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Mn</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mn</em>' containment reference list.
+   * @return the value of the '<em>Mn</em>' reference list.
    * @see org.xtext.trabalho.mAL.MALPackage#getName_Mn()
-   * @model containment="true"
+   * @model
    * @generated
    */
   EList<ModuleName> getMn();

@@ -321,9 +321,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModuleStmt_Help()
+  public EAttribute getModuleStmt_Help()
   {
-    return (EReference)moduleStmtEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)moduleStmtEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -341,19 +341,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModuleStmt_Ident1()
+  public EAttribute getModuleStmt_Second_ident()
   {
     return (EAttribute)moduleStmtEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getModuleStmt_Ident2()
-  {
-    return (EAttribute)moduleStmtEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -401,9 +391,59 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDefinition_Help()
+  public EAttribute getDefinition_Help()
   {
-    return (EReference)definitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefinition_Header()
+  {
+    return (EReference)definitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDefinition_Identifier()
+  {
+    return (EAttribute)definitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefinition_Statements()
+  {
+    return (EReference)definitionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefinition_Function_name()
+  {
+    return (EReference)definitionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefinition_Factory_name()
+  {
+    return (EReference)definitionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -441,9 +481,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getHeader_Identifier()
+  public EReference getHeader_Header_name()
   {
-    return (EAttribute)headerEClass.getEStructuralFeatures().get(0);
+    return (EReference)headerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -451,7 +491,7 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHeader_Stm1()
+  public EReference getHeader_Params()
   {
     return (EReference)headerEClass.getEStructuralFeatures().get(1);
   }
@@ -461,19 +501,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHeader_Name()
+  public EReference getHeader_Return_type()
   {
     return (EReference)headerEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getHeader_Stm2()
-  {
-    return (EReference)headerEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -491,7 +521,7 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getName_Param()
+  public EReference getName_Mn()
   {
     return (EReference)nameEClass.getEStructuralFeatures().get(0);
   }
@@ -501,29 +531,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getName_Result()
-  {
-    return (EReference)nameEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getName_Mn()
-  {
-    return (EReference)nameEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getName_Id()
   {
-    return (EAttribute)nameEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)nameEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -551,6 +561,16 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getParams_Bind()
+  {
+    return (EReference)paramsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getBinding()
   {
     return bindingEClass;
@@ -561,19 +581,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBinding_Bind()
-  {
-    return (EReference)bindingEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getBinding_Identifier()
   {
-    return (EAttribute)bindingEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)bindingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -581,9 +591,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBinding_Tn()
+  public EReference getBinding_Type()
   {
-    return (EReference)bindingEClass.getEStructuralFeatures().get(2);
+    return (EReference)bindingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -594,16 +604,6 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
   public EClass getTypeName()
   {
     return typeNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTypeName_At()
-  {
-    return (EReference)typeNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -661,9 +661,19 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAnyType_Digit()
+  public EAttribute getAnyType_Type()
   {
     return (EAttribute)anyTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAnyType_Digit()
+  {
+    return (EAttribute)anyTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -681,6 +691,36 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getStmt_Flow()
+  {
+    return (EAttribute)stmtEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStmt_List_of_variables()
+  {
+    return (EReference)stmtEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStmt_Exp()
+  {
+    return (EReference)stmtEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVarlist()
   {
     return varlistEClass;
@@ -691,7 +731,7 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVarlist_Exp()
+  public EReference getVarlist_Variables()
   {
     return (EReference)varlistEClass.getEStructuralFeatures().get(0);
   }
@@ -711,19 +751,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariable_Var1()
-  {
-    return (EReference)variableEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getVariable_Identifier()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -741,9 +771,29 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpr_Factor()
+  public EReference getExpr_Left_factor()
   {
     return (EReference)exprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpr_Operator()
+  {
+    return (EAttribute)exprEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpr_Right_factor()
+  {
+    return (EReference)exprEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -761,29 +811,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFactor_Operator()
-  {
-    return (EAttribute)factorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFactor_Var()
-  {
-    return (EReference)factorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getFactor_Factor1()
   {
-    return (EReference)factorEClass.getEStructuralFeatures().get(2);
+    return (EReference)factorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -794,6 +824,36 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
   public EClass getFcncall()
   {
     return fcncallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFcncall_Module()
+  {
+    return (EReference)fcncallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFcncall_Function_name()
+  {
+    return (EReference)fcncallEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFcncall_Args()
+  {
+    return (EAttribute)fcncallEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -821,29 +881,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModuleName_Name()
-  {
-    return (EReference)moduleNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getModuleName_Args()
-  {
-    return (EReference)moduleNameEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getModuleName_Identifier()
   {
-    return (EAttribute)moduleNameEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)moduleNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -882,44 +922,44 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     statementEClass = createEClass(STATEMENT);
 
     moduleStmtEClass = createEClass(MODULE_STMT);
-    createEReference(moduleStmtEClass, MODULE_STMT__HELP);
+    createEAttribute(moduleStmtEClass, MODULE_STMT__HELP);
     createEAttribute(moduleStmtEClass, MODULE_STMT__IDENT);
-    createEAttribute(moduleStmtEClass, MODULE_STMT__IDENT1);
-    createEAttribute(moduleStmtEClass, MODULE_STMT__IDENT2);
+    createEAttribute(moduleStmtEClass, MODULE_STMT__SECOND_IDENT);
 
     includeStmtEClass = createEClass(INCLUDE_STMT);
     createEAttribute(includeStmtEClass, INCLUDE_STMT__IDENTIFIER);
     createEAttribute(includeStmtEClass, INCLUDE_STMT__STRING_LITERAL);
 
     definitionEClass = createEClass(DEFINITION);
-    createEReference(definitionEClass, DEFINITION__HELP);
+    createEAttribute(definitionEClass, DEFINITION__HELP);
+    createEReference(definitionEClass, DEFINITION__HEADER);
+    createEAttribute(definitionEClass, DEFINITION__IDENTIFIER);
+    createEReference(definitionEClass, DEFINITION__STATEMENTS);
+    createEReference(definitionEClass, DEFINITION__FUNCTION_NAME);
+    createEReference(definitionEClass, DEFINITION__FACTORY_NAME);
 
     helpinfoEClass = createEClass(HELPINFO);
     createEAttribute(helpinfoEClass, HELPINFO__STRING_LITERAL);
 
     headerEClass = createEClass(HEADER);
-    createEAttribute(headerEClass, HEADER__IDENTIFIER);
-    createEReference(headerEClass, HEADER__STM1);
-    createEReference(headerEClass, HEADER__NAME);
-    createEReference(headerEClass, HEADER__STM2);
+    createEReference(headerEClass, HEADER__HEADER_NAME);
+    createEReference(headerEClass, HEADER__PARAMS);
+    createEReference(headerEClass, HEADER__RETURN_TYPE);
 
     nameEClass = createEClass(NAME);
-    createEReference(nameEClass, NAME__PARAM);
-    createEReference(nameEClass, NAME__RESULT);
     createEReference(nameEClass, NAME__MN);
     createEAttribute(nameEClass, NAME__ID);
 
     resultEClass = createEClass(RESULT);
 
     paramsEClass = createEClass(PARAMS);
+    createEReference(paramsEClass, PARAMS__BIND);
 
     bindingEClass = createEClass(BINDING);
-    createEReference(bindingEClass, BINDING__BIND);
     createEAttribute(bindingEClass, BINDING__IDENTIFIER);
-    createEReference(bindingEClass, BINDING__TN);
+    createEReference(bindingEClass, BINDING__TYPE);
 
     typeNameEClass = createEClass(TYPE_NAME);
-    createEReference(typeNameEClass, TYPE_NAME__AT);
 
     scalarTypeEClass = createEClass(SCALAR_TYPE);
     createEAttribute(scalarTypeEClass, SCALAR_TYPE__IDENTIFIER);
@@ -929,32 +969,36 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     colElmTypeEClass = createEClass(COL_ELM_TYPE);
 
     anyTypeEClass = createEClass(ANY_TYPE);
+    createEAttribute(anyTypeEClass, ANY_TYPE__TYPE);
     createEAttribute(anyTypeEClass, ANY_TYPE__DIGIT);
 
     stmtEClass = createEClass(STMT);
+    createEAttribute(stmtEClass, STMT__FLOW);
+    createEReference(stmtEClass, STMT__LIST_OF_VARIABLES);
+    createEReference(stmtEClass, STMT__EXP);
 
     varlistEClass = createEClass(VARLIST);
-    createEReference(varlistEClass, VARLIST__EXP);
+    createEReference(varlistEClass, VARLIST__VARIABLES);
 
     variableEClass = createEClass(VARIABLE);
-    createEReference(variableEClass, VARIABLE__VAR1);
     createEAttribute(variableEClass, VARIABLE__IDENTIFIER);
 
     exprEClass = createEClass(EXPR);
-    createEReference(exprEClass, EXPR__FACTOR);
+    createEReference(exprEClass, EXPR__LEFT_FACTOR);
+    createEAttribute(exprEClass, EXPR__OPERATOR);
+    createEReference(exprEClass, EXPR__RIGHT_FACTOR);
 
     factorEClass = createEClass(FACTOR);
-    createEAttribute(factorEClass, FACTOR__OPERATOR);
-    createEReference(factorEClass, FACTOR__VAR);
     createEReference(factorEClass, FACTOR__FACTOR1);
 
     fcncallEClass = createEClass(FCNCALL);
+    createEReference(fcncallEClass, FCNCALL__MODULE);
+    createEReference(fcncallEClass, FCNCALL__FUNCTION_NAME);
+    createEAttribute(fcncallEClass, FCNCALL__ARGS);
 
     argsEClass = createEClass(ARGS);
 
     moduleNameEClass = createEClass(MODULE_NAME);
-    createEReference(moduleNameEClass, MODULE_NAME__NAME);
-    createEReference(moduleNameEClass, MODULE_NAME__ARGS);
     createEAttribute(moduleNameEClass, MODULE_NAME__IDENTIFIER);
   }
 
@@ -990,22 +1034,18 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     moduleStmtEClass.getESuperTypes().add(this.getStatement());
     includeStmtEClass.getESuperTypes().add(this.getStatement());
     definitionEClass.getESuperTypes().add(this.getStatement());
-    headerEClass.getESuperTypes().add(this.getDefinition());
-    nameEClass.getESuperTypes().add(this.getHeader());
     paramsEClass.getESuperTypes().add(this.getResult());
-    bindingEClass.getESuperTypes().add(this.getParams());
     typeNameEClass.getESuperTypes().add(this.getResult());
     scalarTypeEClass.getESuperTypes().add(this.getTypeName());
     scalarTypeEClass.getESuperTypes().add(this.getColElmType());
     columnTypeEClass.getESuperTypes().add(this.getTypeName());
     colElmTypeEClass.getESuperTypes().add(this.getColumnType());
+    anyTypeEClass.getESuperTypes().add(this.getTypeName());
+    anyTypeEClass.getESuperTypes().add(this.getColElmType());
     stmtEClass.getESuperTypes().add(this.getStatement());
-    varlistEClass.getESuperTypes().add(this.getStmt());
-    variableEClass.getESuperTypes().add(this.getVarlist());
-    factorEClass.getESuperTypes().add(this.getExpr());
+    variableEClass.getESuperTypes().add(this.getFactor());
     factorEClass.getESuperTypes().add(this.getArgs());
     fcncallEClass.getESuperTypes().add(this.getExpr());
-    moduleNameEClass.getESuperTypes().add(this.getFcncall());
 
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1014,44 +1054,44 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(moduleStmtEClass, ModuleStmt.class, "ModuleStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModuleStmt_Help(), this.getHelpinfo(), null, "help", null, 0, 1, ModuleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModuleStmt_Help(), ecorePackage.getEBoolean(), "help", null, 0, 1, ModuleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModuleStmt_Ident(), ecorePackage.getEString(), "ident", null, 0, 1, ModuleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModuleStmt_Ident1(), ecorePackage.getEString(), "ident1", null, 0, 1, ModuleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModuleStmt_Ident2(), ecorePackage.getEString(), "ident2", null, 0, 1, ModuleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModuleStmt_Second_ident(), ecorePackage.getEBoolean(), "second_ident", null, 0, 1, ModuleStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(includeStmtEClass, IncludeStmt.class, "IncludeStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIncludeStmt_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, IncludeStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIncludeStmt_String_literal(), ecorePackage.getEString(), "string_literal", null, 0, 1, IncludeStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDefinition_Help(), this.getHelpinfo(), null, "help", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDefinition_Help(), ecorePackage.getEBoolean(), "help", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefinition_Header(), this.getHeader(), null, "header", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDefinition_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefinition_Statements(), this.getStatement(), null, "statements", null, 0, -1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefinition_Function_name(), this.getName_(), null, "function_name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefinition_Factory_name(), this.getName_(), null, "factory_name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(helpinfoEClass, Helpinfo.class, "Helpinfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHelpinfo_String_literal(), ecorePackage.getEString(), "string_literal", null, 0, 1, Helpinfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getHeader_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHeader_Stm1(), this.getStatement(), null, "stm1", null, 0, -1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHeader_Name(), this.getName_(), null, "name", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHeader_Stm2(), this.getStatement(), null, "stm2", null, 0, -1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHeader_Header_name(), this.getName_(), null, "header_name", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHeader_Params(), this.getParams(), null, "params", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHeader_Return_type(), this.getResult(), null, "return_type", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameEClass, Name.class, "Name", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getName_Param(), this.getParams(), null, "param", null, 0, 1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getName_Result(), this.getResult(), null, "result", null, 0, 1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getName_Mn(), this.getModuleName(), null, "mn", null, 0, -1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getName_Mn(), this.getModuleName(), null, "mn", null, 0, -1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getName_Id(), ecorePackage.getEString(), "id", null, 0, 1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(resultEClass, Result.class, "Result", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(paramsEClass, Params.class, "Params", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParams_Bind(), this.getBinding(), null, "bind", null, 0, -1, Params.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBinding_Bind(), this.getBinding(), null, "bind", null, 0, -1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBinding_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBinding_Tn(), this.getTypeName(), null, "tn", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinding_Type(), this.getTypeName(), null, "type", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeNameEClass, TypeName.class, "TypeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTypeName_At(), this.getAnyType(), null, "at", null, 0, 1, TypeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scalarTypeEClass, ScalarType.class, "ScalarType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScalarType_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, ScalarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1061,32 +1101,36 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     initEClass(colElmTypeEClass, ColElmType.class, "ColElmType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(anyTypeEClass, AnyType.class, "AnyType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAnyType_Type(), ecorePackage.getEString(), "type", null, 0, 1, AnyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAnyType_Digit(), ecorePackage.getEString(), "digit", null, 0, 1, AnyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stmtEClass, Stmt.class, "Stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStmt_Flow(), ecorePackage.getEBoolean(), "flow", null, 0, 1, Stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStmt_List_of_variables(), this.getVarlist(), null, "list_of_variables", null, 0, 1, Stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStmt_Exp(), this.getExpr(), null, "exp", null, 0, 1, Stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varlistEClass, Varlist.class, "Varlist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVarlist_Exp(), this.getExpr(), null, "exp", null, 0, 1, Varlist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVarlist_Variables(), this.getVariable(), null, "variables", null, 0, -1, Varlist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariable_Var1(), this.getVariable(), null, "var1", null, 0, -1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariable_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpr_Factor(), this.getFactor(), null, "factor", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpr_Left_factor(), this.getFactor(), null, "left_factor", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpr_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpr_Right_factor(), this.getFactor(), null, "right_factor", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(factorEClass, Factor.class, "Factor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFactor_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFactor_Var(), this.getVariable(), null, "var", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFactor_Factor1(), this.getFactor(), null, "factor1", null, 0, -1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fcncallEClass, Fcncall.class, "Fcncall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFcncall_Module(), this.getModuleName(), null, "module", null, 0, 1, Fcncall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFcncall_Function_name(), this.getName_(), null, "function_name", null, 0, 1, Fcncall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFcncall_Args(), ecorePackage.getEBoolean(), "args", null, 0, 1, Fcncall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(argsEClass, Args.class, "Args", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(moduleNameEClass, ModuleName.class, "ModuleName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModuleName_Name(), this.getName_(), null, "name", null, 0, 1, ModuleName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModuleName_Args(), this.getArgs(), null, "args", null, 0, 1, ModuleName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModuleName_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, ModuleName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

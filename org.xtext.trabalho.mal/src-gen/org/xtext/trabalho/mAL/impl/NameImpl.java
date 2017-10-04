@@ -6,23 +6,19 @@ package org.xtext.trabalho.mAL.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.ModuleName;
 import org.xtext.trabalho.mAL.Name;
-import org.xtext.trabalho.mAL.Params;
-import org.xtext.trabalho.mAL.Result;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,38 +28,16 @@ import org.xtext.trabalho.mAL.Result;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.NameImpl#getParam <em>Param</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.NameImpl#getResult <em>Result</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.NameImpl#getMn <em>Mn</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.NameImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NameImpl extends HeaderImpl implements Name
+public class NameImpl extends MinimalEObjectImpl.Container implements Name
 {
   /**
-   * The cached value of the '{@link #getParam() <em>Param</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParam()
-   * @generated
-   * @ordered
-   */
-  protected Params param;
-
-  /**
-   * The cached value of the '{@link #getResult() <em>Result</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getResult()
-   * @generated
-   * @ordered
-   */
-  protected Result result;
-
-  /**
-   * The cached value of the '{@link #getMn() <em>Mn</em>}' containment reference list.
+   * The cached value of the '{@link #getMn() <em>Mn</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMn()
@@ -118,107 +92,11 @@ public class NameImpl extends HeaderImpl implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  public Params getParam()
-  {
-    return param;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetParam(Params newParam, NotificationChain msgs)
-  {
-    Params oldParam = param;
-    param = newParam;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.NAME__PARAM, oldParam, newParam);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setParam(Params newParam)
-  {
-    if (newParam != param)
-    {
-      NotificationChain msgs = null;
-      if (param != null)
-        msgs = ((InternalEObject)param).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.NAME__PARAM, null, msgs);
-      if (newParam != null)
-        msgs = ((InternalEObject)newParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.NAME__PARAM, null, msgs);
-      msgs = basicSetParam(newParam, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.NAME__PARAM, newParam, newParam));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Result getResult()
-  {
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetResult(Result newResult, NotificationChain msgs)
-  {
-    Result oldResult = result;
-    result = newResult;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.NAME__RESULT, oldResult, newResult);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setResult(Result newResult)
-  {
-    if (newResult != result)
-    {
-      NotificationChain msgs = null;
-      if (result != null)
-        msgs = ((InternalEObject)result).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.NAME__RESULT, null, msgs);
-      if (newResult != null)
-        msgs = ((InternalEObject)newResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.NAME__RESULT, null, msgs);
-      msgs = basicSetResult(newResult, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.NAME__RESULT, newResult, newResult));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<ModuleName> getMn()
   {
     if (mn == null)
     {
-      mn = new EObjectContainmentEList<ModuleName>(ModuleName.class, this, MALPackage.NAME__MN);
+      mn = new EObjectResolvingEList<ModuleName>(ModuleName.class, this, MALPackage.NAME__MN);
     }
     return mn;
   }
@@ -252,34 +130,10 @@ public class NameImpl extends HeaderImpl implements Name
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MALPackage.NAME__PARAM:
-        return basicSetParam(null, msgs);
-      case MALPackage.NAME__RESULT:
-        return basicSetResult(null, msgs);
-      case MALPackage.NAME__MN:
-        return ((InternalEList<?>)getMn()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case MALPackage.NAME__PARAM:
-        return getParam();
-      case MALPackage.NAME__RESULT:
-        return getResult();
       case MALPackage.NAME__MN:
         return getMn();
       case MALPackage.NAME__ID:
@@ -299,12 +153,6 @@ public class NameImpl extends HeaderImpl implements Name
   {
     switch (featureID)
     {
-      case MALPackage.NAME__PARAM:
-        setParam((Params)newValue);
-        return;
-      case MALPackage.NAME__RESULT:
-        setResult((Result)newValue);
-        return;
       case MALPackage.NAME__MN:
         getMn().clear();
         getMn().addAll((Collection<? extends ModuleName>)newValue);
@@ -326,12 +174,6 @@ public class NameImpl extends HeaderImpl implements Name
   {
     switch (featureID)
     {
-      case MALPackage.NAME__PARAM:
-        setParam((Params)null);
-        return;
-      case MALPackage.NAME__RESULT:
-        setResult((Result)null);
-        return;
       case MALPackage.NAME__MN:
         getMn().clear();
         return;
@@ -352,10 +194,6 @@ public class NameImpl extends HeaderImpl implements Name
   {
     switch (featureID)
     {
-      case MALPackage.NAME__PARAM:
-        return param != null;
-      case MALPackage.NAME__RESULT:
-        return result != null;
       case MALPackage.NAME__MN:
         return mn != null && !mn.isEmpty();
       case MALPackage.NAME__ID:

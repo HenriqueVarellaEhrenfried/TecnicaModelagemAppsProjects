@@ -3,12 +3,19 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Params</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.Params#getBind <em>Bind</em>}</li>
+ * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getParams()
  * @model
@@ -16,4 +23,20 @@ package org.xtext.trabalho.mAL;
  */
 public interface Params extends Result
 {
+  /**
+   * Returns the value of the '<em><b>Bind</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Binding}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bind</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bind</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getParams_Bind()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Binding> getBind();
+
 } // Params

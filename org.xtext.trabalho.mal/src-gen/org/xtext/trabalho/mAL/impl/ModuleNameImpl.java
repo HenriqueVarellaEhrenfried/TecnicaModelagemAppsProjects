@@ -4,17 +4,14 @@
 package org.xtext.trabalho.mAL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.trabalho.mAL.Args;
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.ModuleName;
-import org.xtext.trabalho.mAL.Name;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,35 +21,13 @@ import org.xtext.trabalho.mAL.Name;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleNameImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleNameImpl#getArgs <em>Args</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleNameImpl#getIdentifier <em>Identifier</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModuleNameImpl extends FcncallImpl implements ModuleName
+public class ModuleNameImpl extends MinimalEObjectImpl.Container implements ModuleName
 {
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected Name name;
-
-  /**
-   * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArgs()
-   * @generated
-   * @ordered
-   */
-  protected Args args;
-
   /**
    * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -99,102 +74,6 @@ public class ModuleNameImpl extends FcncallImpl implements ModuleName
    * <!-- end-user-doc -->
    * @generated
    */
-  public Name getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetName(Name newName, NotificationChain msgs)
-  {
-    Name oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_NAME__NAME, oldName, newName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(Name newName)
-  {
-    if (newName != name)
-    {
-      NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.MODULE_NAME__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.MODULE_NAME__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_NAME__NAME, newName, newName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Args getArgs()
-  {
-    return args;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetArgs(Args newArgs, NotificationChain msgs)
-  {
-    Args oldArgs = args;
-    args = newArgs;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_NAME__ARGS, oldArgs, newArgs);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setArgs(Args newArgs)
-  {
-    if (newArgs != args)
-    {
-      NotificationChain msgs = null;
-      if (args != null)
-        msgs = ((InternalEObject)args).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.MODULE_NAME__ARGS, null, msgs);
-      if (newArgs != null)
-        msgs = ((InternalEObject)newArgs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.MODULE_NAME__ARGS, null, msgs);
-      msgs = basicSetArgs(newArgs, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_NAME__ARGS, newArgs, newArgs));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getIdentifier()
   {
     return identifier;
@@ -219,32 +98,10 @@ public class ModuleNameImpl extends FcncallImpl implements ModuleName
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MALPackage.MODULE_NAME__NAME:
-        return basicSetName(null, msgs);
-      case MALPackage.MODULE_NAME__ARGS:
-        return basicSetArgs(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case MALPackage.MODULE_NAME__NAME:
-        return getName();
-      case MALPackage.MODULE_NAME__ARGS:
-        return getArgs();
       case MALPackage.MODULE_NAME__IDENTIFIER:
         return getIdentifier();
     }
@@ -261,12 +118,6 @@ public class ModuleNameImpl extends FcncallImpl implements ModuleName
   {
     switch (featureID)
     {
-      case MALPackage.MODULE_NAME__NAME:
-        setName((Name)newValue);
-        return;
-      case MALPackage.MODULE_NAME__ARGS:
-        setArgs((Args)newValue);
-        return;
       case MALPackage.MODULE_NAME__IDENTIFIER:
         setIdentifier((String)newValue);
         return;
@@ -284,12 +135,6 @@ public class ModuleNameImpl extends FcncallImpl implements ModuleName
   {
     switch (featureID)
     {
-      case MALPackage.MODULE_NAME__NAME:
-        setName((Name)null);
-        return;
-      case MALPackage.MODULE_NAME__ARGS:
-        setArgs((Args)null);
-        return;
       case MALPackage.MODULE_NAME__IDENTIFIER:
         setIdentifier(IDENTIFIER_EDEFAULT);
         return;
@@ -307,10 +152,6 @@ public class ModuleNameImpl extends FcncallImpl implements ModuleName
   {
     switch (featureID)
     {
-      case MALPackage.MODULE_NAME__NAME:
-        return name != null;
-      case MALPackage.MODULE_NAME__ARGS:
-        return args != null;
       case MALPackage.MODULE_NAME__IDENTIFIER:
         return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
     }

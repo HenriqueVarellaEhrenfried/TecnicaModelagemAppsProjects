@@ -3,6 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +14,12 @@ package org.xtext.trabalho.mAL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Definition#getHelp <em>Help</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Definition#isHelp <em>Help</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Definition#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Definition#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Definition#getStatements <em>Statements</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Definition#getFunction_name <em>Function name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Definition#getFactory_name <em>Factory name</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getDefinition()
@@ -23,29 +29,149 @@ package org.xtext.trabalho.mAL;
 public interface Definition extends Statement
 {
   /**
-   * Returns the value of the '<em><b>Help</b></em>' containment reference.
+   * Returns the value of the '<em><b>Help</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Help</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Help</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Help</em>' containment reference.
-   * @see #setHelp(Helpinfo)
+   * @return the value of the '<em>Help</em>' attribute.
+   * @see #setHelp(boolean)
    * @see org.xtext.trabalho.mAL.MALPackage#getDefinition_Help()
+   * @model
+   * @generated
+   */
+  boolean isHelp();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Definition#isHelp <em>Help</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Help</em>' attribute.
+   * @see #isHelp()
+   * @generated
+   */
+  void setHelp(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Header</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Header</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Header</em>' containment reference.
+   * @see #setHeader(Header)
+   * @see org.xtext.trabalho.mAL.MALPackage#getDefinition_Header()
    * @model containment="true"
    * @generated
    */
-  Helpinfo getHelp();
+  Header getHeader();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Definition#getHelp <em>Help</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Definition#getHeader <em>Header</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Help</em>' containment reference.
-   * @see #getHelp()
+   * @param value the new value of the '<em>Header</em>' containment reference.
+   * @see #getHeader()
    * @generated
    */
-  void setHelp(Helpinfo value);
+  void setHeader(Header value);
+
+  /**
+   * Returns the value of the '<em><b>Identifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Identifier</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Identifier</em>' attribute.
+   * @see #setIdentifier(String)
+   * @see org.xtext.trabalho.mAL.MALPackage#getDefinition_Identifier()
+   * @model
+   * @generated
+   */
+  String getIdentifier();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Definition#getIdentifier <em>Identifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Identifier</em>' attribute.
+   * @see #getIdentifier()
+   * @generated
+   */
+  void setIdentifier(String value);
+
+  /**
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Statement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getDefinition_Statements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Statement> getStatements();
+
+  /**
+   * Returns the value of the '<em><b>Function name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Function name</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Function name</em>' containment reference.
+   * @see #setFunction_name(Name)
+   * @see org.xtext.trabalho.mAL.MALPackage#getDefinition_Function_name()
+   * @model containment="true"
+   * @generated
+   */
+  Name getFunction_name();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Definition#getFunction_name <em>Function name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Function name</em>' containment reference.
+   * @see #getFunction_name()
+   * @generated
+   */
+  void setFunction_name(Name value);
+
+  /**
+   * Returns the value of the '<em><b>Factory name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Factory name</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Factory name</em>' containment reference.
+   * @see #setFactory_name(Name)
+   * @see org.xtext.trabalho.mAL.MALPackage#getDefinition_Factory_name()
+   * @model containment="true"
+   * @generated
+   */
+  Name getFactory_name();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Definition#getFactory_name <em>Factory name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Factory name</em>' containment reference.
+   * @see #getFactory_name()
+   * @generated
+   */
+  void setFactory_name(Name value);
 
 } // Definition

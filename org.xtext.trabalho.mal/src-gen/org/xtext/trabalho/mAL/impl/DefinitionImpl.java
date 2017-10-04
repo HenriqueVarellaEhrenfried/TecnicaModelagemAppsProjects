@@ -3,17 +3,26 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.trabalho.mAL.Definition;
-import org.xtext.trabalho.mAL.Helpinfo;
+import org.xtext.trabalho.mAL.Header;
 import org.xtext.trabalho.mAL.MALPackage;
+import org.xtext.trabalho.mAL.Name;
+import org.xtext.trabalho.mAL.Statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +32,12 @@ import org.xtext.trabalho.mAL.MALPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.DefinitionImpl#getHelp <em>Help</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.DefinitionImpl#isHelp <em>Help</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.DefinitionImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.DefinitionImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.DefinitionImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.DefinitionImpl#getFunction_name <em>Function name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.DefinitionImpl#getFactory_name <em>Factory name</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +45,84 @@ import org.xtext.trabalho.mAL.MALPackage;
 public class DefinitionImpl extends StatementImpl implements Definition
 {
   /**
-   * The cached value of the '{@link #getHelp() <em>Help</em>}' containment reference.
+   * The default value of the '{@link #isHelp() <em>Help</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHelp()
+   * @see #isHelp()
    * @generated
    * @ordered
    */
-  protected Helpinfo help;
+  protected static final boolean HELP_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHelp() <em>Help</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHelp()
+   * @generated
+   * @ordered
+   */
+  protected boolean help = HELP_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHeader()
+   * @generated
+   * @ordered
+   */
+  protected Header header;
+
+  /**
+   * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdentifier()
+   * @generated
+   * @ordered
+   */
+  protected static final String IDENTIFIER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdentifier()
+   * @generated
+   * @ordered
+   */
+  protected String identifier = IDENTIFIER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatements()
+   * @generated
+   * @ordered
+   */
+  protected EList<Statement> statements;
+
+  /**
+   * The cached value of the '{@link #getFunction_name() <em>Function name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunction_name()
+   * @generated
+   * @ordered
+   */
+  protected Name function_name;
+
+  /**
+   * The cached value of the '{@link #getFactory_name() <em>Factory name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFactory_name()
+   * @generated
+   * @ordered
+   */
+  protected Name factory_name;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +150,7 @@ public class DefinitionImpl extends StatementImpl implements Definition
    * <!-- end-user-doc -->
    * @generated
    */
-  public Helpinfo getHelp()
+  public boolean isHelp()
   {
     return help;
   }
@@ -76,13 +160,36 @@ public class DefinitionImpl extends StatementImpl implements Definition
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetHelp(Helpinfo newHelp, NotificationChain msgs)
+  public void setHelp(boolean newHelp)
   {
-    Helpinfo oldHelp = help;
+    boolean oldHelp = help;
     help = newHelp;
     if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__HELP, oldHelp, help));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Header getHeader()
+  {
+    return header;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs)
+  {
+    Header oldHeader = header;
+    header = newHeader;
+    if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__HELP, oldHelp, newHelp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__HEADER, oldHeader, newHeader);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +200,153 @@ public class DefinitionImpl extends StatementImpl implements Definition
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHelp(Helpinfo newHelp)
+  public void setHeader(Header newHeader)
   {
-    if (newHelp != help)
+    if (newHeader != header)
     {
       NotificationChain msgs = null;
-      if (help != null)
-        msgs = ((InternalEObject)help).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__HELP, null, msgs);
-      if (newHelp != null)
-        msgs = ((InternalEObject)newHelp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__HELP, null, msgs);
-      msgs = basicSetHelp(newHelp, msgs);
+      if (header != null)
+        msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__HEADER, null, msgs);
+      if (newHeader != null)
+        msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__HEADER, null, msgs);
+      msgs = basicSetHeader(newHeader, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__HELP, newHelp, newHelp));
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__HEADER, newHeader, newHeader));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getIdentifier()
+  {
+    return identifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIdentifier(String newIdentifier)
+  {
+    String oldIdentifier = identifier;
+    identifier = newIdentifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__IDENTIFIER, oldIdentifier, identifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Statement> getStatements()
+  {
+    if (statements == null)
+    {
+      statements = new EObjectContainmentEList<Statement>(Statement.class, this, MALPackage.DEFINITION__STATEMENTS);
+    }
+    return statements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Name getFunction_name()
+  {
+    return function_name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFunction_name(Name newFunction_name, NotificationChain msgs)
+  {
+    Name oldFunction_name = function_name;
+    function_name = newFunction_name;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__FUNCTION_NAME, oldFunction_name, newFunction_name);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFunction_name(Name newFunction_name)
+  {
+    if (newFunction_name != function_name)
+    {
+      NotificationChain msgs = null;
+      if (function_name != null)
+        msgs = ((InternalEObject)function_name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__FUNCTION_NAME, null, msgs);
+      if (newFunction_name != null)
+        msgs = ((InternalEObject)newFunction_name).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__FUNCTION_NAME, null, msgs);
+      msgs = basicSetFunction_name(newFunction_name, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__FUNCTION_NAME, newFunction_name, newFunction_name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Name getFactory_name()
+  {
+    return factory_name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFactory_name(Name newFactory_name, NotificationChain msgs)
+  {
+    Name oldFactory_name = factory_name;
+    factory_name = newFactory_name;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__FACTORY_NAME, oldFactory_name, newFactory_name);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFactory_name(Name newFactory_name)
+  {
+    if (newFactory_name != factory_name)
+    {
+      NotificationChain msgs = null;
+      if (factory_name != null)
+        msgs = ((InternalEObject)factory_name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__FACTORY_NAME, null, msgs);
+      if (newFactory_name != null)
+        msgs = ((InternalEObject)newFactory_name).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.DEFINITION__FACTORY_NAME, null, msgs);
+      msgs = basicSetFactory_name(newFactory_name, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.DEFINITION__FACTORY_NAME, newFactory_name, newFactory_name));
   }
 
   /**
@@ -119,8 +359,14 @@ public class DefinitionImpl extends StatementImpl implements Definition
   {
     switch (featureID)
     {
-      case MALPackage.DEFINITION__HELP:
-        return basicSetHelp(null, msgs);
+      case MALPackage.DEFINITION__HEADER:
+        return basicSetHeader(null, msgs);
+      case MALPackage.DEFINITION__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case MALPackage.DEFINITION__FUNCTION_NAME:
+        return basicSetFunction_name(null, msgs);
+      case MALPackage.DEFINITION__FACTORY_NAME:
+        return basicSetFactory_name(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,7 +382,17 @@ public class DefinitionImpl extends StatementImpl implements Definition
     switch (featureID)
     {
       case MALPackage.DEFINITION__HELP:
-        return getHelp();
+        return isHelp();
+      case MALPackage.DEFINITION__HEADER:
+        return getHeader();
+      case MALPackage.DEFINITION__IDENTIFIER:
+        return getIdentifier();
+      case MALPackage.DEFINITION__STATEMENTS:
+        return getStatements();
+      case MALPackage.DEFINITION__FUNCTION_NAME:
+        return getFunction_name();
+      case MALPackage.DEFINITION__FACTORY_NAME:
+        return getFactory_name();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,13 +402,30 @@ public class DefinitionImpl extends StatementImpl implements Definition
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case MALPackage.DEFINITION__HELP:
-        setHelp((Helpinfo)newValue);
+        setHelp((Boolean)newValue);
+        return;
+      case MALPackage.DEFINITION__HEADER:
+        setHeader((Header)newValue);
+        return;
+      case MALPackage.DEFINITION__IDENTIFIER:
+        setIdentifier((String)newValue);
+        return;
+      case MALPackage.DEFINITION__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends Statement>)newValue);
+        return;
+      case MALPackage.DEFINITION__FUNCTION_NAME:
+        setFunction_name((Name)newValue);
+        return;
+      case MALPackage.DEFINITION__FACTORY_NAME:
+        setFactory_name((Name)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +442,22 @@ public class DefinitionImpl extends StatementImpl implements Definition
     switch (featureID)
     {
       case MALPackage.DEFINITION__HELP:
-        setHelp((Helpinfo)null);
+        setHelp(HELP_EDEFAULT);
+        return;
+      case MALPackage.DEFINITION__HEADER:
+        setHeader((Header)null);
+        return;
+      case MALPackage.DEFINITION__IDENTIFIER:
+        setIdentifier(IDENTIFIER_EDEFAULT);
+        return;
+      case MALPackage.DEFINITION__STATEMENTS:
+        getStatements().clear();
+        return;
+      case MALPackage.DEFINITION__FUNCTION_NAME:
+        setFunction_name((Name)null);
+        return;
+      case MALPackage.DEFINITION__FACTORY_NAME:
+        setFactory_name((Name)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,9 +474,38 @@ public class DefinitionImpl extends StatementImpl implements Definition
     switch (featureID)
     {
       case MALPackage.DEFINITION__HELP:
-        return help != null;
+        return help != HELP_EDEFAULT;
+      case MALPackage.DEFINITION__HEADER:
+        return header != null;
+      case MALPackage.DEFINITION__IDENTIFIER:
+        return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+      case MALPackage.DEFINITION__STATEMENTS:
+        return statements != null && !statements.isEmpty();
+      case MALPackage.DEFINITION__FUNCTION_NAME:
+        return function_name != null;
+      case MALPackage.DEFINITION__FACTORY_NAME:
+        return factory_name != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (help: ");
+    result.append(help);
+    result.append(", identifier: ");
+    result.append(identifier);
+    result.append(')');
+    return result.toString();
   }
 
 } //DefinitionImpl

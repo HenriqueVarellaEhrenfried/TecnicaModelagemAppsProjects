@@ -3,16 +3,22 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.trabalho.mAL.Expr;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.trabalho.mAL.MALPackage;
+import org.xtext.trabalho.mAL.Variable;
 import org.xtext.trabalho.mAL.Varlist;
 
 /**
@@ -23,22 +29,22 @@ import org.xtext.trabalho.mAL.Varlist;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.VarlistImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.VarlistImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VarlistImpl extends StmtImpl implements Varlist
+public class VarlistImpl extends MinimalEObjectImpl.Container implements Varlist
 {
   /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExp()
+   * @see #getVariables()
    * @generated
    * @ordered
    */
-  protected Expr exp;
+  protected EList<Variable> variables;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,47 +72,13 @@ public class VarlistImpl extends StmtImpl implements Varlist
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getExp()
+  public EList<Variable> getVariables()
   {
-    return exp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExp(Expr newExp, NotificationChain msgs)
-  {
-    Expr oldExp = exp;
-    exp = newExp;
-    if (eNotificationRequired())
+    if (variables == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.VARLIST__EXP, oldExp, newExp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      variables = new EObjectContainmentEList<Variable>(Variable.class, this, MALPackage.VARLIST__VARIABLES);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExp(Expr newExp)
-  {
-    if (newExp != exp)
-    {
-      NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.VARLIST__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.VARLIST__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.VARLIST__EXP, newExp, newExp));
+    return variables;
   }
 
   /**
@@ -119,8 +91,8 @@ public class VarlistImpl extends StmtImpl implements Varlist
   {
     switch (featureID)
     {
-      case MALPackage.VARLIST__EXP:
-        return basicSetExp(null, msgs);
+      case MALPackage.VARLIST__VARIABLES:
+        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +107,8 @@ public class VarlistImpl extends StmtImpl implements Varlist
   {
     switch (featureID)
     {
-      case MALPackage.VARLIST__EXP:
-        return getExp();
+      case MALPackage.VARLIST__VARIABLES:
+        return getVariables();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,13 +118,15 @@ public class VarlistImpl extends StmtImpl implements Varlist
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MALPackage.VARLIST__EXP:
-        setExp((Expr)newValue);
+      case MALPackage.VARLIST__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends Variable>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +142,8 @@ public class VarlistImpl extends StmtImpl implements Varlist
   {
     switch (featureID)
     {
-      case MALPackage.VARLIST__EXP:
-        setExp((Expr)null);
+      case MALPackage.VARLIST__VARIABLES:
+        getVariables().clear();
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +159,8 @@ public class VarlistImpl extends StmtImpl implements Varlist
   {
     switch (featureID)
     {
-      case MALPackage.VARLIST__EXP:
-        return exp != null;
+      case MALPackage.VARLIST__VARIABLES:
+        return variables != null && !variables.isEmpty();
     }
     return super.eIsSet(featureID);
   }

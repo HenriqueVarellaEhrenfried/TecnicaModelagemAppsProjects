@@ -9,6 +9,14 @@ package org.xtext.trabalho.mAL;
  * A representation of the model object '<em><b>Stmt</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.Stmt#isFlow <em>Flow</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Stmt#getList_of_variables <em>List of variables</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Stmt#getExp <em>Exp</em>}</li>
+ * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getStmt()
  * @model
@@ -16,4 +24,82 @@ package org.xtext.trabalho.mAL;
  */
 public interface Stmt extends Statement
 {
+  /**
+   * Returns the value of the '<em><b>Flow</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Flow</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Flow</em>' attribute.
+   * @see #setFlow(boolean)
+   * @see org.xtext.trabalho.mAL.MALPackage#getStmt_Flow()
+   * @model
+   * @generated
+   */
+  boolean isFlow();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Stmt#isFlow <em>Flow</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Flow</em>' attribute.
+   * @see #isFlow()
+   * @generated
+   */
+  void setFlow(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>List of variables</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List of variables</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List of variables</em>' containment reference.
+   * @see #setList_of_variables(Varlist)
+   * @see org.xtext.trabalho.mAL.MALPackage#getStmt_List_of_variables()
+   * @model containment="true"
+   * @generated
+   */
+  Varlist getList_of_variables();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Stmt#getList_of_variables <em>List of variables</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List of variables</em>' containment reference.
+   * @see #getList_of_variables()
+   * @generated
+   */
+  void setList_of_variables(Varlist value);
+
+  /**
+   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Exp</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Exp</em>' containment reference.
+   * @see #setExp(Expr)
+   * @see org.xtext.trabalho.mAL.MALPackage#getStmt_Exp()
+   * @model containment="true"
+   * @generated
+   */
+  Expr getExp();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Stmt#getExp <em>Exp</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Exp</em>' containment reference.
+   * @see #getExp()
+   * @generated
+   */
+  void setExp(Expr value);
+
 } // Stmt

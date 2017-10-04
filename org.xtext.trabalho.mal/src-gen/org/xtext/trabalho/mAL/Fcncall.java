@@ -9,6 +9,14 @@ package org.xtext.trabalho.mAL;
  * A representation of the model object '<em><b>Fcncall</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.Fcncall#getModule <em>Module</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Fcncall#getFunction_name <em>Function name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Fcncall#isArgs <em>Args</em>}</li>
+ * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getFcncall()
  * @model
@@ -16,4 +24,82 @@ package org.xtext.trabalho.mAL;
  */
 public interface Fcncall extends Expr
 {
+  /**
+   * Returns the value of the '<em><b>Module</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Module</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Module</em>' containment reference.
+   * @see #setModule(ModuleName)
+   * @see org.xtext.trabalho.mAL.MALPackage#getFcncall_Module()
+   * @model containment="true"
+   * @generated
+   */
+  ModuleName getModule();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Fcncall#getModule <em>Module</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Module</em>' containment reference.
+   * @see #getModule()
+   * @generated
+   */
+  void setModule(ModuleName value);
+
+  /**
+   * Returns the value of the '<em><b>Function name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Function name</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Function name</em>' containment reference.
+   * @see #setFunction_name(Name)
+   * @see org.xtext.trabalho.mAL.MALPackage#getFcncall_Function_name()
+   * @model containment="true"
+   * @generated
+   */
+  Name getFunction_name();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Fcncall#getFunction_name <em>Function name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Function name</em>' containment reference.
+   * @see #getFunction_name()
+   * @generated
+   */
+  void setFunction_name(Name value);
+
+  /**
+   * Returns the value of the '<em><b>Args</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Args</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Args</em>' attribute.
+   * @see #setArgs(boolean)
+   * @see org.xtext.trabalho.mAL.MALPackage#getFcncall_Args()
+   * @model
+   * @generated
+   */
+  boolean isArgs();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Fcncall#isArgs <em>Args</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Args</em>' attribute.
+   * @see #isArgs()
+   * @generated
+   */
+  void setArgs(boolean value);
+
 } // Fcncall
