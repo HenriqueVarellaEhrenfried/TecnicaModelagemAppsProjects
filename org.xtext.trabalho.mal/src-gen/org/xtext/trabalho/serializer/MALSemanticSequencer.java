@@ -17,7 +17,6 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.xtext.trabalho.mAL.AnyType;
 import org.xtext.trabalho.mAL.Args;
 import org.xtext.trabalho.mAL.Binding;
-import org.xtext.trabalho.mAL.ColElmType;
 import org.xtext.trabalho.mAL.Expr;
 import org.xtext.trabalho.mAL.Factor;
 import org.xtext.trabalho.mAL.Helpinfo;
@@ -63,26 +62,12 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case MALPackage.COL_ELM_TYPE:
-				sequence_ColElmType(context, (ColElmType) semanticObject); 
-				return; 
 			case MALPackage.EXPR:
 				sequence_Expr(context, (Expr) semanticObject); 
 				return; 
 			case MALPackage.FACTOR:
-				if (rule == grammarAccess.getArgsRule()) {
-					sequence_Args_Factor(context, (Factor) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getExprRule()) {
-					sequence_Expr_Factor(context, (Factor) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getFactorRule()) {
-					sequence_Factor(context, (Factor) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Factor(context, (Factor) semanticObject); 
+				return; 
 			case MALPackage.HELPINFO:
 				sequence_Helpinfo(context, (Helpinfo) semanticObject); 
 				return; 
@@ -159,19 +144,17 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Result returns AnyType
+	 *     TypeName returns AnyType
+	 *     ColumnType returns AnyType
+	 *     ColElmType returns AnyType
 	 *     AnyType returns AnyType
 	 *
 	 * Constraint:
-	 *     digit=ID
+	 *     digit=ID?
 	 */
 	protected void sequence_AnyType(ISerializationContext context, AnyType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.ANY_TYPE__DIGIT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.ANY_TYPE__DIGIT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAnyTypeAccess().getDigitIDTerminalRuleCall_1_1_0(), semanticObject.getDigit());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -180,21 +163,9 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Args returns Args
 	 *
 	 * Constraint:
-	 *     factor1+=Factor+
+	 *     (f1=Factor factor2+=Factor*)
 	 */
 	protected void sequence_Args(ISerializationContext context, Args semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Args returns Factor
-	 *
-	 * Constraint:
-	 *     (var=Variable factor1+=Factor*)
-	 */
-	protected void sequence_Args_Factor(ISerializationContext context, Factor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -230,27 +201,6 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Binding_Params(ISerializationContext context, Binding semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Result returns ColElmType
-	 *     TypeName returns ColElmType
-	 *     ColumnType returns ColElmType
-	 *     ColElmType returns ColElmType
-	 *
-	 * Constraint:
-	 *     at=AnyType
-	 */
-	protected void sequence_ColElmType(ISerializationContext context, ColElmType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.TYPE_NAME__AT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.TYPE_NAME__AT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getColElmTypeAccess().getAtAnyTypeParserRuleCall_1_0(), semanticObject.getAt());
-		feeder.finish();
 	}
 	
 	
@@ -294,7 +244,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Expr returns Expr
 	 *
 	 * Constraint:
-	 *     (operator=ID? factor=Factor)
+	 *     (f1=Factor? f2=Factor)
 	 */
 	protected void sequence_Expr(ISerializationContext context, Expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -303,43 +253,13 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Expr returns Factor
-	 *
-	 * Constraint:
-	 *     (var=Variable operator=ID factor=Factor)
-	 */
-	protected void sequence_Expr_Factor(ISerializationContext context, Factor semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.FACTOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.FACTOR__VAR));
-			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.FACTOR__OPERATOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.FACTOR__OPERATOR));
-			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.EXPR__FACTOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.EXPR__FACTOR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFactorAccess().getVarVariableParserRuleCall_2_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getExprAccess().getOperatorIDTerminalRuleCall_1_0_1_0(), semanticObject.getOperator());
-		feeder.accept(grammarAccess.getExprAccess().getFactorFactorParserRuleCall_1_1_0(), semanticObject.getFactor());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Factor returns Factor
 	 *
 	 * Constraint:
-	 *     var=Variable
+	 *     (lt=Literal_constant | var=Variable)?
 	 */
 	protected void sequence_Factor(ISerializationContext context, Factor semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.FACTOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.FACTOR__VAR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFactorAccess().getVarVariableParserRuleCall_2_0(), semanticObject.getVar());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

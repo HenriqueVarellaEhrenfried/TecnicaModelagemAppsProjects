@@ -65,15 +65,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Variable/identifier"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Expr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Expr/factor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Expr/f1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Expr/f2"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Factor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Factor/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Factor/lt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Factor/var"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Factor/factor1"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Fcncall"/>
-    <genClasses ecoreClass="MAL.ecore#//Args"/>
+    <genClasses ecoreClass="MAL.ecore#//Args">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Args/f1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Args/factor2"/>
+    </genClasses>
     <genClasses ecoreClass="MAL.ecore#//ModuleName">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//ModuleName/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//ModuleName/args"/>

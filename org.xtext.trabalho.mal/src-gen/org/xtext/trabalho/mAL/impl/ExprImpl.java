@@ -24,7 +24,8 @@ import org.xtext.trabalho.mAL.MALPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.ExprImpl#getFactor <em>Factor</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ExprImpl#getF1 <em>F1</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ExprImpl#getF2 <em>F2</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +33,24 @@ import org.xtext.trabalho.mAL.MALPackage;
 public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
 {
   /**
-   * The cached value of the '{@link #getFactor() <em>Factor</em>}' containment reference.
+   * The cached value of the '{@link #getF1() <em>F1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFactor()
+   * @see #getF1()
    * @generated
    * @ordered
    */
-  protected Factor factor;
+  protected Factor f1;
+
+  /**
+   * The cached value of the '{@link #getF2() <em>F2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getF2()
+   * @generated
+   * @ordered
+   */
+  protected Factor f2;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +78,9 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Factor getFactor()
+  public Factor getF1()
   {
-    return factor;
+    return f1;
   }
 
   /**
@@ -77,13 +88,13 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFactor(Factor newFactor, NotificationChain msgs)
+  public NotificationChain basicSetF1(Factor newF1, NotificationChain msgs)
   {
-    Factor oldFactor = factor;
-    factor = newFactor;
+    Factor oldF1 = f1;
+    f1 = newF1;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__FACTOR, oldFactor, newFactor);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__F1, oldF1, newF1);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +105,68 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFactor(Factor newFactor)
+  public void setF1(Factor newF1)
   {
-    if (newFactor != factor)
+    if (newF1 != f1)
     {
       NotificationChain msgs = null;
-      if (factor != null)
-        msgs = ((InternalEObject)factor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__FACTOR, null, msgs);
-      if (newFactor != null)
-        msgs = ((InternalEObject)newFactor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__FACTOR, null, msgs);
-      msgs = basicSetFactor(newFactor, msgs);
+      if (f1 != null)
+        msgs = ((InternalEObject)f1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__F1, null, msgs);
+      if (newF1 != null)
+        msgs = ((InternalEObject)newF1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__F1, null, msgs);
+      msgs = basicSetF1(newF1, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__FACTOR, newFactor, newFactor));
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__F1, newF1, newF1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Factor getF2()
+  {
+    return f2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetF2(Factor newF2, NotificationChain msgs)
+  {
+    Factor oldF2 = f2;
+    f2 = newF2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__F2, oldF2, newF2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setF2(Factor newF2)
+  {
+    if (newF2 != f2)
+    {
+      NotificationChain msgs = null;
+      if (f2 != null)
+        msgs = ((InternalEObject)f2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__F2, null, msgs);
+      if (newF2 != null)
+        msgs = ((InternalEObject)newF2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.EXPR__F2, null, msgs);
+      msgs = basicSetF2(newF2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.EXPR__F2, newF2, newF2));
   }
 
   /**
@@ -120,8 +179,10 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        return basicSetFactor(null, msgs);
+      case MALPackage.EXPR__F1:
+        return basicSetF1(null, msgs);
+      case MALPackage.EXPR__F2:
+        return basicSetF2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +197,10 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        return getFactor();
+      case MALPackage.EXPR__F1:
+        return getF1();
+      case MALPackage.EXPR__F2:
+        return getF2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +215,11 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        setFactor((Factor)newValue);
+      case MALPackage.EXPR__F1:
+        setF1((Factor)newValue);
+        return;
+      case MALPackage.EXPR__F2:
+        setF2((Factor)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +235,11 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        setFactor((Factor)null);
+      case MALPackage.EXPR__F1:
+        setF1((Factor)null);
+        return;
+      case MALPackage.EXPR__F2:
+        setF2((Factor)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,8 +255,10 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case MALPackage.EXPR__FACTOR:
-        return factor != null;
+      case MALPackage.EXPR__F1:
+        return f1 != null;
+      case MALPackage.EXPR__F2:
+        return f2 != null;
     }
     return super.eIsSet(featureID);
   }

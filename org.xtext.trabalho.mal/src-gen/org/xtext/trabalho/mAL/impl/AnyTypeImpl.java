@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.trabalho.mAL.AnyType;
 import org.xtext.trabalho.mAL.MALPackage;
@@ -26,7 +25,7 @@ import org.xtext.trabalho.mAL.MALPackage;
  *
  * @generated
  */
-public class AnyTypeImpl extends MinimalEObjectImpl.Container implements AnyType
+public class AnyTypeImpl extends ColElmTypeImpl implements AnyType
 {
   /**
    * The default value of the '{@link #getDigit() <em>Digit</em>}' attribute.

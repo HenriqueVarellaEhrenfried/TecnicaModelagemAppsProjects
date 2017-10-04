@@ -63,11 +63,11 @@ ColumnType:
 ;
 
 ColElmType:
-	ScalarType | at=AnyType // TODO: Descobrir o que é AnyType
+	ScalarType | AnyType // TODO: Descobrir o que é AnyType
 ;
 
 AnyType:
-	'any' ('_' digit=ID)?
+	{AnyType}'any'('_' digit=ID)?
 ;
 
 Stmt:
@@ -87,11 +87,15 @@ Variable:
 ;
 
 Expr:
-	Fcncall | (Factor operator=ID)? factor=Factor // TODO: operator é ID????
+	Fcncall | (f1=Factor Operator)? f2=Factor // TODO: operator é ID????
+;
+
+Operator:
+	'+' | '-' | '*' | '/' | '&&' | "||"
 ;
 
 Factor:
-	Literal_constant | 'NIL' | var=Variable // TODO: literal_constant e var são ID?????
+	{Factor}(lt=Literal_constant | 'NIL' | var=Variable) // TODO: literal_constant e var são ID?????
 ;
 
 Fcncall:
@@ -99,7 +103,7 @@ Fcncall:
 ;
 
 Args:
-	Factor (',' factor1+=Factor)*
+	f1=Factor (',' factor2+=Factor)*
 ;
 
 ModuleName:
@@ -107,7 +111,7 @@ ModuleName:
 ;
 
 Literal_constant:
-	BIT | Bte | CHR | WRD | INT | LNG | OID | FLT | DBL | STR //| Sht
+	BIT | Bte | CHR | WRD | INT  | OID | FLT | STR //| Sht | DBL | LNG
 ;
 
 terminal BIT:
@@ -117,21 +121,16 @@ Bte:
 	BIT BIT BIT BIT BIT BIT BIT BIT
 ;
 terminal CHR:
-	.
+	('a'..'z'|'A'..'Z'|'_'|'0'..'9')
 ;
 terminal WRD:
 	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
 ;
-LNG:
-	INT
-;
+
 terminal OID:
 	('1'..'9') ('0'..'9')*
 ;
 FLT:
-	INT'.'INT
-;
-DBL:
 	INT'.'INT
 ;
 STR:

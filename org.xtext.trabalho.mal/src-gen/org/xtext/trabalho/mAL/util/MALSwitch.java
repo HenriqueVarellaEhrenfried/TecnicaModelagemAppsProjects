@@ -203,6 +203,10 @@ public class MALSwitch<T> extends Switch<T>
       {
         AnyType anyType = (AnyType)theEObject;
         T result = caseAnyType(anyType);
+        if (result == null) result = caseColElmType(anyType);
+        if (result == null) result = caseColumnType(anyType);
+        if (result == null) result = caseTypeName(anyType);
+        if (result == null) result = caseResult(anyType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -244,8 +248,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         Factor factor = (Factor)theEObject;
         T result = caseFactor(factor);
-        if (result == null) result = caseExpr(factor);
-        if (result == null) result = caseArgs(factor);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

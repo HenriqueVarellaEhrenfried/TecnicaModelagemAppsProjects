@@ -632,13 +632,22 @@ public interface MALPackage extends EPackage
   int ANY_TYPE = 15;
 
   /**
+   * The feature id for the '<em><b>At</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANY_TYPE__AT = COL_ELM_TYPE__AT;
+
+  /**
    * The feature id for the '<em><b>Digit</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANY_TYPE__DIGIT = 0;
+  int ANY_TYPE__DIGIT = COL_ELM_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Any Type</em>' class.
@@ -647,7 +656,7 @@ public interface MALPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANY_TYPE_FEATURE_COUNT = 1;
+  int ANY_TYPE_FEATURE_COUNT = COL_ELM_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.StmtImpl <em>Stmt</em>}' class.
@@ -753,13 +762,22 @@ public interface MALPackage extends EPackage
   int EXPR = 19;
 
   /**
-   * The feature id for the '<em><b>Factor</b></em>' containment reference.
+   * The feature id for the '<em><b>F1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR__FACTOR = 0;
+  int EXPR__F1 = 0;
+
+  /**
+   * The feature id for the '<em><b>F2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__F2 = 1;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -768,7 +786,7 @@ public interface MALPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR_FEATURE_COUNT = 1;
+  int EXPR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.FactorImpl <em>Factor</em>}' class.
@@ -781,22 +799,13 @@ public interface MALPackage extends EPackage
   int FACTOR = 20;
 
   /**
-   * The feature id for the '<em><b>Factor</b></em>' containment reference.
+   * The feature id for the '<em><b>Lt</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FACTOR__FACTOR = EXPR__FACTOR;
-
-  /**
-   * The feature id for the '<em><b>Operator</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__OPERATOR = EXPR_FEATURE_COUNT + 0;
+  int FACTOR__LT = 0;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -805,16 +814,7 @@ public interface MALPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FACTOR__VAR = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Factor1</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__FACTOR1 = EXPR_FEATURE_COUNT + 2;
+  int FACTOR__VAR = 1;
 
   /**
    * The number of structural features of the '<em>Factor</em>' class.
@@ -823,7 +823,7 @@ public interface MALPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FACTOR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int FACTOR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.FcncallImpl <em>Fcncall</em>}' class.
@@ -836,13 +836,22 @@ public interface MALPackage extends EPackage
   int FCNCALL = 21;
 
   /**
-   * The feature id for the '<em><b>Factor</b></em>' containment reference.
+   * The feature id for the '<em><b>F1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FCNCALL__FACTOR = EXPR__FACTOR;
+  int FCNCALL__F1 = EXPR__F1;
+
+  /**
+   * The feature id for the '<em><b>F2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FCNCALL__F2 = EXPR__F2;
 
   /**
    * The number of structural features of the '<em>Fcncall</em>' class.
@@ -864,13 +873,31 @@ public interface MALPackage extends EPackage
   int ARGS = 22;
 
   /**
+   * The feature id for the '<em><b>F1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGS__F1 = 0;
+
+  /**
+   * The feature id for the '<em><b>Factor2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGS__FACTOR2 = 1;
+
+  /**
    * The number of structural features of the '<em>Args</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARGS_FEATURE_COUNT = 0;
+  int ARGS_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.ModuleNameImpl <em>Module Name</em>}' class.
@@ -883,13 +910,22 @@ public interface MALPackage extends EPackage
   int MODULE_NAME = 23;
 
   /**
-   * The feature id for the '<em><b>Factor</b></em>' containment reference.
+   * The feature id for the '<em><b>F1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_NAME__FACTOR = FCNCALL__FACTOR;
+  int MODULE_NAME__F1 = FCNCALL__F1;
+
+  /**
+   * The feature id for the '<em><b>F2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_NAME__F2 = FCNCALL__F2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -1415,15 +1451,26 @@ public interface MALPackage extends EPackage
   EClass getExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Expr#getFactor <em>Factor</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Expr#getF1 <em>F1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Factor</em>'.
-   * @see org.xtext.trabalho.mAL.Expr#getFactor()
+   * @return the meta object for the containment reference '<em>F1</em>'.
+   * @see org.xtext.trabalho.mAL.Expr#getF1()
    * @see #getExpr()
    * @generated
    */
-  EReference getExpr_Factor();
+  EReference getExpr_F1();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Expr#getF2 <em>F2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>F2</em>'.
+   * @see org.xtext.trabalho.mAL.Expr#getF2()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_F2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.trabalho.mAL.Factor <em>Factor</em>}'.
@@ -1436,15 +1483,15 @@ public interface MALPackage extends EPackage
   EClass getFactor();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.Factor#getOperator <em>Operator</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.Factor#getLt <em>Lt</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operator</em>'.
-   * @see org.xtext.trabalho.mAL.Factor#getOperator()
+   * @return the meta object for the attribute '<em>Lt</em>'.
+   * @see org.xtext.trabalho.mAL.Factor#getLt()
    * @see #getFactor()
    * @generated
    */
-  EAttribute getFactor_Operator();
+  EAttribute getFactor_Lt();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Factor#getVar <em>Var</em>}'.
@@ -1456,17 +1503,6 @@ public interface MALPackage extends EPackage
    * @generated
    */
   EReference getFactor_Var();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.trabalho.mAL.Factor#getFactor1 <em>Factor1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Factor1</em>'.
-   * @see org.xtext.trabalho.mAL.Factor#getFactor1()
-   * @see #getFactor()
-   * @generated
-   */
-  EReference getFactor_Factor1();
 
   /**
    * Returns the meta object for class '{@link org.xtext.trabalho.mAL.Fcncall <em>Fcncall</em>}'.
@@ -1487,6 +1523,28 @@ public interface MALPackage extends EPackage
    * @generated
    */
   EClass getArgs();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Args#getF1 <em>F1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>F1</em>'.
+   * @see org.xtext.trabalho.mAL.Args#getF1()
+   * @see #getArgs()
+   * @generated
+   */
+  EReference getArgs_F1();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.trabalho.mAL.Args#getFactor2 <em>Factor2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Factor2</em>'.
+   * @see org.xtext.trabalho.mAL.Args#getFactor2()
+   * @see #getArgs()
+   * @generated
+   */
+  EReference getArgs_Factor2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.trabalho.mAL.ModuleName <em>Module Name</em>}'.
@@ -1963,12 +2021,20 @@ public interface MALPackage extends EPackage
     EClass EXPR = eINSTANCE.getExpr();
 
     /**
-     * The meta object literal for the '<em><b>Factor</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>F1</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR__FACTOR = eINSTANCE.getExpr_Factor();
+    EReference EXPR__F1 = eINSTANCE.getExpr_F1();
+
+    /**
+     * The meta object literal for the '<em><b>F2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__F2 = eINSTANCE.getExpr_F2();
 
     /**
      * The meta object literal for the '{@link org.xtext.trabalho.mAL.impl.FactorImpl <em>Factor</em>}' class.
@@ -1981,12 +2047,12 @@ public interface MALPackage extends EPackage
     EClass FACTOR = eINSTANCE.getFactor();
 
     /**
-     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Lt</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FACTOR__OPERATOR = eINSTANCE.getFactor_Operator();
+    EAttribute FACTOR__LT = eINSTANCE.getFactor_Lt();
 
     /**
      * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
@@ -1995,14 +2061,6 @@ public interface MALPackage extends EPackage
      * @generated
      */
     EReference FACTOR__VAR = eINSTANCE.getFactor_Var();
-
-    /**
-     * The meta object literal for the '<em><b>Factor1</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FACTOR__FACTOR1 = eINSTANCE.getFactor_Factor1();
 
     /**
      * The meta object literal for the '{@link org.xtext.trabalho.mAL.impl.FcncallImpl <em>Fcncall</em>}' class.
@@ -2023,6 +2081,22 @@ public interface MALPackage extends EPackage
      * @generated
      */
     EClass ARGS = eINSTANCE.getArgs();
+
+    /**
+     * The meta object literal for the '<em><b>F1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGS__F1 = eINSTANCE.getArgs_F1();
+
+    /**
+     * The meta object literal for the '<em><b>Factor2</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGS__FACTOR2 = eINSTANCE.getArgs_Factor2();
 
     /**
      * The meta object literal for the '{@link org.xtext.trabalho.mAL.impl.ModuleNameImpl <em>Module Name</em>}' class.

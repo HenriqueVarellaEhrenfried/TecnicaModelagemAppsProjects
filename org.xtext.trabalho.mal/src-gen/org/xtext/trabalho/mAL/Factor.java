@@ -3,7 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,42 +14,41 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Factor#getOperator <em>Operator</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Factor#getLt <em>Lt</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.Factor#getVar <em>Var</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.Factor#getFactor1 <em>Factor1</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getFactor()
  * @model
  * @generated
  */
-public interface Factor extends Expr, Args
+public interface Factor extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Operator</b></em>' attribute.
+   * Returns the value of the '<em><b>Lt</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Operator</em>' attribute isn't clear,
+   * If the meaning of the '<em>Lt</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operator</em>' attribute.
-   * @see #setOperator(String)
-   * @see org.xtext.trabalho.mAL.MALPackage#getFactor_Operator()
+   * @return the value of the '<em>Lt</em>' attribute.
+   * @see #setLt(String)
+   * @see org.xtext.trabalho.mAL.MALPackage#getFactor_Lt()
    * @model
    * @generated
    */
-  String getOperator();
+  String getLt();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Factor#getOperator <em>Operator</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Factor#getLt <em>Lt</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operator</em>' attribute.
-   * @see #getOperator()
+   * @param value the new value of the '<em>Lt</em>' attribute.
+   * @see #getLt()
    * @generated
    */
-  void setOperator(String value);
+  void setLt(String value);
 
   /**
    * Returns the value of the '<em><b>Var</b></em>' containment reference.
@@ -76,21 +75,5 @@ public interface Factor extends Expr, Args
    * @generated
    */
   void setVar(Variable value);
-
-  /**
-   * Returns the value of the '<em><b>Factor1</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.trabalho.mAL.Factor}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Factor1</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Factor1</em>' containment reference list.
-   * @see org.xtext.trabalho.mAL.MALPackage#getFactor_Factor1()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Factor> getFactor1();
 
 } // Factor

@@ -3,6 +3,8 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -10,6 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Args</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.Args#getF1 <em>F1</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Args#getFactor2 <em>Factor2</em>}</li>
+ * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getArgs()
  * @model
@@ -17,4 +26,46 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Args extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>F1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>F1</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>F1</em>' containment reference.
+   * @see #setF1(Factor)
+   * @see org.xtext.trabalho.mAL.MALPackage#getArgs_F1()
+   * @model containment="true"
+   * @generated
+   */
+  Factor getF1();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Args#getF1 <em>F1</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>F1</em>' containment reference.
+   * @see #getF1()
+   * @generated
+   */
+  void setF1(Factor value);
+
+  /**
+   * Returns the value of the '<em><b>Factor2</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Factor}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Factor2</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Factor2</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getArgs_Factor2()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Factor> getFactor2();
+
 } // Args

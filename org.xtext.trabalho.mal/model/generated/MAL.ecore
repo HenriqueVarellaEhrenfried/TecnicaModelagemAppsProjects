@@ -59,7 +59,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColumnType" eSuperTypes="#//TypeName"/>
   <eClassifiers xsi:type="ecore:EClass" name="ColElmType" eSuperTypes="#//ColumnType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnyType">
+  <eClassifiers xsi:type="ecore:EClass" name="AnyType" eSuperTypes="#//ColElmType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="digit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stmt" eSuperTypes="#//Statement"/>
@@ -72,18 +72,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="factor" eType="#//Factor"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="f1" eType="#//Factor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="f2" eType="#//Factor" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Factor" eSuperTypes="#//Expr #//Args">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Factor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="factor1" upperBound="-1"
-        eType="#//Factor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fcncall" eSuperTypes="#//Expr"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Args"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Args">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="f1" eType="#//Factor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="factor2" upperBound="-1"
+        eType="#//Factor" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleName" eSuperTypes="#//Fcncall">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Name" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="args" eType="#//Args" containment="true"/>

@@ -3,22 +3,62 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.trabalho.mAL.Args;
+import org.xtext.trabalho.mAL.Factor;
 import org.xtext.trabalho.mAL.MALPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Args</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ArgsImpl#getF1 <em>F1</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ArgsImpl#getFactor2 <em>Factor2</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class ArgsImpl extends MinimalEObjectImpl.Container implements Args
 {
+  /**
+   * The cached value of the '{@link #getF1() <em>F1</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getF1()
+   * @generated
+   * @ordered
+   */
+  protected Factor f1;
+
+  /**
+   * The cached value of the '{@link #getFactor2() <em>Factor2</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFactor2()
+   * @generated
+   * @ordered
+   */
+  protected EList<Factor> factor2;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +78,164 @@ public class ArgsImpl extends MinimalEObjectImpl.Container implements Args
   protected EClass eStaticClass()
   {
     return MALPackage.Literals.ARGS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Factor getF1()
+  {
+    return f1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetF1(Factor newF1, NotificationChain msgs)
+  {
+    Factor oldF1 = f1;
+    f1 = newF1;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.ARGS__F1, oldF1, newF1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setF1(Factor newF1)
+  {
+    if (newF1 != f1)
+    {
+      NotificationChain msgs = null;
+      if (f1 != null)
+        msgs = ((InternalEObject)f1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.ARGS__F1, null, msgs);
+      if (newF1 != null)
+        msgs = ((InternalEObject)newF1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.ARGS__F1, null, msgs);
+      msgs = basicSetF1(newF1, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.ARGS__F1, newF1, newF1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Factor> getFactor2()
+  {
+    if (factor2 == null)
+    {
+      factor2 = new EObjectContainmentEList<Factor>(Factor.class, this, MALPackage.ARGS__FACTOR2);
+    }
+    return factor2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MALPackage.ARGS__F1:
+        return basicSetF1(null, msgs);
+      case MALPackage.ARGS__FACTOR2:
+        return ((InternalEList<?>)getFactor2()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case MALPackage.ARGS__F1:
+        return getF1();
+      case MALPackage.ARGS__FACTOR2:
+        return getFactor2();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case MALPackage.ARGS__F1:
+        setF1((Factor)newValue);
+        return;
+      case MALPackage.ARGS__FACTOR2:
+        getFactor2().clear();
+        getFactor2().addAll((Collection<? extends Factor>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case MALPackage.ARGS__F1:
+        setF1((Factor)null);
+        return;
+      case MALPackage.ARGS__FACTOR2:
+        getFactor2().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case MALPackage.ARGS__F1:
+        return f1 != null;
+      case MALPackage.ARGS__FACTOR2:
+        return factor2 != null && !factor2.isEmpty();
+    }
+    return super.eIsSet(featureID);
   }
 
 } //ArgsImpl

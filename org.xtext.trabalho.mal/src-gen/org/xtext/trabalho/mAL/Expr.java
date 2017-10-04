@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Expr#getFactor <em>Factor</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Expr#getF1 <em>F1</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Expr#getF2 <em>F2</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getExpr()
@@ -24,29 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Expr extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Factor</b></em>' containment reference.
+   * Returns the value of the '<em><b>F1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Factor</em>' containment reference isn't clear,
+   * If the meaning of the '<em>F1</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Factor</em>' containment reference.
-   * @see #setFactor(Factor)
-   * @see org.xtext.trabalho.mAL.MALPackage#getExpr_Factor()
+   * @return the value of the '<em>F1</em>' containment reference.
+   * @see #setF1(Factor)
+   * @see org.xtext.trabalho.mAL.MALPackage#getExpr_F1()
    * @model containment="true"
    * @generated
    */
-  Factor getFactor();
+  Factor getF1();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Expr#getFactor <em>Factor</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Expr#getF1 <em>F1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Factor</em>' containment reference.
-   * @see #getFactor()
+   * @param value the new value of the '<em>F1</em>' containment reference.
+   * @see #getF1()
    * @generated
    */
-  void setFactor(Factor value);
+  void setF1(Factor value);
+
+  /**
+   * Returns the value of the '<em><b>F2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>F2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>F2</em>' containment reference.
+   * @see #setF2(Factor)
+   * @see org.xtext.trabalho.mAL.MALPackage#getExpr_F2()
+   * @model containment="true"
+   * @generated
+   */
+  Factor getF2();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Expr#getF2 <em>F2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>F2</em>' containment reference.
+   * @see #getF2()
+   * @generated
+   */
+  void setF2(Factor value);
 
 } // Expr
