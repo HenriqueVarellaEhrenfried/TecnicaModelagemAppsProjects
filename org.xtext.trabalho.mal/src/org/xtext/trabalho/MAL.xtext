@@ -7,11 +7,11 @@ Program:
 ;
 
 Statement:
-	ModuleStmt (help=Helpinfo)? | Definition (help=Helpinfo)? | IncludeStmt | Stmt
+	ModuleStmt (help?=Helpinfo)? | Definition (help?=Helpinfo)? | IncludeStmt | Stmt
 ;
 
 ModuleStmt:
-	'MODULE' ident=ID | 'ATOM' ident1=ID (':' ident2=ID)?
+	'MODULE' ident=ID | 'ATOM' ident=ID (':' second_ident?=ID)?
 ;
 
 IncludeStmt:
@@ -19,10 +19,10 @@ IncludeStmt:
 ;
 
 Definition:
-	('UNSAFE')? 'COMMAND' Header 'ADDRESS' identifier=ID |
-	('UNSAFE')? 'PATTERN' Header 'ADDRESS' identifier=ID |
-	('INLINE' | 'UNSAFE' )? 'FUNCTION' Header (stm1+=Statement)* 'END' name=Name | 
-	'FACTORY' Header (stm2+=Statement)* 'END' name=Name
+	('UNSAFE')? 'COMMAND' header=Header 'ADDRESS' identifier=ID | //Nosso Comando possuí um header e um identificador
+	('UNSAFE')? 'PATTERN' header=Header 'ADDRESS' identifier=ID | //Nosso Pattern possuí um header e um identificador
+	('INLINE' | 'UNSAFE' )? 'FUNCTION' header=Header (statements+=Statement)* 'END' function_name=Name | // Nossa função possuí um header, os seus statements e o nome da função
+	'FACTORY' header=Header (statements+=Statement)* 'END' factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
 ;
 
 Helpinfo:
@@ -30,11 +30,11 @@ Helpinfo:
 ;
 
 Header:
-	Name '(' param=Params ')' result=Result
+	header_name=Name '(' params=Params ')' return_type=Result // Nosso Header possuí um name que contém o seu Nome, params que é uma lista de parametros e um tipo de retorno.
 ;
 
 Name:
-	(mn+=ModuleName '.')* id=ID | id=ID // TODO: Descobrir o que é ModuleName
+	(mn+=[ModuleName] '.')* id=ID // TODO: Descobrir o que é ModuleName
 ;
 
 
@@ -43,15 +43,15 @@ Result:
 ;
 
 Params: 
-	Binding (',' bind+=Binding)*
+	bind+=Binding (',' bind+=Binding)*
 ;
 
 Binding:
-	identifier=ID tn=TypeName
+	identifier=ID type=TypeName
 ;
 
 TypeName:
-	ScalarType | ColumnType | ':' at=AnyType // TODO: any e digit são ID???? 
+	ScalarType | ColumnType | ':' AnyType // TODO: any e digit são ID???? 
 ;
 
 ScalarType:
@@ -63,15 +63,15 @@ ColumnType:
 ;
 
 ColElmType:
-	ScalarType | at=AnyType // TODO: Descobrir o que é AnyType
+	ScalarType | AnyType // TODO: Descobrir o que é AnyType
 ;
 
 AnyType:
-	'any' ('_' digit=ID)?
+	type='any' ('_' digit=ID)?
 ;
 
 Stmt:
-	(Flow)? Varlist (':=' exp=Expr)
+	(flow?=Flow)? list_of_variables=Varlist (':=' exp=Expr)
 ;
 
 Flow:
@@ -79,7 +79,7 @@ Flow:
 ;
 
 Varlist:
-	Variable | '(' Variable (',' var1+=Variable)* ')'
+	variables+=Variable | '(' variables+=Variable (',' variables+=Variable)* ')'
 ;
 
 Variable:
@@ -87,15 +87,19 @@ Variable:
 ;
 
 Expr:
-	Fcncall | (Factor operator=ID)? factor=Factor // TODO: operator é ID????
+	Fcncall | (left_factor=Factor operator=Operator)? right_factor=Factor // TODO: operator é ID????
+;
+
+Operator:
+	'+' | '-' | '*' | '/'
 ;
 
 Factor:
-	Literal_constant | 'NIL' | var=Variable // TODO: literal_constant e var são ID?????
+	{Factor}Literal_constant | {Factor}'NIL' | Variable // {Factor} foi colocado porque quando o retorno de uma regra é uma string tipo 'NIL' o objeto não é criado, então ele garante a criação 
 ;
 
 Fcncall:
-	ModuleName '.' name=Name '(' (args=Args)? ')' // TODO: Descobrir o que é ModuleName
+	module=ModuleName '.' function_name=Name '(' (args?=Args)? ')' // TODO: Descobrir o que é ModuleName
 ;
 
 Args:
@@ -107,7 +111,7 @@ ModuleName:
 ;
 
 Literal_constant:
-	BIT | Bte | CHR | WRD | INT | LNG | OID | FLT | DBL | STR //| Sht
+	BIT | Bte | CHR | WRD | INT | OID | FLT | STR //| Sht | LNG | DBL
 ;
 
 terminal BIT:
@@ -117,21 +121,15 @@ Bte:
 	BIT BIT BIT BIT BIT BIT BIT BIT
 ;
 terminal CHR:
-	.
+	('a'..'z'|'A'..'Z'|'_'|'0'..'9')
 ;
 terminal WRD:
 	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
-;
-LNG:
-	INT
 ;
 terminal OID:
 	('1'..'9') ('0'..'9')*
 ;
 FLT:
-	INT'.'INT
-;
-DBL:
 	INT'.'INT
 ;
 STR:

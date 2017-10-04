@@ -101,7 +101,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'FACTORY' | ('UNSAFE'? 'PATTERN') | ('UNSAFE'? 'COMMAND') | (('INLINE' | 'UNSAFE')? 'FUNCTION')
+	 *     'FACTORY' | ('UNSAFE'? 'COMMAND') | ('UNSAFE'? 'PATTERN') | (('INLINE' | 'UNSAFE')? 'FUNCTION')
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) id=ID
@@ -113,7 +113,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'NIL' | Literal_constant
+	 *     Literal_constant | 'NIL'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) ',' factor1+=Factor
