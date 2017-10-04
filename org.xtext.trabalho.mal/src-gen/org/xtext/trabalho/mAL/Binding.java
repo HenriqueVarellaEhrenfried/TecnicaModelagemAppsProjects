@@ -3,6 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,30 +26,20 @@ package org.xtext.trabalho.mAL;
 public interface Binding extends Params
 {
   /**
-   * Returns the value of the '<em><b>Bind</b></em>' containment reference.
+   * Returns the value of the '<em><b>Bind</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Binding}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Bind</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Bind</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Bind</em>' containment reference.
-   * @see #setBind(Binding)
+   * @return the value of the '<em>Bind</em>' containment reference list.
    * @see org.xtext.trabalho.mAL.MALPackage#getBinding_Bind()
    * @model containment="true"
    * @generated
    */
-  Binding getBind();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Binding#getBind <em>Bind</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bind</em>' containment reference.
-   * @see #getBind()
-   * @generated
-   */
-  void setBind(Binding value);
+  EList<Binding> getBind();
 
   /**
    * Returns the value of the '<em><b>Identifier</b></em>' attribute.

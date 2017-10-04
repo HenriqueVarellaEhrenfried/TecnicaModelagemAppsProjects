@@ -3,13 +3,20 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.trabalho.mAL.Binding;
 import org.xtext.trabalho.mAL.MALPackage;
@@ -33,14 +40,14 @@ import org.xtext.trabalho.mAL.TypeName;
 public class BindingImpl extends ParamsImpl implements Binding
 {
   /**
-   * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference.
+   * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getBind()
    * @generated
    * @ordered
    */
-  protected Binding bind;
+  protected EList<Binding> bind;
 
   /**
    * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
@@ -98,47 +105,13 @@ public class BindingImpl extends ParamsImpl implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
-  public Binding getBind()
+  public EList<Binding> getBind()
   {
+    if (bind == null)
+    {
+      bind = new EObjectContainmentEList<Binding>(Binding.class, this, MALPackage.BINDING__BIND);
+    }
     return bind;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBind(Binding newBind, NotificationChain msgs)
-  {
-    Binding oldBind = bind;
-    bind = newBind;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.BINDING__BIND, oldBind, newBind);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBind(Binding newBind)
-  {
-    if (newBind != bind)
-    {
-      NotificationChain msgs = null;
-      if (bind != null)
-        msgs = ((InternalEObject)bind).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.BINDING__BIND, null, msgs);
-      if (newBind != null)
-        msgs = ((InternalEObject)newBind).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.BINDING__BIND, null, msgs);
-      msgs = basicSetBind(newBind, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.BINDING__BIND, newBind, newBind));
   }
 
   /**
@@ -223,7 +196,7 @@ public class BindingImpl extends ParamsImpl implements Binding
     switch (featureID)
     {
       case MALPackage.BINDING__BIND:
-        return basicSetBind(null, msgs);
+        return ((InternalEList<?>)getBind()).basicRemove(otherEnd, msgs);
       case MALPackage.BINDING__TN:
         return basicSetTn(null, msgs);
     }
@@ -255,13 +228,15 @@ public class BindingImpl extends ParamsImpl implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case MALPackage.BINDING__BIND:
-        setBind((Binding)newValue);
+        getBind().clear();
+        getBind().addAll((Collection<? extends Binding>)newValue);
         return;
       case MALPackage.BINDING__IDENTIFIER:
         setIdentifier((String)newValue);
@@ -284,7 +259,7 @@ public class BindingImpl extends ParamsImpl implements Binding
     switch (featureID)
     {
       case MALPackage.BINDING__BIND:
-        setBind((Binding)null);
+        getBind().clear();
         return;
       case MALPackage.BINDING__IDENTIFIER:
         setIdentifier(IDENTIFIER_EDEFAULT);
@@ -307,7 +282,7 @@ public class BindingImpl extends ParamsImpl implements Binding
     switch (featureID)
     {
       case MALPackage.BINDING__BIND:
-        return bind != null;
+        return bind != null && !bind.isEmpty();
       case MALPackage.BINDING__IDENTIFIER:
         return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
       case MALPackage.BINDING__TN:

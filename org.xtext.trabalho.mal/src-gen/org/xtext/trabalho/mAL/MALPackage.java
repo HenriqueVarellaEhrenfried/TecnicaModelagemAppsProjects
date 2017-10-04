@@ -133,13 +133,31 @@ public interface MALPackage extends EPackage
   int MODULE_STMT__IDENT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Ident1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_STMT__IDENT1 = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Ident2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_STMT__IDENT2 = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Module Stmt</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_STMT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+  int MODULE_STMT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.IncludeStmtImpl <em>Include Stmt</em>}' class.
@@ -263,13 +281,13 @@ public interface MALPackage extends EPackage
   int HEADER__IDENTIFIER = DEFINITION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Stm</b></em>' containment reference.
+   * The feature id for the '<em><b>Stm1</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HEADER__STM = DEFINITION_FEATURE_COUNT + 1;
+  int HEADER__STM1 = DEFINITION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -281,13 +299,22 @@ public interface MALPackage extends EPackage
   int HEADER__NAME = DEFINITION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Stm2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEADER__STM2 = DEFINITION_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Header</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HEADER_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 3;
+  int HEADER_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.NameImpl <em>Name</em>}' class.
@@ -318,13 +345,13 @@ public interface MALPackage extends EPackage
   int NAME__IDENTIFIER = HEADER__IDENTIFIER;
 
   /**
-   * The feature id for the '<em><b>Stm</b></em>' containment reference.
+   * The feature id for the '<em><b>Stm1</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME__STM = HEADER__STM;
+  int NAME__STM1 = HEADER__STM1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -334,6 +361,15 @@ public interface MALPackage extends EPackage
    * @ordered
    */
   int NAME__NAME = HEADER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Stm2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME__STM2 = HEADER__STM2;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -429,7 +465,7 @@ public interface MALPackage extends EPackage
   int BINDING = 10;
 
   /**
-   * The feature id for the '<em><b>Bind</b></em>' containment reference.
+   * The feature id for the '<em><b>Bind</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -680,13 +716,13 @@ public interface MALPackage extends EPackage
   int VARIABLE__EXP = VARLIST__EXP;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' containment reference.
+   * The feature id for the '<em><b>Var1</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE__VAR = VARLIST_FEATURE_COUNT + 0;
+  int VARIABLE__VAR1 = VARLIST_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Identifier</b></em>' attribute.
@@ -763,22 +799,22 @@ public interface MALPackage extends EPackage
   int FACTOR__OPERATOR = EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Literal constant</b></em>' attribute.
+   * The feature id for the '<em><b>Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FACTOR__LITERAL_CONSTANT = EXPR_FEATURE_COUNT + 1;
+  int FACTOR__VAR = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * The feature id for the '<em><b>Factor1</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FACTOR__VAR = EXPR_FEATURE_COUNT + 2;
+  int FACTOR__FACTOR1 = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Factor</em>' class.
@@ -956,6 +992,28 @@ public interface MALPackage extends EPackage
   EAttribute getModuleStmt_Ident();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent1 <em>Ident1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ident1</em>'.
+   * @see org.xtext.trabalho.mAL.ModuleStmt#getIdent1()
+   * @see #getModuleStmt()
+   * @generated
+   */
+  EAttribute getModuleStmt_Ident1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent2 <em>Ident2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ident2</em>'.
+   * @see org.xtext.trabalho.mAL.ModuleStmt#getIdent2()
+   * @see #getModuleStmt()
+   * @generated
+   */
+  EAttribute getModuleStmt_Ident2();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.trabalho.mAL.IncludeStmt <em>Include Stmt</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1051,15 +1109,15 @@ public interface MALPackage extends EPackage
   EAttribute getHeader_Identifier();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Header#getStm <em>Stm</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.trabalho.mAL.Header#getStm1 <em>Stm1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Stm</em>'.
-   * @see org.xtext.trabalho.mAL.Header#getStm()
+   * @return the meta object for the containment reference list '<em>Stm1</em>'.
+   * @see org.xtext.trabalho.mAL.Header#getStm1()
    * @see #getHeader()
    * @generated
    */
-  EReference getHeader_Stm();
+  EReference getHeader_Stm1();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Header#getName <em>Name</em>}'.
@@ -1071,6 +1129,17 @@ public interface MALPackage extends EPackage
    * @generated
    */
   EReference getHeader_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.trabalho.mAL.Header#getStm2 <em>Stm2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stm2</em>'.
+   * @see org.xtext.trabalho.mAL.Header#getStm2()
+   * @see #getHeader()
+   * @generated
+   */
+  EReference getHeader_Stm2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.trabalho.mAL.Name <em>Name</em>}'.
@@ -1157,10 +1226,10 @@ public interface MALPackage extends EPackage
   EClass getBinding();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Binding#getBind <em>Bind</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.trabalho.mAL.Binding#getBind <em>Bind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bind</em>'.
+   * @return the meta object for the containment reference list '<em>Bind</em>'.
    * @see org.xtext.trabalho.mAL.Binding#getBind()
    * @see #getBinding()
    * @generated
@@ -1314,15 +1383,15 @@ public interface MALPackage extends EPackage
   EClass getVariable();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Variable#getVar <em>Var</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.trabalho.mAL.Variable#getVar1 <em>Var1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var</em>'.
-   * @see org.xtext.trabalho.mAL.Variable#getVar()
+   * @return the meta object for the containment reference list '<em>Var1</em>'.
+   * @see org.xtext.trabalho.mAL.Variable#getVar1()
    * @see #getVariable()
    * @generated
    */
-  EReference getVariable_Var();
+  EReference getVariable_Var1();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.Variable#getIdentifier <em>Identifier</em>}'.
@@ -1378,26 +1447,26 @@ public interface MALPackage extends EPackage
   EAttribute getFactor_Operator();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.Factor#getLiteral_constant <em>Literal constant</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.trabalho.mAL.Factor#getVar <em>Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Literal constant</em>'.
-   * @see org.xtext.trabalho.mAL.Factor#getLiteral_constant()
-   * @see #getFactor()
-   * @generated
-   */
-  EAttribute getFactor_Literal_constant();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.Factor#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
+   * @return the meta object for the containment reference '<em>Var</em>'.
    * @see org.xtext.trabalho.mAL.Factor#getVar()
    * @see #getFactor()
    * @generated
    */
-  EAttribute getFactor_Var();
+  EReference getFactor_Var();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.trabalho.mAL.Factor#getFactor1 <em>Factor1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Factor1</em>'.
+   * @see org.xtext.trabalho.mAL.Factor#getFactor1()
+   * @see #getFactor()
+   * @generated
+   */
+  EReference getFactor_Factor1();
 
   /**
    * Returns the meta object for class '{@link org.xtext.trabalho.mAL.Fcncall <em>Fcncall</em>}'.
@@ -1540,6 +1609,22 @@ public interface MALPackage extends EPackage
     EAttribute MODULE_STMT__IDENT = eINSTANCE.getModuleStmt_Ident();
 
     /**
+     * The meta object literal for the '<em><b>Ident1</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULE_STMT__IDENT1 = eINSTANCE.getModuleStmt_Ident1();
+
+    /**
+     * The meta object literal for the '<em><b>Ident2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULE_STMT__IDENT2 = eINSTANCE.getModuleStmt_Ident2();
+
+    /**
      * The meta object literal for the '{@link org.xtext.trabalho.mAL.impl.IncludeStmtImpl <em>Include Stmt</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1620,12 +1705,12 @@ public interface MALPackage extends EPackage
     EAttribute HEADER__IDENTIFIER = eINSTANCE.getHeader_Identifier();
 
     /**
-     * The meta object literal for the '<em><b>Stm</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Stm1</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HEADER__STM = eINSTANCE.getHeader_Stm();
+    EReference HEADER__STM1 = eINSTANCE.getHeader_Stm1();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
@@ -1634,6 +1719,14 @@ public interface MALPackage extends EPackage
      * @generated
      */
     EReference HEADER__NAME = eINSTANCE.getHeader_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Stm2</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HEADER__STM2 = eINSTANCE.getHeader_Stm2();
 
     /**
      * The meta object literal for the '{@link org.xtext.trabalho.mAL.impl.NameImpl <em>Name</em>}' class.
@@ -1708,7 +1801,7 @@ public interface MALPackage extends EPackage
     EClass BINDING = eINSTANCE.getBinding();
 
     /**
-     * The meta object literal for the '<em><b>Bind</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Bind</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1844,12 +1937,12 @@ public interface MALPackage extends EPackage
     EClass VARIABLE = eINSTANCE.getVariable();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Var1</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLE__VAR = eINSTANCE.getVariable_Var();
+    EReference VARIABLE__VAR1 = eINSTANCE.getVariable_Var1();
 
     /**
      * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature.
@@ -1896,20 +1989,20 @@ public interface MALPackage extends EPackage
     EAttribute FACTOR__OPERATOR = eINSTANCE.getFactor_Operator();
 
     /**
-     * The meta object literal for the '<em><b>Literal constant</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FACTOR__LITERAL_CONSTANT = eINSTANCE.getFactor_Literal_constant();
+    EReference FACTOR__VAR = eINSTANCE.getFactor_Var();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Factor1</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FACTOR__VAR = eINSTANCE.getFactor_Var();
+    EReference FACTOR__FACTOR1 = eINSTANCE.getFactor_Factor1();
 
     /**
      * The meta object literal for the '{@link org.xtext.trabalho.mAL.impl.FcncallImpl <em>Fcncall</em>}' class.

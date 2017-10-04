@@ -3,6 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,8 +15,9 @@ package org.xtext.trabalho.mAL;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.trabalho.mAL.Header#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.Header#getStm <em>Stm</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Header#getStm1 <em>Stm1</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.Header#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Header#getStm2 <em>Stm2</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getHeader()
@@ -51,30 +53,20 @@ public interface Header extends Definition
   void setIdentifier(String value);
 
   /**
-   * Returns the value of the '<em><b>Stm</b></em>' containment reference.
+   * Returns the value of the '<em><b>Stm1</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Statement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Stm</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Stm1</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stm</em>' containment reference.
-   * @see #setStm(Statement)
-   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Stm()
+   * @return the value of the '<em>Stm1</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Stm1()
    * @model containment="true"
    * @generated
    */
-  Statement getStm();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Header#getStm <em>Stm</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Stm</em>' containment reference.
-   * @see #getStm()
-   * @generated
-   */
-  void setStm(Statement value);
+  EList<Statement> getStm1();
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' containment reference.
@@ -101,5 +93,21 @@ public interface Header extends Definition
    * @generated
    */
   void setName(Name value);
+
+  /**
+   * Returns the value of the '<em><b>Stm2</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Statement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Stm2</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Stm2</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getHeader_Stm2()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Statement> getStm2();
 
 } // Header

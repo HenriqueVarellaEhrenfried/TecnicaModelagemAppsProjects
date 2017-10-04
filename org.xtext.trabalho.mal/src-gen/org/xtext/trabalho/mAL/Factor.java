@@ -3,6 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,8 +15,8 @@ package org.xtext.trabalho.mAL;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.trabalho.mAL.Factor#getOperator <em>Operator</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.Factor#getLiteral_constant <em>Literal constant</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.Factor#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Factor#getFactor1 <em>Factor1</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getFactor()
@@ -51,55 +52,45 @@ public interface Factor extends Expr, Args
   void setOperator(String value);
 
   /**
-   * Returns the value of the '<em><b>Literal constant</b></em>' attribute.
+   * Returns the value of the '<em><b>Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Literal constant</em>' attribute isn't clear,
+   * If the meaning of the '<em>Var</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Literal constant</em>' attribute.
-   * @see #setLiteral_constant(String)
-   * @see org.xtext.trabalho.mAL.MALPackage#getFactor_Literal_constant()
-   * @model
-   * @generated
-   */
-  String getLiteral_constant();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Factor#getLiteral_constant <em>Literal constant</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Literal constant</em>' attribute.
-   * @see #getLiteral_constant()
-   * @generated
-   */
-  void setLiteral_constant(String value);
-
-  /**
-   * Returns the value of the '<em><b>Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Var</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' attribute.
-   * @see #setVar(String)
+   * @return the value of the '<em>Var</em>' containment reference.
+   * @see #setVar(Variable)
    * @see org.xtext.trabalho.mAL.MALPackage#getFactor_Var()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getVar();
+  Variable getVar();
 
   /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Factor#getVar <em>Var</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.Factor#getVar <em>Var</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' attribute.
+   * @param value the new value of the '<em>Var</em>' containment reference.
    * @see #getVar()
    * @generated
    */
-  void setVar(String value);
+  void setVar(Variable value);
+
+  /**
+   * Returns the value of the '<em><b>Factor1</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Factor}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Factor1</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Factor1</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getFactor_Factor1()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Factor> getFactor1();
 
 } // Factor

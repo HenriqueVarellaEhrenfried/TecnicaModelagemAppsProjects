@@ -15,6 +15,8 @@ package org.xtext.trabalho.mAL;
  * <ul>
  *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getHelp <em>Help</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent <em>Ident</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent1 <em>Ident1</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent2 <em>Ident2</em>}</li>
  * </ul>
  *
  * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt()
@@ -74,5 +76,57 @@ public interface ModuleStmt extends Statement
    * @generated
    */
   void setIdent(String value);
+
+  /**
+   * Returns the value of the '<em><b>Ident1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ident1</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ident1</em>' attribute.
+   * @see #setIdent1(String)
+   * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt_Ident1()
+   * @model
+   * @generated
+   */
+  String getIdent1();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent1 <em>Ident1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ident1</em>' attribute.
+   * @see #getIdent1()
+   * @generated
+   */
+  void setIdent1(String value);
+
+  /**
+   * Returns the value of the '<em><b>Ident2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ident2</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ident2</em>' attribute.
+   * @see #setIdent2(String)
+   * @see org.xtext.trabalho.mAL.MALPackage#getModuleStmt_Ident2()
+   * @model
+   * @generated
+   */
+  String getIdent2();
+
+  /**
+   * Sets the value of the '{@link org.xtext.trabalho.mAL.ModuleStmt#getIdent2 <em>Ident2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ident2</em>' attribute.
+   * @see #getIdent2()
+   * @generated
+   */
+  void setIdent2(String value);
 
 } // ModuleStmt

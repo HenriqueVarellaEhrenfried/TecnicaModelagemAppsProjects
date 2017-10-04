@@ -3,14 +3,24 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.trabalho.mAL.Factor;
 import org.xtext.trabalho.mAL.MALPackage;
+import org.xtext.trabalho.mAL.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,8 +31,8 @@ import org.xtext.trabalho.mAL.MALPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.trabalho.mAL.impl.FactorImpl#getOperator <em>Operator</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.FactorImpl#getLiteral_constant <em>Literal constant</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.FactorImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.FactorImpl#getFactor1 <em>Factor1</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,44 +60,24 @@ public class FactorImpl extends ExprImpl implements Factor
   protected String operator = OPERATOR_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getLiteral_constant() <em>Literal constant</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLiteral_constant()
-   * @generated
-   * @ordered
-   */
-  protected static final String LITERAL_CONSTANT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLiteral_constant() <em>Literal constant</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLiteral_constant()
-   * @generated
-   * @ordered
-   */
-  protected String literal_constant = LITERAL_CONSTANT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVar()
    * @generated
    * @ordered
    */
-  protected static final String VAR_EDEFAULT = null;
+  protected Variable var;
 
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * The cached value of the '{@link #getFactor1() <em>Factor1</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getFactor1()
    * @generated
    * @ordered
    */
-  protected String var = VAR_EDEFAULT;
+  protected EList<Factor> factor1;
 
   /**
    * <!-- begin-user-doc -->
@@ -138,30 +128,7 @@ public class FactorImpl extends ExprImpl implements Factor
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLiteral_constant()
-  {
-    return literal_constant;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLiteral_constant(String newLiteral_constant)
-  {
-    String oldLiteral_constant = literal_constant;
-    literal_constant = newLiteral_constant;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.FACTOR__LITERAL_CONSTANT, oldLiteral_constant, literal_constant));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getVar()
+  public Variable getVar()
   {
     return var;
   }
@@ -171,12 +138,69 @@ public class FactorImpl extends ExprImpl implements Factor
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar(String newVar)
+  public NotificationChain basicSetVar(Variable newVar, NotificationChain msgs)
   {
-    String oldVar = var;
+    Variable oldVar = var;
     var = newVar;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.FACTOR__VAR, oldVar, var));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.FACTOR__VAR, oldVar, newVar);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVar(Variable newVar)
+  {
+    if (newVar != var)
+    {
+      NotificationChain msgs = null;
+      if (var != null)
+        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.FACTOR__VAR, null, msgs);
+      if (newVar != null)
+        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.FACTOR__VAR, null, msgs);
+      msgs = basicSetVar(newVar, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.FACTOR__VAR, newVar, newVar));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Factor> getFactor1()
+  {
+    if (factor1 == null)
+    {
+      factor1 = new EObjectContainmentEList<Factor>(Factor.class, this, MALPackage.FACTOR__FACTOR1);
+    }
+    return factor1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MALPackage.FACTOR__VAR:
+        return basicSetVar(null, msgs);
+      case MALPackage.FACTOR__FACTOR1:
+        return ((InternalEList<?>)getFactor1()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -191,10 +215,10 @@ public class FactorImpl extends ExprImpl implements Factor
     {
       case MALPackage.FACTOR__OPERATOR:
         return getOperator();
-      case MALPackage.FACTOR__LITERAL_CONSTANT:
-        return getLiteral_constant();
       case MALPackage.FACTOR__VAR:
         return getVar();
+      case MALPackage.FACTOR__FACTOR1:
+        return getFactor1();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -204,6 +228,7 @@ public class FactorImpl extends ExprImpl implements Factor
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -212,11 +237,12 @@ public class FactorImpl extends ExprImpl implements Factor
       case MALPackage.FACTOR__OPERATOR:
         setOperator((String)newValue);
         return;
-      case MALPackage.FACTOR__LITERAL_CONSTANT:
-        setLiteral_constant((String)newValue);
-        return;
       case MALPackage.FACTOR__VAR:
-        setVar((String)newValue);
+        setVar((Variable)newValue);
+        return;
+      case MALPackage.FACTOR__FACTOR1:
+        getFactor1().clear();
+        getFactor1().addAll((Collection<? extends Factor>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +261,11 @@ public class FactorImpl extends ExprImpl implements Factor
       case MALPackage.FACTOR__OPERATOR:
         setOperator(OPERATOR_EDEFAULT);
         return;
-      case MALPackage.FACTOR__LITERAL_CONSTANT:
-        setLiteral_constant(LITERAL_CONSTANT_EDEFAULT);
-        return;
       case MALPackage.FACTOR__VAR:
-        setVar(VAR_EDEFAULT);
+        setVar((Variable)null);
+        return;
+      case MALPackage.FACTOR__FACTOR1:
+        getFactor1().clear();
         return;
     }
     super.eUnset(featureID);
@@ -257,10 +283,10 @@ public class FactorImpl extends ExprImpl implements Factor
     {
       case MALPackage.FACTOR__OPERATOR:
         return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
-      case MALPackage.FACTOR__LITERAL_CONSTANT:
-        return LITERAL_CONSTANT_EDEFAULT == null ? literal_constant != null : !LITERAL_CONSTANT_EDEFAULT.equals(literal_constant);
       case MALPackage.FACTOR__VAR:
-        return VAR_EDEFAULT == null ? var != null : !VAR_EDEFAULT.equals(var);
+        return var != null;
+      case MALPackage.FACTOR__FACTOR1:
+        return factor1 != null && !factor1.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -278,10 +304,6 @@ public class FactorImpl extends ExprImpl implements Factor
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (operator: ");
     result.append(operator);
-    result.append(", literal_constant: ");
-    result.append(literal_constant);
-    result.append(", var: ");
-    result.append(var);
     result.append(')');
     return result.toString();
   }

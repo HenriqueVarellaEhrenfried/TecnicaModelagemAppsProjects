@@ -3,6 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +14,7 @@ package org.xtext.trabalho.mAL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.Variable#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.Variable#getVar1 <em>Var1</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.Variable#getIdentifier <em>Identifier</em>}</li>
  * </ul>
  *
@@ -24,30 +25,20 @@ package org.xtext.trabalho.mAL;
 public interface Variable extends Varlist
 {
   /**
-   * Returns the value of the '<em><b>Var</b></em>' containment reference.
+   * Returns the value of the '<em><b>Var1</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.trabalho.mAL.Variable}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Var1</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' containment reference.
-   * @see #setVar(Variable)
-   * @see org.xtext.trabalho.mAL.MALPackage#getVariable_Var()
+   * @return the value of the '<em>Var1</em>' containment reference list.
+   * @see org.xtext.trabalho.mAL.MALPackage#getVariable_Var1()
    * @model containment="true"
    * @generated
    */
-  Variable getVar();
-
-  /**
-   * Sets the value of the '{@link org.xtext.trabalho.mAL.Variable#getVar <em>Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' containment reference.
-   * @see #getVar()
-   * @generated
-   */
-  void setVar(Variable value);
+  EList<Variable> getVar1();
 
   /**
    * Returns the value of the '<em><b>Identifier</b></em>' attribute.

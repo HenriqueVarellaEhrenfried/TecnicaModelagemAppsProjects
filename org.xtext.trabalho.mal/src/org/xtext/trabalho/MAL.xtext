@@ -11,22 +11,22 @@ Statement:
 ;
 
 ModuleStmt:
-	'MODULE' ident=ID | 'ATOM' ident=ID (':'ident=ID)?
+	'MODULE' ident=ID | 'ATOM' ident1=ID (':' ident2=ID)?
 ;
 
 IncludeStmt:
-	'INCLUDE' identifier=ID | 'INCLUDE' string_literal=ID //TODO: String literal é ID??????
+	'INCLUDE' identifier=ID | 'INCLUDE' string_literal=STRING
 ;
 
 Definition:
-	('UNSAFE')? 'COMMAND' Header 'ADDRESS' identifier=ID	|
-	 ('UNSAFE')? 'PATTERN' Header 'ADDRESS' identifier=ID |
-	  ('INLINE' | 'UNSAFE' )? 'FUNCTION' Header (stm=Statement)* 'END' name=Name | 
-	  'FACTORY' Header (stm=Statement)* 'END' name=Name
+	('UNSAFE')? 'COMMAND' Header 'ADDRESS' identifier=ID |
+	('UNSAFE')? 'PATTERN' Header 'ADDRESS' identifier=ID |
+	('INLINE' | 'UNSAFE' )? 'FUNCTION' Header (stm1+=Statement)* 'END' name=Name | 
+	'FACTORY' Header (stm2+=Statement)* 'END' name=Name
 ;
 
 Helpinfo:
-	'COMMENT' string_literal=ID //TODO: String literal é ID??????
+	'COMMENT' string_literal=STRING
 ;
 
 Header:
@@ -43,7 +43,7 @@ Result:
 ;
 
 Params: 
-	Binding (',' bind=Binding)*
+	Binding (',' bind+=Binding)*
 ;
 
 Binding:
@@ -79,7 +79,7 @@ Flow:
 ;
 
 Varlist:
-	Variable | '(' Variable (',' var=Variable)* ')'
+	Variable | '(' Variable (',' var1+=Variable)* ')'
 ;
 
 Variable:
@@ -91,7 +91,7 @@ Expr:
 ;
 
 Factor:
-	literal_constant=ID | 'NIL' | var=ID // TODO: literal_constant e var são ID?????
+	Literal_constant | 'NIL' | var=Variable // TODO: literal_constant e var são ID?????
 ;
 
 Fcncall:
@@ -99,11 +99,41 @@ Fcncall:
 ;
 
 Args:
-	Factor (',' factor=Factor)*
+	Factor (',' factor1+=Factor)*
 ;
 
 ModuleName:
 	identifier=ID
 ;
 
+Literal_constant:
+	BIT | Bte | CHR | WRD | INT | LNG | OID | FLT | DBL | STR //| Sht
+;
 
+terminal BIT:
+	'0' | '1'
+;
+Bte:
+	BIT BIT BIT BIT BIT BIT BIT BIT
+;
+terminal CHR:
+	.
+;
+terminal WRD:
+	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+;
+LNG:
+	INT
+;
+terminal OID:
+	('1'..'9') ('0'..'9')*
+;
+FLT:
+	INT'.'INT
+;
+DBL:
+	INT'.'INT
+;
+STR:
+	STRING
+;

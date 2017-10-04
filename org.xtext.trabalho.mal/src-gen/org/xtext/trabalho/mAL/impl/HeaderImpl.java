@@ -3,13 +3,20 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.trabalho.mAL.Header;
 import org.xtext.trabalho.mAL.MALPackage;
@@ -25,8 +32,9 @@ import org.xtext.trabalho.mAL.Statement;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getStm <em>Stm</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getStm1 <em>Stm1</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.HeaderImpl#getStm2 <em>Stm2</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,14 +62,14 @@ public class HeaderImpl extends DefinitionImpl implements Header
   protected String identifier = IDENTIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStm() <em>Stm</em>}' containment reference.
+   * The cached value of the '{@link #getStm1() <em>Stm1</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStm()
+   * @see #getStm1()
    * @generated
    * @ordered
    */
-  protected Statement stm;
+  protected EList<Statement> stm1;
 
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
@@ -72,6 +80,16 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * @ordered
    */
   protected Name name;
+
+  /**
+   * The cached value of the '{@link #getStm2() <em>Stm2</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStm2()
+   * @generated
+   * @ordered
+   */
+  protected EList<Statement> stm2;
 
   /**
    * <!-- begin-user-doc -->
@@ -122,47 +140,13 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement getStm()
+  public EList<Statement> getStm1()
   {
-    return stm;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStm(Statement newStm, NotificationChain msgs)
-  {
-    Statement oldStm = stm;
-    stm = newStm;
-    if (eNotificationRequired())
+    if (stm1 == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__STM, oldStm, newStm);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      stm1 = new EObjectContainmentEList<Statement>(Statement.class, this, MALPackage.HEADER__STM1);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStm(Statement newStm)
-  {
-    if (newStm != stm)
-    {
-      NotificationChain msgs = null;
-      if (stm != null)
-        msgs = ((InternalEObject)stm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__STM, null, msgs);
-      if (newStm != null)
-        msgs = ((InternalEObject)newStm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MALPackage.HEADER__STM, null, msgs);
-      msgs = basicSetStm(newStm, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.HEADER__STM, newStm, newStm));
+    return stm1;
   }
 
   /**
@@ -218,15 +202,31 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Statement> getStm2()
+  {
+    if (stm2 == null)
+    {
+      stm2 = new EObjectContainmentEList<Statement>(Statement.class, this, MALPackage.HEADER__STM2);
+    }
+    return stm2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case MALPackage.HEADER__STM:
-        return basicSetStm(null, msgs);
+      case MALPackage.HEADER__STM1:
+        return ((InternalEList<?>)getStm1()).basicRemove(otherEnd, msgs);
       case MALPackage.HEADER__NAME:
         return basicSetName(null, msgs);
+      case MALPackage.HEADER__STM2:
+        return ((InternalEList<?>)getStm2()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -243,10 +243,12 @@ public class HeaderImpl extends DefinitionImpl implements Header
     {
       case MALPackage.HEADER__IDENTIFIER:
         return getIdentifier();
-      case MALPackage.HEADER__STM:
-        return getStm();
+      case MALPackage.HEADER__STM1:
+        return getStm1();
       case MALPackage.HEADER__NAME:
         return getName();
+      case MALPackage.HEADER__STM2:
+        return getStm2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -256,6 +258,7 @@ public class HeaderImpl extends DefinitionImpl implements Header
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -264,11 +267,16 @@ public class HeaderImpl extends DefinitionImpl implements Header
       case MALPackage.HEADER__IDENTIFIER:
         setIdentifier((String)newValue);
         return;
-      case MALPackage.HEADER__STM:
-        setStm((Statement)newValue);
+      case MALPackage.HEADER__STM1:
+        getStm1().clear();
+        getStm1().addAll((Collection<? extends Statement>)newValue);
         return;
       case MALPackage.HEADER__NAME:
         setName((Name)newValue);
+        return;
+      case MALPackage.HEADER__STM2:
+        getStm2().clear();
+        getStm2().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -287,11 +295,14 @@ public class HeaderImpl extends DefinitionImpl implements Header
       case MALPackage.HEADER__IDENTIFIER:
         setIdentifier(IDENTIFIER_EDEFAULT);
         return;
-      case MALPackage.HEADER__STM:
-        setStm((Statement)null);
+      case MALPackage.HEADER__STM1:
+        getStm1().clear();
         return;
       case MALPackage.HEADER__NAME:
         setName((Name)null);
+        return;
+      case MALPackage.HEADER__STM2:
+        getStm2().clear();
         return;
     }
     super.eUnset(featureID);
@@ -309,10 +320,12 @@ public class HeaderImpl extends DefinitionImpl implements Header
     {
       case MALPackage.HEADER__IDENTIFIER:
         return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
-      case MALPackage.HEADER__STM:
-        return stm != null;
+      case MALPackage.HEADER__STM1:
+        return stm1 != null && !stm1.isEmpty();
       case MALPackage.HEADER__NAME:
         return name != null;
+      case MALPackage.HEADER__STM2:
+        return stm2 != null && !stm2.isEmpty();
     }
     return super.eIsSet(featureID);
   }

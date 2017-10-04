@@ -25,6 +25,8 @@ import org.xtext.trabalho.mAL.ModuleStmt;
  * <ul>
  *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getHelp <em>Help</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getIdent <em>Ident</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getIdent1 <em>Ident1</em>}</li>
+ *   <li>{@link org.xtext.trabalho.mAL.impl.ModuleStmtImpl#getIdent2 <em>Ident2</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,6 +62,46 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
    * @ordered
    */
   protected String ident = IDENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIdent1() <em>Ident1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdent1()
+   * @generated
+   * @ordered
+   */
+  protected static final String IDENT1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIdent1() <em>Ident1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdent1()
+   * @generated
+   * @ordered
+   */
+  protected String ident1 = IDENT1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIdent2() <em>Ident2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdent2()
+   * @generated
+   * @ordered
+   */
+  protected static final String IDENT2_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIdent2() <em>Ident2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdent2()
+   * @generated
+   * @ordered
+   */
+  protected String ident2 = IDENT2_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,6 +200,52 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getIdent1()
+  {
+    return ident1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIdent1(String newIdent1)
+  {
+    String oldIdent1 = ident1;
+    ident1 = newIdent1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__IDENT1, oldIdent1, ident1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getIdent2()
+  {
+    return ident2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIdent2(String newIdent2)
+  {
+    String oldIdent2 = ident2;
+    ident2 = newIdent2;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MALPackage.MODULE_STMT__IDENT2, oldIdent2, ident2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -183,6 +271,10 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
         return getHelp();
       case MALPackage.MODULE_STMT__IDENT:
         return getIdent();
+      case MALPackage.MODULE_STMT__IDENT1:
+        return getIdent1();
+      case MALPackage.MODULE_STMT__IDENT2:
+        return getIdent2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,6 +294,12 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
         return;
       case MALPackage.MODULE_STMT__IDENT:
         setIdent((String)newValue);
+        return;
+      case MALPackage.MODULE_STMT__IDENT1:
+        setIdent1((String)newValue);
+        return;
+      case MALPackage.MODULE_STMT__IDENT2:
+        setIdent2((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -223,6 +321,12 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
       case MALPackage.MODULE_STMT__IDENT:
         setIdent(IDENT_EDEFAULT);
         return;
+      case MALPackage.MODULE_STMT__IDENT1:
+        setIdent1(IDENT1_EDEFAULT);
+        return;
+      case MALPackage.MODULE_STMT__IDENT2:
+        setIdent2(IDENT2_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -241,6 +345,10 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
         return help != null;
       case MALPackage.MODULE_STMT__IDENT:
         return IDENT_EDEFAULT == null ? ident != null : !IDENT_EDEFAULT.equals(ident);
+      case MALPackage.MODULE_STMT__IDENT1:
+        return IDENT1_EDEFAULT == null ? ident1 != null : !IDENT1_EDEFAULT.equals(ident1);
+      case MALPackage.MODULE_STMT__IDENT2:
+        return IDENT2_EDEFAULT == null ? ident2 != null : !IDENT2_EDEFAULT.equals(ident2);
     }
     return super.eIsSet(featureID);
   }
@@ -258,6 +366,10 @@ public class ModuleStmtImpl extends StatementImpl implements ModuleStmt
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (ident: ");
     result.append(ident);
+    result.append(", ident1: ");
+    result.append(ident1);
+    result.append(", ident2: ");
+    result.append(ident2);
     result.append(')');
     return result.toString();
   }
