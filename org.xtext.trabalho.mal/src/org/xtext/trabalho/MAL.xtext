@@ -2,8 +2,96 @@ grammar org.xtext.trabalho.MAL with org.eclipse.xtext.common.Terminals
 
 generate mAL "http://www.xtext.org/trabalho/MAL"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+Program:
+	(elements+=Statement ';')*
+;
+
+Statement:
+	ModuleStmt (help=Helpinfo)? | Definition (help=Helpinfo)? | IncludeStmt | Stmt
+;
+
+ModuleStmt:
+	'MODULE' ident=ID | 'ATOM' ident=ID (':'ident=ID)?
+;
+
+IncludeStmt:
+	'INCLUDE' identifier=ID | 'INCLUDE' string_literal=ID //TODO: String literal é ID??????
+;
+
+Definition:
+	('UNSAFE')? 'COMMAND' Header 'ADDRESS' identifier=ID	|
+	 ('UNSAFE')? 'PATTERN' Header 'ADDRESS' identifier=ID |
+	  ('INLINE' | 'UNSAFE' )? 'FUNCTION' Header (stm=Statement)* 'END' name=Name | 
+	  'FACTORY' Header (stm=Statement)* 'END' name=Name
+;
+
+Helpinfo:
+	'COMMENT' string_literal=ID //TODO: String literal é ID??????
+;
+
+Header:
+	Name '(' param=Params ')' result=Result
+;
+
+Name:
+	(ModuleName '.')? Name // TODO: Descobrir o que é ModuleName
+;
+
+Result:
+	TypeName | '(' Params ')'
+;
+
+Params: 
+	Binding (',' bind=Binding)*
+;
+
+Binding:
+	identifier=ID tn=TypeName
+;
+
+TypeName:
+	ScalarType | ColumnType | ':' any=ID ('_' digit=ID)? // TODO: any e digit são ID???? 
+;
+
+ScalarType:
+	':' identifier=ID
+;
+
+ColumnType:
+	':' 'BAT' '[' ':' ColElmType ']'
+;
+
+ColElmType:
+	ScalarType | AnyType // TODO: Descobrir o que é AnyType
+;
+
+Stmt:
+	(Flow)? Varlist (':=' exp=Expr)
+;
+
+Flow:
+	'RETURN'  | 'BARRIER' | 'CATCH' | 'LEAVE' | 'REDO' | 'RAISE'
+;
+
+Varlist:
+	Variable | '(' Variable (',' var=Variable)* ')'
+;
+
+Variable:
+	identifier=ID
+;
+
+Expr:
+	Fcncall | (Factor operator=ID)? factor=Factor // TODO: operator é ID????
+;
+
+Factor:
+	literal_constant=ID | 'NIL' | var=ID // TODO: literal_constant e var são ID?????
+;
+
+Fcncall:
+	ModuleName '.' Name '(' (Args)? ')' // TODO: Descobrir o que é ModuleName
+;
+Args:
+	Factor (',' factor=Factor)*
+;
