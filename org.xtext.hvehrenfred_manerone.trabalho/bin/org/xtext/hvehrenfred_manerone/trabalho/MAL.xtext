@@ -1,0 +1,9 @@
+grammar org.xtext.hvehrenfred_manerone.trabalho.MAL with org.eclipse.xtext.common.Terminals
+
+generate mAL "http://www.xtext.org/hvehrenfred_manerone/trabalho/MAL"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
