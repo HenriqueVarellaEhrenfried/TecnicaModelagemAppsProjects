@@ -1,0 +1,23 @@
+COMMAND alarm.sleep{unsafe}(secs:int):void
+ADDRESS ALARMsleep
+COMMENT "Sleep a few seconds";
+
+COMMAND alarm.usec{unsafe}() :lng
+ADDRESS ALARMusec
+COMMENT "Return time in microseconds.";
+
+COMMAND alarm.time{unsafe}() :int
+ADDRESS ALARMtime
+COMMENT "Return time in milliseconds.";
+
+COMMAND alarm.epoch{unsafe}() :int
+ADDRESS ALARMepoch
+COMMENT "Return the current time as UNIX epoch.";
+
+COMMAND alarm.ctime{unsafe}() :str
+ADDRESS ALARMctime
+COMMENT "Return the current time as a C-time string.";
+
+COMMAND alarm.prelude():void
+ADDRESS ALARMprelude
+COMMENT "Initialize alarm module.";
