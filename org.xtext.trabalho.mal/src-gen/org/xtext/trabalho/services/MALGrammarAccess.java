@@ -102,11 +102,15 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.ModuleStmt");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cMODULEKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final Keyword cMODULEKeyword_0_0_0 = (Keyword)cAlternatives_0_0.eContents().get(0);
+		private final Keyword cModuleKeyword_0_0_1 = (Keyword)cAlternatives_0_0.eContents().get(1);
 		private final Assignment cIdentAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cIdentIDTerminalRuleCall_0_1_0 = (RuleCall)cIdentAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cATOMKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Keyword cATOMKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cAtomKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
 		private final Assignment cIdentAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cIdentIDTerminalRuleCall_1_1_0 = (RuleCall)cIdentAssignment_1_1.eContents().get(0);
 		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
@@ -115,17 +119,23 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSecond_identIDTerminalRuleCall_1_2_1_0 = (RuleCall)cSecond_identAssignment_1_2_1.eContents().get(0);
 		
 		//ModuleStmt:
-		//	'MODULE' ident=ID | 'ATOM' ident=ID (':' second_ident?=ID)?;
+		//	('MODULE' | 'module') ident=ID | ('ATOM' | 'atom') ident=ID (':' second_ident?=ID)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'MODULE' ident=ID | 'ATOM' ident=ID (':' second_ident?=ID)?
+		//('MODULE' | 'module') ident=ID | ('ATOM' | 'atom') ident=ID (':' second_ident?=ID)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'MODULE' ident=ID
+		//('MODULE' | 'module') ident=ID
 		public Group getGroup_0() { return cGroup_0; }
 		
+		//'MODULE' | 'module'
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
+		
 		//'MODULE'
-		public Keyword getMODULEKeyword_0_0() { return cMODULEKeyword_0_0; }
+		public Keyword getMODULEKeyword_0_0_0() { return cMODULEKeyword_0_0_0; }
+		
+		//'module'
+		public Keyword getModuleKeyword_0_0_1() { return cModuleKeyword_0_0_1; }
 		
 		//ident=ID
 		public Assignment getIdentAssignment_0_1() { return cIdentAssignment_0_1; }
@@ -133,11 +143,17 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIdentIDTerminalRuleCall_0_1_0() { return cIdentIDTerminalRuleCall_0_1_0; }
 		
-		//'ATOM' ident=ID (':' second_ident?=ID)?
+		//('ATOM' | 'atom') ident=ID (':' second_ident?=ID)?
 		public Group getGroup_1() { return cGroup_1; }
 		
+		//'ATOM' | 'atom'
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
 		//'ATOM'
-		public Keyword getATOMKeyword_1_0() { return cATOMKeyword_1_0; }
+		public Keyword getATOMKeyword_1_0_0() { return cATOMKeyword_1_0_0; }
+		
+		//'atom'
+		public Keyword getAtomKeyword_1_0_1() { return cAtomKeyword_1_0_1; }
 		
 		//ident=ID
 		public Assignment getIdentAssignment_1_1() { return cIdentAssignment_1_1; }
@@ -161,26 +177,36 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.IncludeStmt");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cINCLUDEKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final Keyword cINCLUDEKeyword_0_0_0 = (Keyword)cAlternatives_0_0.eContents().get(0);
+		private final Keyword cIncludeKeyword_0_0_1 = (Keyword)cAlternatives_0_0.eContents().get(1);
 		private final Assignment cIdentifierAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cIdentifierIDTerminalRuleCall_0_1_0 = (RuleCall)cIdentifierAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cINCLUDEKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Keyword cINCLUDEKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cIncludeKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
 		private final Assignment cString_literalAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cString_literalSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cString_literalAssignment_1_1.eContents().get(0);
 		
 		//IncludeStmt:
-		//	'INCLUDE' identifier=ID | 'INCLUDE' string_literal=STRING;
+		//	('INCLUDE' | 'include') identifier=ID | ('INCLUDE' | 'include') string_literal=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'INCLUDE' identifier=ID | 'INCLUDE' string_literal=STRING
+		//('INCLUDE' | 'include') identifier=ID | ('INCLUDE' | 'include') string_literal=STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'INCLUDE' identifier=ID
+		//('INCLUDE' | 'include') identifier=ID
 		public Group getGroup_0() { return cGroup_0; }
 		
+		//'INCLUDE' | 'include'
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
+		
 		//'INCLUDE'
-		public Keyword getINCLUDEKeyword_0_0() { return cINCLUDEKeyword_0_0; }
+		public Keyword getINCLUDEKeyword_0_0_0() { return cINCLUDEKeyword_0_0_0; }
+		
+		//'include'
+		public Keyword getIncludeKeyword_0_0_1() { return cIncludeKeyword_0_0_1; }
 		
 		//identifier=ID
 		public Assignment getIdentifierAssignment_0_1() { return cIdentifierAssignment_0_1; }
@@ -188,11 +214,17 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIdentifierIDTerminalRuleCall_0_1_0() { return cIdentifierIDTerminalRuleCall_0_1_0; }
 		
-		//'INCLUDE' string_literal=STRING
+		//('INCLUDE' | 'include') string_literal=STRING
 		public Group getGroup_1() { return cGroup_1; }
 		
+		//'INCLUDE' | 'include'
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
 		//'INCLUDE'
-		public Keyword getINCLUDEKeyword_1_0() { return cINCLUDEKeyword_1_0; }
+		public Keyword getINCLUDEKeyword_1_0_0() { return cINCLUDEKeyword_1_0_0; }
+		
+		//'include'
+		public Keyword getIncludeKeyword_1_0_1() { return cIncludeKeyword_1_0_1; }
 		
 		//string_literal=STRING
 		public Assignment getString_literalAssignment_1_1() { return cString_literalAssignment_1_1; }
@@ -204,63 +236,101 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.Definition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cUNSAFEKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cCOMMANDKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final Keyword cUNSAFEKeyword_0_0_0 = (Keyword)cAlternatives_0_0.eContents().get(0);
+		private final Keyword cUnsafeKeyword_0_0_1 = (Keyword)cAlternatives_0_0.eContents().get(1);
+		private final Alternatives cAlternatives_0_1 = (Alternatives)cGroup_0.eContents().get(1);
+		private final Keyword cCOMMANDKeyword_0_1_0 = (Keyword)cAlternatives_0_1.eContents().get(0);
+		private final Keyword cCommandKeyword_0_1_1 = (Keyword)cAlternatives_0_1.eContents().get(1);
 		private final Assignment cHeaderAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cHeaderHeaderParserRuleCall_0_2_0 = (RuleCall)cHeaderAssignment_0_2.eContents().get(0);
-		private final Keyword cADDRESSKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Alternatives cAlternatives_0_3 = (Alternatives)cGroup_0.eContents().get(3);
+		private final Keyword cADDRESSKeyword_0_3_0 = (Keyword)cAlternatives_0_3.eContents().get(0);
+		private final Keyword cAddressKeyword_0_3_1 = (Keyword)cAlternatives_0_3.eContents().get(1);
 		private final Assignment cIdentifierAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
 		private final RuleCall cIdentifierIDTerminalRuleCall_0_4_0 = (RuleCall)cIdentifierAssignment_0_4.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cUNSAFEKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cPATTERNKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Keyword cUNSAFEKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cUnsafeKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Keyword cPATTERNKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cPatternKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
 		private final Assignment cHeaderAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cHeaderHeaderParserRuleCall_1_2_0 = (RuleCall)cHeaderAssignment_1_2.eContents().get(0);
-		private final Keyword cADDRESSKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Alternatives cAlternatives_1_3 = (Alternatives)cGroup_1.eContents().get(3);
+		private final Keyword cADDRESSKeyword_1_3_0 = (Keyword)cAlternatives_1_3.eContents().get(0);
+		private final Keyword cAddressKeyword_1_3_1 = (Keyword)cAlternatives_1_3.eContents().get(1);
 		private final Assignment cIdentifierAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
 		private final RuleCall cIdentifierIDTerminalRuleCall_1_4_0 = (RuleCall)cIdentifierAssignment_1_4.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
-		private final Keyword cINLINEKeyword_2_0_0 = (Keyword)cAlternatives_2_0.eContents().get(0);
-		private final Keyword cUNSAFEKeyword_2_0_1 = (Keyword)cAlternatives_2_0.eContents().get(1);
-		private final Keyword cFUNCTIONKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Alternatives cAlternatives_2_0_0 = (Alternatives)cAlternatives_2_0.eContents().get(0);
+		private final Keyword cINLINEKeyword_2_0_0_0 = (Keyword)cAlternatives_2_0_0.eContents().get(0);
+		private final Keyword cInlineKeyword_2_0_0_1 = (Keyword)cAlternatives_2_0_0.eContents().get(1);
+		private final Alternatives cAlternatives_2_0_1 = (Alternatives)cAlternatives_2_0.eContents().get(1);
+		private final Keyword cUNSAFEKeyword_2_0_1_0 = (Keyword)cAlternatives_2_0_1.eContents().get(0);
+		private final Keyword cUnsafeKeyword_2_0_1_1 = (Keyword)cAlternatives_2_0_1.eContents().get(1);
+		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
+		private final Keyword cFUNCTIONKeyword_2_1_0 = (Keyword)cAlternatives_2_1.eContents().get(0);
+		private final Keyword cFunctionKeyword_2_1_1 = (Keyword)cAlternatives_2_1.eContents().get(1);
 		private final Assignment cHeaderAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cHeaderHeaderParserRuleCall_2_2_0 = (RuleCall)cHeaderAssignment_2_2.eContents().get(0);
 		private final Assignment cStatementsAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
 		private final RuleCall cStatementsStatementParserRuleCall_2_3_0 = (RuleCall)cStatementsAssignment_2_3.eContents().get(0);
-		private final Keyword cENDKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final Alternatives cAlternatives_2_4 = (Alternatives)cGroup_2.eContents().get(4);
+		private final Keyword cENDKeyword_2_4_0 = (Keyword)cAlternatives_2_4.eContents().get(0);
+		private final Keyword cEndKeyword_2_4_1 = (Keyword)cAlternatives_2_4.eContents().get(1);
 		private final Assignment cFunction_nameAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
 		private final RuleCall cFunction_nameNameParserRuleCall_2_5_0 = (RuleCall)cFunction_nameAssignment_2_5.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cFACTORYKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
+		private final Keyword cFACTORYKeyword_3_0_0 = (Keyword)cAlternatives_3_0.eContents().get(0);
+		private final Keyword cFactoryKeyword_3_0_1 = (Keyword)cAlternatives_3_0.eContents().get(1);
 		private final Assignment cHeaderAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cHeaderHeaderParserRuleCall_3_1_0 = (RuleCall)cHeaderAssignment_3_1.eContents().get(0);
 		private final Assignment cStatementsAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cStatementsStatementParserRuleCall_3_2_0 = (RuleCall)cStatementsAssignment_3_2.eContents().get(0);
-		private final Keyword cENDKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Alternatives cAlternatives_3_3 = (Alternatives)cGroup_3.eContents().get(3);
+		private final Keyword cENDKeyword_3_3_0 = (Keyword)cAlternatives_3_3.eContents().get(0);
+		private final Keyword cEndKeyword_3_3_1 = (Keyword)cAlternatives_3_3.eContents().get(1);
 		private final Assignment cFactory_nameAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
 		private final RuleCall cFactory_nameNameParserRuleCall_3_4_0 = (RuleCall)cFactory_nameAssignment_3_4.eContents().get(0);
 		
 		//Definition:
-		//	'UNSAFE'? 'COMMAND' header=Header 'ADDRESS' identifier=ID | 'UNSAFE'? 'PATTERN' header=Header 'ADDRESS' identifier=ID
-		//	| ('INLINE' | 'UNSAFE')? 'FUNCTION' header=Header statements+=Statement* 'END' function_name=Name | // Nossa função possuí um header, os seus statements e o nome da função
-		//	'FACTORY' header=Header statements+=Statement* 'END' factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
+		//	('UNSAFE' | 'unsafe')? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=ID | ('UNSAFE' |
+		//	'unsafe')? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=ID | (('INLINE' | 'inline') |
+		//	('UNSAFE' | 'unsafe'))? ('FUNCTION' | 'function') header=Header statements+=Statement* ('END' | 'end')
+		//	function_name=Name | ('FACTORY' | 'factory') header=Header statements+=Statement* ('END' | 'end') factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'UNSAFE'? 'COMMAND' header=Header 'ADDRESS' identifier=ID | 'UNSAFE'? 'PATTERN' header=Header 'ADDRESS' identifier=ID |
-		//('INLINE' | 'UNSAFE')? 'FUNCTION' header=Header statements+=Statement* 'END' function_name=Name | // Nossa função possuí um header, os seus statements e o nome da função
-		//'FACTORY' header=Header statements+=Statement* 'END' factory_name=Name
+		//('UNSAFE' | 'unsafe')? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=ID | ('UNSAFE' |
+		//'unsafe')? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=ID | (('INLINE' | 'inline') |
+		//('UNSAFE' | 'unsafe'))? ('FUNCTION' | 'function') header=Header statements+=Statement* ('END' | 'end')
+		//function_name=Name | ('FACTORY' | 'factory') header=Header statements+=Statement* ('END' | 'end') factory_name=Name
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'UNSAFE'? 'COMMAND' header=Header 'ADDRESS' identifier=ID
+		//('UNSAFE' | 'unsafe')? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=ID
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'UNSAFE'?
-		public Keyword getUNSAFEKeyword_0_0() { return cUNSAFEKeyword_0_0; }
+		//('UNSAFE' | 'unsafe')?
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
+		
+		//'UNSAFE'
+		public Keyword getUNSAFEKeyword_0_0_0() { return cUNSAFEKeyword_0_0_0; }
+		
+		//'unsafe'
+		public Keyword getUnsafeKeyword_0_0_1() { return cUnsafeKeyword_0_0_1; }
+		
+		//'COMMAND' | 'command'
+		public Alternatives getAlternatives_0_1() { return cAlternatives_0_1; }
 		
 		//'COMMAND'
-		public Keyword getCOMMANDKeyword_0_1() { return cCOMMANDKeyword_0_1; }
+		public Keyword getCOMMANDKeyword_0_1_0() { return cCOMMANDKeyword_0_1_0; }
+		
+		//'command'
+		public Keyword getCommandKeyword_0_1_1() { return cCommandKeyword_0_1_1; }
 		
 		//header=Header
 		public Assignment getHeaderAssignment_0_2() { return cHeaderAssignment_0_2; }
@@ -268,8 +338,14 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//Header
 		public RuleCall getHeaderHeaderParserRuleCall_0_2_0() { return cHeaderHeaderParserRuleCall_0_2_0; }
 		
+		//'ADDRESS' | 'address'
+		public Alternatives getAlternatives_0_3() { return cAlternatives_0_3; }
+		
 		//'ADDRESS'
-		public Keyword getADDRESSKeyword_0_3() { return cADDRESSKeyword_0_3; }
+		public Keyword getADDRESSKeyword_0_3_0() { return cADDRESSKeyword_0_3_0; }
+		
+		//'address'
+		public Keyword getAddressKeyword_0_3_1() { return cAddressKeyword_0_3_1; }
 		
 		//identifier=ID
 		public Assignment getIdentifierAssignment_0_4() { return cIdentifierAssignment_0_4; }
@@ -277,16 +353,26 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIdentifierIDTerminalRuleCall_0_4_0() { return cIdentifierIDTerminalRuleCall_0_4_0; }
 		
-		////Nosso Comando possuí um header e um identificador
-		//'UNSAFE'? 'PATTERN' header=Header 'ADDRESS' identifier=ID
+		//('UNSAFE' | 'unsafe')? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=ID
 		public Group getGroup_1() { return cGroup_1; }
 		
-		////Nosso Comando possuí um header e um identificador
-		//'UNSAFE'?
-		public Keyword getUNSAFEKeyword_1_0() { return cUNSAFEKeyword_1_0; }
+		//('UNSAFE' | 'unsafe')?
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
+		//'UNSAFE'
+		public Keyword getUNSAFEKeyword_1_0_0() { return cUNSAFEKeyword_1_0_0; }
+		
+		//'unsafe'
+		public Keyword getUnsafeKeyword_1_0_1() { return cUnsafeKeyword_1_0_1; }
+		
+		//'PATTERN' | 'pattern'
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 		
 		//'PATTERN'
-		public Keyword getPATTERNKeyword_1_1() { return cPATTERNKeyword_1_1; }
+		public Keyword getPATTERNKeyword_1_1_0() { return cPATTERNKeyword_1_1_0; }
+		
+		//'pattern'
+		public Keyword getPatternKeyword_1_1_1() { return cPatternKeyword_1_1_1; }
 		
 		//header=Header
 		public Assignment getHeaderAssignment_1_2() { return cHeaderAssignment_1_2; }
@@ -294,8 +380,14 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//Header
 		public RuleCall getHeaderHeaderParserRuleCall_1_2_0() { return cHeaderHeaderParserRuleCall_1_2_0; }
 		
+		//'ADDRESS' | 'address'
+		public Alternatives getAlternatives_1_3() { return cAlternatives_1_3; }
+		
 		//'ADDRESS'
-		public Keyword getADDRESSKeyword_1_3() { return cADDRESSKeyword_1_3; }
+		public Keyword getADDRESSKeyword_1_3_0() { return cADDRESSKeyword_1_3_0; }
+		
+		//'address'
+		public Keyword getAddressKeyword_1_3_1() { return cAddressKeyword_1_3_1; }
 		
 		//identifier=ID
 		public Assignment getIdentifierAssignment_1_4() { return cIdentifierAssignment_1_4; }
@@ -303,20 +395,39 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIdentifierIDTerminalRuleCall_1_4_0() { return cIdentifierIDTerminalRuleCall_1_4_0; }
 		
-		//('INLINE' | 'UNSAFE')? 'FUNCTION' header=Header statements+=Statement* 'END' function_name=Name
+		//(('INLINE' | 'inline') | ('UNSAFE' | 'unsafe'))? ('FUNCTION' | 'function') header=Header statements+=Statement* ('END' |
+		//'end') function_name=Name
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//('INLINE' | 'UNSAFE')?
+		//(('INLINE' | 'inline') | ('UNSAFE' | 'unsafe'))?
 		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
 		
+		//('INLINE' | 'inline')
+		public Alternatives getAlternatives_2_0_0() { return cAlternatives_2_0_0; }
+		
 		//'INLINE'
-		public Keyword getINLINEKeyword_2_0_0() { return cINLINEKeyword_2_0_0; }
+		public Keyword getINLINEKeyword_2_0_0_0() { return cINLINEKeyword_2_0_0_0; }
+		
+		//'inline'
+		public Keyword getInlineKeyword_2_0_0_1() { return cInlineKeyword_2_0_0_1; }
+		
+		//('UNSAFE' | 'unsafe')
+		public Alternatives getAlternatives_2_0_1() { return cAlternatives_2_0_1; }
 		
 		//'UNSAFE'
-		public Keyword getUNSAFEKeyword_2_0_1() { return cUNSAFEKeyword_2_0_1; }
+		public Keyword getUNSAFEKeyword_2_0_1_0() { return cUNSAFEKeyword_2_0_1_0; }
+		
+		//'unsafe'
+		public Keyword getUnsafeKeyword_2_0_1_1() { return cUnsafeKeyword_2_0_1_1; }
+		
+		//'FUNCTION' | 'function'
+		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 		
 		//'FUNCTION'
-		public Keyword getFUNCTIONKeyword_2_1() { return cFUNCTIONKeyword_2_1; }
+		public Keyword getFUNCTIONKeyword_2_1_0() { return cFUNCTIONKeyword_2_1_0; }
+		
+		//'function'
+		public Keyword getFunctionKeyword_2_1_1() { return cFunctionKeyword_2_1_1; }
 		
 		//header=Header
 		public Assignment getHeaderAssignment_2_2() { return cHeaderAssignment_2_2; }
@@ -330,8 +441,14 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//Statement
 		public RuleCall getStatementsStatementParserRuleCall_2_3_0() { return cStatementsStatementParserRuleCall_2_3_0; }
 		
+		//'END' | 'end'
+		public Alternatives getAlternatives_2_4() { return cAlternatives_2_4; }
+		
 		//'END'
-		public Keyword getENDKeyword_2_4() { return cENDKeyword_2_4; }
+		public Keyword getENDKeyword_2_4_0() { return cENDKeyword_2_4_0; }
+		
+		//'end'
+		public Keyword getEndKeyword_2_4_1() { return cEndKeyword_2_4_1; }
 		
 		//function_name=Name
 		public Assignment getFunction_nameAssignment_2_5() { return cFunction_nameAssignment_2_5; }
@@ -339,13 +456,18 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//Name
 		public RuleCall getFunction_nameNameParserRuleCall_2_5_0() { return cFunction_nameNameParserRuleCall_2_5_0; }
 		
-		//// Nossa função possuí um header, os seus statements e o nome da função
-		//'FACTORY' header=Header statements+=Statement* 'END' factory_name=Name
+		//('FACTORY' | 'factory') header=Header statements+=Statement* ('END' | 'end') factory_name=Name
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//// Nossa função possuí um header, os seus statements e o nome da função
+		//'FACTORY' | 'factory'
+		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
+		
 		//'FACTORY'
-		public Keyword getFACTORYKeyword_3_0() { return cFACTORYKeyword_3_0; }
+		public Keyword getFACTORYKeyword_3_0_0() { return cFACTORYKeyword_3_0_0; }
+		
+		//'factory'
+		public Keyword getFactoryKeyword_3_0_1() { return cFactoryKeyword_3_0_1; }
 		
 		//header=Header
 		public Assignment getHeaderAssignment_3_1() { return cHeaderAssignment_3_1; }
@@ -359,8 +481,14 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//Statement
 		public RuleCall getStatementsStatementParserRuleCall_3_2_0() { return cStatementsStatementParserRuleCall_3_2_0; }
 		
+		//'END' | 'end'
+		public Alternatives getAlternatives_3_3() { return cAlternatives_3_3; }
+		
 		//'END'
-		public Keyword getENDKeyword_3_3() { return cENDKeyword_3_3; }
+		public Keyword getENDKeyword_3_3_0() { return cENDKeyword_3_3_0; }
+		
+		//'end'
+		public Keyword getEndKeyword_3_3_1() { return cEndKeyword_3_3_1; }
 		
 		//factory_name=Name
 		public Assignment getFactory_nameAssignment_3_4() { return cFactory_nameAssignment_3_4; }
@@ -371,19 +499,27 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	public class HelpinfoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.Helpinfo");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCOMMENTKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cCOMMENTKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cCommentKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Assignment cString_literalAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cString_literalSTRINGTerminalRuleCall_1_0 = (RuleCall)cString_literalAssignment_1.eContents().get(0);
 		
 		//Helpinfo:
-		//	'COMMENT' string_literal=STRING;
+		//	('COMMENT' | 'comment') string_literal=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'COMMENT' string_literal=STRING
+		//('COMMENT' | 'comment') string_literal=STRING
 		public Group getGroup() { return cGroup; }
 		
+		//'COMMENT' | 'comment'
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
 		//'COMMENT'
-		public Keyword getCOMMENTKeyword_0() { return cCOMMENTKeyword_0; }
+		public Keyword getCOMMENTKeyword_0_0() { return cCOMMENTKeyword_0_0; }
+		
+		//'comment'
+		public Keyword getCommentKeyword_0_1() { return cCommentKeyword_0_1; }
 		
 		//string_literal=STRING
 		public Assignment getString_literalAssignment_1() { return cString_literalAssignment_1; }
@@ -627,24 +763,32 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.ColumnType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cColonKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cBATKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cBATKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cBatKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final RuleCall cColElmTypeParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ColumnType:
-		//	':' 'BAT' '[' ':' ColElmType ']';
+		//	':' ('BAT' | 'bat') '[' ':' ColElmType ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//':' 'BAT' '[' ':' ColElmType ']'
+		//':' ('BAT' | 'bat') '[' ':' ColElmType ']'
 		public Group getGroup() { return cGroup; }
 		
 		//':'
 		public Keyword getColonKeyword_0() { return cColonKeyword_0; }
 		
+		//'BAT' | 'bat'
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//'BAT'
-		public Keyword getBATKeyword_1() { return cBATKeyword_1; }
+		public Keyword getBATKeyword_1_0() { return cBATKeyword_1_0; }
+		
+		//'bat'
+		public Keyword getBatKeyword_1_1() { return cBatKeyword_1_1; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
@@ -759,37 +903,87 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	public class FlowElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.Flow");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cRETURNKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cBARRIERKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cCATCHKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cLEAVEKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cREDOKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cRAISEKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Alternatives cAlternatives_0 = (Alternatives)cAlternatives.eContents().get(0);
+		private final Keyword cRETURNKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cReturnKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cAlternatives.eContents().get(1);
+		private final Keyword cBARRIERKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cBarrierKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cAlternatives.eContents().get(2);
+		private final Keyword cCATCHKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
+		private final Keyword cCatchKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		private final Alternatives cAlternatives_3 = (Alternatives)cAlternatives.eContents().get(3);
+		private final Keyword cLEAVEKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
+		private final Keyword cLeaveKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Alternatives cAlternatives_4 = (Alternatives)cAlternatives.eContents().get(4);
+		private final Keyword cREDOKeyword_4_0 = (Keyword)cAlternatives_4.eContents().get(0);
+		private final Keyword cRedoKeyword_4_1 = (Keyword)cAlternatives_4.eContents().get(1);
+		private final Alternatives cAlternatives_5 = (Alternatives)cAlternatives.eContents().get(5);
+		private final Keyword cRAISEKeyword_5_0 = (Keyword)cAlternatives_5.eContents().get(0);
+		private final Keyword cRaiseKeyword_5_1 = (Keyword)cAlternatives_5.eContents().get(1);
 		
 		//Flow:
-		//	'RETURN' | 'BARRIER' | 'CATCH' | 'LEAVE' | 'REDO' | 'RAISE';
+		//	('RETURN' | 'return') | ('BARRIER' | 'barrier') | ('CATCH' | 'catch') | ('LEAVE' | 'leave') | ('REDO' | 'redo') |
+		//	('RAISE' | 'raise');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RETURN' | 'BARRIER' | 'CATCH' | 'LEAVE' | 'REDO' | 'RAISE'
+		//('RETURN' | 'return') | ('BARRIER' | 'barrier') | ('CATCH' | 'catch') | ('LEAVE' | 'leave') | ('REDO' | 'redo') |
+		//('RAISE' | 'raise')
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//('RETURN' | 'return')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
 		//'RETURN'
-		public Keyword getRETURNKeyword_0() { return cRETURNKeyword_0; }
+		public Keyword getRETURNKeyword_0_0() { return cRETURNKeyword_0_0; }
+		
+		//'return'
+		public Keyword getReturnKeyword_0_1() { return cReturnKeyword_0_1; }
+		
+		//('BARRIER' | 'barrier')
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//'BARRIER'
-		public Keyword getBARRIERKeyword_1() { return cBARRIERKeyword_1; }
+		public Keyword getBARRIERKeyword_1_0() { return cBARRIERKeyword_1_0; }
+		
+		//'barrier'
+		public Keyword getBarrierKeyword_1_1() { return cBarrierKeyword_1_1; }
+		
+		//('CATCH' | 'catch')
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//'CATCH'
-		public Keyword getCATCHKeyword_2() { return cCATCHKeyword_2; }
+		public Keyword getCATCHKeyword_2_0() { return cCATCHKeyword_2_0; }
+		
+		//'catch'
+		public Keyword getCatchKeyword_2_1() { return cCatchKeyword_2_1; }
+		
+		//('LEAVE' | 'leave')
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//'LEAVE'
-		public Keyword getLEAVEKeyword_3() { return cLEAVEKeyword_3; }
+		public Keyword getLEAVEKeyword_3_0() { return cLEAVEKeyword_3_0; }
+		
+		//'leave'
+		public Keyword getLeaveKeyword_3_1() { return cLeaveKeyword_3_1; }
+		
+		//('REDO' | 'redo')
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
 		//'REDO'
-		public Keyword getREDOKeyword_4() { return cREDOKeyword_4; }
+		public Keyword getREDOKeyword_4_0() { return cREDOKeyword_4_0; }
+		
+		//'redo'
+		public Keyword getRedoKeyword_4_1() { return cRedoKeyword_4_1; }
+		
+		//('RAISE' | 'raise')
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
 		//'RAISE'
-		public Keyword getRAISEKeyword_5() { return cRAISEKeyword_5; }
+		public Keyword getRAISEKeyword_5_0() { return cRAISEKeyword_5_0; }
+		
+		//'raise'
+		public Keyword getRaiseKeyword_5_1() { return cRaiseKeyword_5_1; }
 	}
 	public class VarlistElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.Varlist");
@@ -1321,7 +1515,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ModuleStmt:
-	//	'MODULE' ident=ID | 'ATOM' ident=ID (':' second_ident?=ID)?;
+	//	('MODULE' | 'module') ident=ID | ('ATOM' | 'atom') ident=ID (':' second_ident?=ID)?;
 	public ModuleStmtElements getModuleStmtAccess() {
 		return pModuleStmt;
 	}
@@ -1331,7 +1525,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IncludeStmt:
-	//	'INCLUDE' identifier=ID | 'INCLUDE' string_literal=STRING;
+	//	('INCLUDE' | 'include') identifier=ID | ('INCLUDE' | 'include') string_literal=STRING;
 	public IncludeStmtElements getIncludeStmtAccess() {
 		return pIncludeStmt;
 	}
@@ -1341,9 +1535,10 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Definition:
-	//	'UNSAFE'? 'COMMAND' header=Header 'ADDRESS' identifier=ID | 'UNSAFE'? 'PATTERN' header=Header 'ADDRESS' identifier=ID
-	//	| ('INLINE' | 'UNSAFE')? 'FUNCTION' header=Header statements+=Statement* 'END' function_name=Name | // Nossa função possuí um header, os seus statements e o nome da função
-	//	'FACTORY' header=Header statements+=Statement* 'END' factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
+	//	('UNSAFE' | 'unsafe')? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=ID | ('UNSAFE' |
+	//	'unsafe')? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=ID | (('INLINE' | 'inline') |
+	//	('UNSAFE' | 'unsafe'))? ('FUNCTION' | 'function') header=Header statements+=Statement* ('END' | 'end')
+	//	function_name=Name | ('FACTORY' | 'factory') header=Header statements+=Statement* ('END' | 'end') factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
 	//;
 	public DefinitionElements getDefinitionAccess() {
 		return pDefinition;
@@ -1354,7 +1549,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Helpinfo:
-	//	'COMMENT' string_literal=STRING;
+	//	('COMMENT' | 'comment') string_literal=STRING;
 	public HelpinfoElements getHelpinfoAccess() {
 		return pHelpinfo;
 	}
@@ -1437,7 +1632,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ColumnType:
-	//	':' 'BAT' '[' ':' ColElmType ']';
+	//	':' ('BAT' | 'bat') '[' ':' ColElmType ']';
 	public ColumnTypeElements getColumnTypeAccess() {
 		return pColumnType;
 	}
@@ -1478,7 +1673,8 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Flow:
-	//	'RETURN' | 'BARRIER' | 'CATCH' | 'LEAVE' | 'REDO' | 'RAISE';
+	//	('RETURN' | 'return') | ('BARRIER' | 'barrier') | ('CATCH' | 'catch') | ('LEAVE' | 'leave') | ('REDO' | 'redo') |
+	//	('RAISE' | 'raise');
 	public FlowElements getFlowAccess() {
 		return pFlow;
 	}

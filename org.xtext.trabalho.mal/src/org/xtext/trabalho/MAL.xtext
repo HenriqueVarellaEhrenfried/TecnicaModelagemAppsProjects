@@ -11,22 +11,22 @@ Statement:
 ;
 
 ModuleStmt:
-	'MODULE' ident=ID | 'ATOM' ident=ID (':' second_ident?=ID)?
+	('MODULE' | 'module') ident=ID | ('ATOM' | 'atom') ident=ID (':' second_ident?=ID)?
 ;
 
 IncludeStmt:
-	'INCLUDE' identifier=ID | 'INCLUDE' string_literal=STRING
+	('INCLUDE' | 'include') identifier=ID | ('INCLUDE' | 'include') string_literal=STRING
 ;
 
 Definition:
-	('UNSAFE')? 'COMMAND' header=Header 'ADDRESS' identifier=ID | //Nosso Comando possuí um header e um identificador
-	('UNSAFE')? 'PATTERN' header=Header 'ADDRESS' identifier=ID | //Nosso Pattern possuí um header e um identificador
-	('INLINE' | 'UNSAFE' )? 'FUNCTION' header=Header (statements+=Statement)* 'END' function_name=Name | // Nossa função possuí um header, os seus statements e o nome da função
-	'FACTORY' header=Header (statements+=Statement)* 'END' factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
+	(('UNSAFE' | 'unsafe'))? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=ID | //Nosso Comando possuí um header e um identificador
+	(('UNSAFE' | 'unsafe'))? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=ID | //Nosso Pattern possuí um header e um identificador
+	(('INLINE' | 'inline') | ('UNSAFE' | 'unsafe'))? ('FUNCTION' | 'function') header=Header (statements+=Statement)* ('END' | 'end') function_name=Name | // Nossa função possuí um header, os seus statements e o nome da função
+	('FACTORY' | 'factory') header=Header (statements+=Statement)* ('END' | 'end') factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
 ;
 
 Helpinfo:
-	'COMMENT' string_literal=STRING
+	('COMMENT' | 'comment') string_literal=STRING
 ;
 
 Header:
@@ -59,7 +59,7 @@ ScalarType:
 ;
 
 ColumnType:
-	':' 'BAT' '[' ':' ColElmType ']'
+	':' ('BAT' | 'bat') '[' ':' ColElmType ']'
 ;
 
 ColElmType:
@@ -75,7 +75,7 @@ Stmt:
 ;
 
 Flow:
-	'RETURN'  | 'BARRIER' | 'CATCH' | 'LEAVE' | 'REDO' | 'RAISE'
+	('RETURN' | 'return' ) | ('BARRIER' | 'barrier') | ('CATCH' | 'catch') | ('LEAVE' | 'leave') | ('REDO' | 'redo') | ('RAISE' | 'raise')
 ;
 
 Varlist:
@@ -111,7 +111,7 @@ ModuleName:
 ;
 
 Literal_constant:
-	BIT | Bte | CHR | WRD | INT | OID | FLT | STR //| Sht | LNG | DBL
+	BIT | Bte | CHR | WRD | INT | OID | FLT | STR   //| Sht | LNG | DBL
 ;
 
 terminal BIT:
