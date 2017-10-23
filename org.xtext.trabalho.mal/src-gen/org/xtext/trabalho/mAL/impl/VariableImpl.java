@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.Variable;
@@ -25,7 +26,7 @@ import org.xtext.trabalho.mAL.Variable;
  *
  * @generated
  */
-public class VariableImpl extends FactorImpl implements Variable
+public class VariableImpl extends MinimalEObjectImpl.Container implements Variable
 {
   /**
    * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.

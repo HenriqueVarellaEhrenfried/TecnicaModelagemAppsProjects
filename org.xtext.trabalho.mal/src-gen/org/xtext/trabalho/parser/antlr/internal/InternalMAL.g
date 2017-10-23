@@ -228,9 +228,9 @@ ruleModuleStmt returns [EObject current=null]
 			)
 			(
 				(
-					lv_ident_2_0=RULE_ID
+					lv_ident_2_0=RULE_WRD
 					{
-						newLeafNode(lv_ident_2_0, grammarAccess.getModuleStmtAccess().getIdentIDTerminalRuleCall_0_1_0());
+						newLeafNode(lv_ident_2_0, grammarAccess.getModuleStmtAccess().getIdentWRDTerminalRuleCall_0_1_0());
 					}
 					{
 						if ($current==null) {
@@ -240,7 +240,7 @@ ruleModuleStmt returns [EObject current=null]
 							$current,
 							"ident",
 							lv_ident_2_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"org.xtext.trabalho.MAL.WRD");
 					}
 				)
 			)
@@ -260,9 +260,9 @@ ruleModuleStmt returns [EObject current=null]
 			)
 			(
 				(
-					lv_ident_5_0=RULE_ID
+					lv_ident_5_0=RULE_WRD
 					{
-						newLeafNode(lv_ident_5_0, grammarAccess.getModuleStmtAccess().getIdentIDTerminalRuleCall_1_1_0());
+						newLeafNode(lv_ident_5_0, grammarAccess.getModuleStmtAccess().getIdentWRDTerminalRuleCall_1_1_0());
 					}
 					{
 						if ($current==null) {
@@ -272,7 +272,7 @@ ruleModuleStmt returns [EObject current=null]
 							$current,
 							"ident",
 							lv_ident_5_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"org.xtext.trabalho.MAL.WRD");
 					}
 				)
 			)
@@ -283,9 +283,9 @@ ruleModuleStmt returns [EObject current=null]
 				}
 				(
 					(
-						lv_second_ident_7_0=RULE_ID
+						lv_second_ident_7_0=RULE_WRD
 						{
-							newLeafNode(lv_second_ident_7_0, grammarAccess.getModuleStmtAccess().getSecond_identIDTerminalRuleCall_1_2_1_0());
+							newLeafNode(lv_second_ident_7_0, grammarAccess.getModuleStmtAccess().getSecond_identWRDTerminalRuleCall_1_2_1_0());
 						}
 						{
 							if ($current==null) {
@@ -295,7 +295,7 @@ ruleModuleStmt returns [EObject current=null]
 								$current,
 								"second_ident",
 								true,
-								"org.eclipse.xtext.common.Terminals.ID");
+								"org.xtext.trabalho.MAL.WRD");
 						}
 					)
 				)
@@ -334,9 +334,9 @@ ruleIncludeStmt returns [EObject current=null]
 			)
 			(
 				(
-					lv_identifier_2_0=RULE_ID
+					lv_identifier_2_0=RULE_WRD
 					{
-						newLeafNode(lv_identifier_2_0, grammarAccess.getIncludeStmtAccess().getIdentifierIDTerminalRuleCall_0_1_0());
+						newLeafNode(lv_identifier_2_0, grammarAccess.getIncludeStmtAccess().getIdentifierWRDTerminalRuleCall_0_1_0());
 					}
 					{
 						if ($current==null) {
@@ -346,7 +346,7 @@ ruleIncludeStmt returns [EObject current=null]
 							$current,
 							"identifier",
 							lv_identifier_2_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"org.xtext.trabalho.MAL.WRD");
 					}
 				)
 			)
@@ -457,9 +457,9 @@ ruleDefinition returns [EObject current=null]
 			)
 			(
 				(
-					lv_identifier_7_0=RULE_ID
+					lv_identifier_7_0=RULE_WRD
 					{
-						newLeafNode(lv_identifier_7_0, grammarAccess.getDefinitionAccess().getIdentifierIDTerminalRuleCall_0_4_0());
+						newLeafNode(lv_identifier_7_0, grammarAccess.getDefinitionAccess().getIdentifierWRDTerminalRuleCall_0_4_0());
 					}
 					{
 						if ($current==null) {
@@ -469,7 +469,7 @@ ruleDefinition returns [EObject current=null]
 							$current,
 							"identifier",
 							lv_identifier_7_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"org.xtext.trabalho.MAL.WRD");
 					}
 				)
 			)
@@ -530,9 +530,9 @@ ruleDefinition returns [EObject current=null]
 			)
 			(
 				(
-					lv_identifier_15_0=RULE_ID
+					lv_identifier_15_0=RULE_WRD
 					{
-						newLeafNode(lv_identifier_15_0, grammarAccess.getDefinitionAccess().getIdentifierIDTerminalRuleCall_1_4_0());
+						newLeafNode(lv_identifier_15_0, grammarAccess.getDefinitionAccess().getIdentifierWRDTerminalRuleCall_1_4_0());
 					}
 					{
 						if ($current==null) {
@@ -542,7 +542,7 @@ ruleDefinition returns [EObject current=null]
 							$current,
 							"identifier",
 							lv_identifier_15_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"org.xtext.trabalho.MAL.WRD");
 					}
 				)
 			)
@@ -888,29 +888,24 @@ ruleName returns [EObject current=null]
 }:
 	(
 		(
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getNameRule());
-						}
-					}
-					otherlv_0=RULE_ID
-					{
-						newLeafNode(otherlv_0, grammarAccess.getNameAccess().getMnModuleNameCrossReference_0_0_0());
-					}
-				)
-			)
+			{
+				newCompositeNode(grammarAccess.getNameAccess().getModuleNameParserRuleCall_0_0());
+			}
+			this_ModuleName_0=ruleModuleName
+			{
+				$current = $this_ModuleName_0.current;
+				afterParserOrEnumRuleCall();
+			}
 			otherlv_1='.'
 			{
 				newLeafNode(otherlv_1, grammarAccess.getNameAccess().getFullStopKeyword_0_1());
 			}
-		)*
+		)?
 		(
 			(
-				lv_id_2_0=RULE_ID
+				lv_id_2_0=RULE_WRD
 				{
-					newLeafNode(lv_id_2_0, grammarAccess.getNameAccess().getIdIDTerminalRuleCall_1_0());
+					newLeafNode(lv_id_2_0, grammarAccess.getNameAccess().getIdWRDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -920,7 +915,7 @@ ruleName returns [EObject current=null]
 						$current,
 						"id",
 						lv_id_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.xtext.trabalho.MAL.WRD");
 				}
 			)
 		)
@@ -1054,9 +1049,9 @@ ruleBinding returns [EObject current=null]
 	(
 		(
 			(
-				lv_identifier_0_0=RULE_ID
+				lv_identifier_0_0=RULE_WRD
 				{
-					newLeafNode(lv_identifier_0_0, grammarAccess.getBindingAccess().getIdentifierIDTerminalRuleCall_0_0());
+					newLeafNode(lv_identifier_0_0, grammarAccess.getBindingAccess().getIdentifierWRDTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -1066,7 +1061,7 @@ ruleBinding returns [EObject current=null]
 						$current,
 						"identifier",
 						lv_identifier_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.xtext.trabalho.MAL.WRD");
 				}
 			)
 		)
@@ -1165,9 +1160,9 @@ ruleScalarType returns [EObject current=null]
 		}
 		(
 			(
-				lv_identifier_1_0=RULE_ID
+				lv_identifier_1_0=RULE_WRD
 				{
-					newLeafNode(lv_identifier_1_0, grammarAccess.getScalarTypeAccess().getIdentifierIDTerminalRuleCall_1_0());
+					newLeafNode(lv_identifier_1_0, grammarAccess.getScalarTypeAccess().getIdentifierWRDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -1177,7 +1172,7 @@ ruleScalarType returns [EObject current=null]
 						$current,
 						"identifier",
 						lv_identifier_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.xtext.trabalho.MAL.WRD");
 				}
 			)
 		)
@@ -1311,9 +1306,9 @@ ruleAnyType returns [EObject current=null]
 			}
 			(
 				(
-					lv_digit_2_0=RULE_ID
+					lv_digit_2_0=RULE_WRD
 					{
-						newLeafNode(lv_digit_2_0, grammarAccess.getAnyTypeAccess().getDigitIDTerminalRuleCall_1_1_0());
+						newLeafNode(lv_digit_2_0, grammarAccess.getAnyTypeAccess().getDigitWRDTerminalRuleCall_1_1_0());
 					}
 					{
 						if ($current==null) {
@@ -1323,7 +1318,7 @@ ruleAnyType returns [EObject current=null]
 							$current,
 							"digit",
 							lv_digit_2_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"org.xtext.trabalho.MAL.WRD");
 					}
 				)
 			)
@@ -1625,9 +1620,9 @@ ruleVariable returns [EObject current=null]
 }:
 	(
 		(
-			lv_identifier_0_0=RULE_ID
+			lv_identifier_0_0=RULE_WRD
 			{
-				newLeafNode(lv_identifier_0_0, grammarAccess.getVariableAccess().getIdentifierIDTerminalRuleCall_0());
+				newLeafNode(lv_identifier_0_0, grammarAccess.getVariableAccess().getIdentifierWRDTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -1637,7 +1632,7 @@ ruleVariable returns [EObject current=null]
 					$current,
 					"identifier",
 					lv_identifier_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"org.xtext.trabalho.MAL.WRD");
 			}
 		)
 	)
@@ -1820,15 +1815,6 @@ ruleFactor returns [EObject current=null]
 				newLeafNode(otherlv_3, grammarAccess.getFactorAccess().getNILKeyword_1_1());
 			}
 		)
-		    |
-		{
-			newCompositeNode(grammarAccess.getFactorAccess().getVariableParserRuleCall_2());
-		}
-		this_Variable_4=ruleVariable
-		{
-			$current = $this_Variable_4.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -1989,9 +1975,9 @@ ruleModuleName returns [EObject current=null]
 }:
 	(
 		(
-			lv_identifier_0_0=RULE_ID
+			lv_identifier_0_0=RULE_WRD
 			{
-				newLeafNode(lv_identifier_0_0, grammarAccess.getModuleNameAccess().getIdentifierIDTerminalRuleCall_0());
+				newLeafNode(lv_identifier_0_0, grammarAccess.getModuleNameAccess().getIdentifierWRDTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -2001,7 +1987,7 @@ ruleModuleName returns [EObject current=null]
 					$current,
 					"identifier",
 					lv_identifier_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"org.xtext.trabalho.MAL.WRD");
 			}
 		)
 	)

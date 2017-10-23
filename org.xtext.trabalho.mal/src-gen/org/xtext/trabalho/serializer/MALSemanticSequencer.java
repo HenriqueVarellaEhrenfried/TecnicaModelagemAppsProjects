@@ -91,8 +91,15 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_IncludeStmt(context, (IncludeStmt) semanticObject); 
 				return; 
 			case MALPackage.MODULE_NAME:
-				sequence_ModuleName(context, (ModuleName) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getModuleNameRule()) {
+					sequence_ModuleName(context, (ModuleName) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getNameRule()) {
+					sequence_ModuleName_Name(context, (ModuleName) semanticObject); 
+					return; 
+				}
+				else break;
 			case MALPackage.MODULE_STMT:
 				if (rule == grammarAccess.getModuleStmtRule()) {
 					sequence_ModuleStmt(context, (ModuleStmt) semanticObject); 
@@ -119,16 +126,8 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_Stmt(context, (Stmt) semanticObject); 
 				return; 
 			case MALPackage.VARIABLE:
-				if (rule == grammarAccess.getArgsRule()) {
-					sequence_Args_Variable(context, (Variable) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getVariableRule()
-						|| rule == grammarAccess.getFactorRule()) {
-					sequence_Variable(context, (Variable) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Variable(context, (Variable) semanticObject); 
+				return; 
 			case MALPackage.VARLIST:
 				sequence_Varlist(context, (Varlist) semanticObject); 
 				return; 
@@ -146,7 +145,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AnyType returns AnyType
 	 *
 	 * Constraint:
-	 *     (type='any' digit=ID?)
+	 *     (type='any' digit=WRD?)
 	 */
 	protected void sequence_AnyType(ISerializationContext context, AnyType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -167,22 +166,10 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Args returns Variable
-	 *
-	 * Constraint:
-	 *     (identifier=ID factor1+=Factor*)
-	 */
-	protected void sequence_Args_Variable(ISerializationContext context, Variable semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Binding returns Binding
 	 *
 	 * Constraint:
-	 *     (identifier=ID type=TypeName)
+	 *     (identifier=WRD type=TypeName)
 	 */
 	protected void sequence_Binding(ISerializationContext context, Binding semanticObject) {
 		if (errorAcceptor != null) {
@@ -192,7 +179,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.BINDING__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBindingAccess().getIdentifierIDTerminalRuleCall_0_0(), semanticObject.getIdentifier());
+		feeder.accept(grammarAccess.getBindingAccess().getIdentifierWRDTerminalRuleCall_0_0(), semanticObject.getIdentifier());
 		feeder.accept(grammarAccess.getBindingAccess().getTypeTypeNameParserRuleCall_1_0(), semanticObject.getType());
 		feeder.finish();
 	}
@@ -204,8 +191,8 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         (header=Header identifier=ID) | 
-	 *         (header=Header identifier=ID) | 
+	 *         (header=Header identifier=WRD) | 
+	 *         (header=Header identifier=WRD) | 
 	 *         (header=Header statements+=Statement* function_name=Name) | 
 	 *         (header=Header statements+=Statement* factory_name=Name)
 	 *     )
@@ -222,8 +209,8 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             (header=Header identifier=ID) | 
-	 *             (header=Header identifier=ID) | 
+	 *             (header=Header identifier=WRD) | 
+	 *             (header=Header identifier=WRD) | 
 	 *             (header=Header statements+=Statement* function_name=Name) | 
 	 *             (header=Header statements+=Statement* factory_name=Name)
 	 *         ) 
@@ -320,7 +307,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IncludeStmt returns IncludeStmt
 	 *
 	 * Constraint:
-	 *     (identifier=ID | string_literal=STRING)
+	 *     (identifier=WRD | string_literal=STRING)
 	 */
 	protected void sequence_IncludeStmt(ISerializationContext context, IncludeStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -332,7 +319,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ModuleName returns ModuleName
 	 *
 	 * Constraint:
-	 *     identifier=ID
+	 *     identifier=WRD
 	 */
 	protected void sequence_ModuleName(ISerializationContext context, ModuleName semanticObject) {
 		if (errorAcceptor != null) {
@@ -340,7 +327,28 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.MODULE_NAME__IDENTIFIER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModuleNameAccess().getIdentifierIDTerminalRuleCall_0(), semanticObject.getIdentifier());
+		feeder.accept(grammarAccess.getModuleNameAccess().getIdentifierWRDTerminalRuleCall_0(), semanticObject.getIdentifier());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Name returns ModuleName
+	 *
+	 * Constraint:
+	 *     (identifier=WRD id=WRD)
+	 */
+	protected void sequence_ModuleName_Name(ISerializationContext context, ModuleName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.MODULE_NAME__IDENTIFIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.MODULE_NAME__IDENTIFIER));
+			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.NAME__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.NAME__ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModuleNameAccess().getIdentifierWRDTerminalRuleCall_0(), semanticObject.getIdentifier());
+		feeder.accept(grammarAccess.getNameAccess().getIdWRDTerminalRuleCall_1_0(), semanticObject.getId());
 		feeder.finish();
 	}
 	
@@ -350,7 +358,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ModuleStmt returns ModuleStmt
 	 *
 	 * Constraint:
-	 *     (ident=ID | (ident=ID second_ident?=ID?))
+	 *     (ident=WRD | (ident=WRD second_ident?=WRD?))
 	 */
 	protected void sequence_ModuleStmt(ISerializationContext context, ModuleStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -362,7 +370,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Statement returns ModuleStmt
 	 *
 	 * Constraint:
-	 *     ((ident=ID | (ident=ID second_ident?=ID?)) help?=Helpinfo?)
+	 *     ((ident=WRD | (ident=WRD second_ident?=WRD?)) help?=Helpinfo?)
 	 */
 	protected void sequence_ModuleStmt_Statement(ISerializationContext context, ModuleStmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -374,10 +382,16 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Name returns Name
 	 *
 	 * Constraint:
-	 *     (mn+=[ModuleName|ID]* id=ID)
+	 *     id=WRD
 	 */
 	protected void sequence_Name(ISerializationContext context, Name semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MALPackage.Literals.NAME__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.NAME__ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNameAccess().getIdWRDTerminalRuleCall_1_0(), semanticObject.getId());
+		feeder.finish();
 	}
 	
 	
@@ -415,7 +429,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ColElmType returns ScalarType
 	 *
 	 * Constraint:
-	 *     identifier=ID
+	 *     identifier=WRD
 	 */
 	protected void sequence_ScalarType(ISerializationContext context, ScalarType semanticObject) {
 		if (errorAcceptor != null) {
@@ -423,7 +437,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.SCALAR_TYPE__IDENTIFIER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getScalarTypeAccess().getIdentifierIDTerminalRuleCall_1_0(), semanticObject.getIdentifier());
+		feeder.accept(grammarAccess.getScalarTypeAccess().getIdentifierWRDTerminalRuleCall_1_0(), semanticObject.getIdentifier());
 		feeder.finish();
 	}
 	
@@ -444,10 +458,9 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Variable returns Variable
-	 *     Factor returns Variable
 	 *
 	 * Constraint:
-	 *     identifier=ID
+	 *     identifier=WRD
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
 		if (errorAcceptor != null) {
@@ -455,7 +468,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MALPackage.Literals.VARIABLE__IDENTIFIER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableAccess().getIdentifierIDTerminalRuleCall_0(), semanticObject.getIdentifier());
+		feeder.accept(grammarAccess.getVariableAccess().getIdentifierWRDTerminalRuleCall_0(), semanticObject.getIdentifier());
 		feeder.finish();
 	}
 	

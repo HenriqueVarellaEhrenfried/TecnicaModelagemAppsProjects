@@ -36,7 +36,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MAL.ecore#//Header/return_type"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Name">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MAL.ecore#//Name/mn"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MAL.ecore#//Name/id"/>
     </genClasses>
     <genClasses ecoreClass="MAL.ecore#//Result"/>

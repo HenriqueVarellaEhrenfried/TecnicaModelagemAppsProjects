@@ -11,16 +11,16 @@ Statement:
 ;
 
 ModuleStmt:
-	('MODULE' | 'module') ident=ID | ('ATOM' | 'atom') ident=ID (':' second_ident?=ID)?
+	('MODULE' | 'module') ident=WRD | ('ATOM' | 'atom') ident=WRD (':' second_ident?=WRD)?
 ;
 
 IncludeStmt:
-	('INCLUDE' | 'include') identifier=ID | ('INCLUDE' | 'include') string_literal=STRING
+	('INCLUDE' | 'include') identifier=WRD | ('INCLUDE' | 'include') string_literal=STRING
 ;
 
 Definition:
-	(('UNSAFE' | 'unsafe'))? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=ID | //Nosso Comando possuí um header e um identificador
-	(('UNSAFE' | 'unsafe'))? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=ID | //Nosso Pattern possuí um header e um identificador
+	(('UNSAFE' | 'unsafe'))? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=WRD | //Nosso Comando possuí um header e um identificador
+	(('UNSAFE' | 'unsafe'))? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=WRD | //Nosso Pattern possuí um header e um identificador
 	(('INLINE' | 'inline') | ('UNSAFE' | 'unsafe'))? ('FUNCTION' | 'function') header=Header (statements+=Statement)* ('END' | 'end') function_name=Name | // Nossa função possuí um header, os seus statements e o nome da função
 	('FACTORY' | 'factory') header=Header (statements+=Statement)* ('END' | 'end') factory_name=Name // Nossa factory possuí um header, os seus statements e o nome da função
 ;
@@ -34,7 +34,7 @@ Header:
 ;
 
 Name:
-	(mn+=[ModuleName] '.')* id=ID // TODO: Descobrir o que é ModuleName
+	(ModuleName '.')? id=WRD // TODO: Descobrir o que é ModuleName
 ;
 
 
@@ -47,7 +47,7 @@ Params:
 ;
 
 Binding:
-	identifier=ID type=TypeName
+	identifier=WRD type=TypeName
 ;
 
 TypeName:
@@ -55,7 +55,7 @@ TypeName:
 ;
 
 ScalarType:
-	':' identifier=ID
+	':' identifier=WRD
 ;
 
 ColumnType:
@@ -67,7 +67,7 @@ ColElmType:
 ;
 
 AnyType:
-	type='any' ('_' digit=ID)?
+	type='any' ('_' digit=WRD)?
 ;
 
 Stmt:
@@ -83,7 +83,7 @@ Varlist:
 ;
 
 Variable:
-	identifier=ID
+	identifier=WRD
 ;
 
 Expr:
@@ -95,7 +95,7 @@ Operator:
 ;
 
 Factor:
-	{Factor}Literal_constant | {Factor}'NIL' | Variable // {Factor} foi colocado porque quando o retorno de uma regra é uma string tipo 'NIL' o objeto não é criado, então ele garante a criação 
+	{Factor}Literal_constant | {Factor}'NIL'  // {Factor} foi colocado porque quando o retorno de uma regra é uma string tipo 'NIL' o objeto não é criado, então ele garante a criação 
 ;
 
 Fcncall:
@@ -107,7 +107,7 @@ Args:
 ;
 
 ModuleName:
-	identifier=ID
+	identifier=WRD
 ;
 
 Literal_constant:

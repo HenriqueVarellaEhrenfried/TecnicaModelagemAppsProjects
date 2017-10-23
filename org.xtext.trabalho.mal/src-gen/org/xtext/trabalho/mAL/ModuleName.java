@@ -3,7 +3,6 @@
  */
 package org.xtext.trabalho.mAL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ModuleName extends EObject
+public interface ModuleName extends Name
 {
   /**
    * Returns the value of the '<em><b>Identifier</b></em>' attribute.

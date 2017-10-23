@@ -222,8 +222,6 @@ public class MALSwitch<T> extends Switch<T>
       {
         Variable variable = (Variable)theEObject;
         T result = caseVariable(variable);
-        if (result == null) result = caseFactor(variable);
-        if (result == null) result = caseArgs(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -261,6 +259,7 @@ public class MALSwitch<T> extends Switch<T>
       {
         ModuleName moduleName = (ModuleName)theEObject;
         T result = caseModuleName(moduleName);
+        if (result == null) result = caseName(moduleName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

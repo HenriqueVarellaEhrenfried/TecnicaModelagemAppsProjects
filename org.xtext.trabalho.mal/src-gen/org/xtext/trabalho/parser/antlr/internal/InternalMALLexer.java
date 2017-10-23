@@ -30,11 +30,11 @@ public class InternalMALLexer extends Lexer {
     public static final int T__54=54;
     public static final int T__60=60;
     public static final int T__61=61;
-    public static final int RULE_ID=4;
+    public static final int RULE_ID=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=9;
+    public static final int RULE_INT=8;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int T__66=66;
@@ -46,7 +46,7 @@ public class InternalMALLexer extends Lexer {
     public static final int T__25=25;
     public static final int T__62=62;
     public static final int T__63=63;
-    public static final int RULE_WRD=8;
+    public static final int RULE_WRD=4;
     public static final int T__20=20;
     public static final int T__64=64;
     public static final int T__21=21;
@@ -60,7 +60,7 @@ public class InternalMALLexer extends Lexer {
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int RULE_OID=10;
+    public static final int RULE_OID=9;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -1218,8 +1218,8 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_BIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2238:10: ( ( '0' | '1' ) )
-            // InternalMAL.g:2238:12: ( '0' | '1' )
+            // InternalMAL.g:2224:10: ( ( '0' | '1' ) )
+            // InternalMAL.g:2224:12: ( '0' | '1' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='1') ) {
                 input.consume();
@@ -1246,8 +1246,8 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_CHR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2240:10: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' ) )
-            // InternalMAL.g:2240:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )
+            // InternalMAL.g:2226:10: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' ) )
+            // InternalMAL.g:2226:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1274,8 +1274,8 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_WRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2242:10: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalMAL.g:2242:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMAL.g:2228:10: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalMAL.g:2228:12: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1286,7 +1286,7 @@ public class InternalMALLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMAL.g:2242:36: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMAL.g:2228:36: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -1335,11 +1335,11 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_OID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2244:10: ( '1' .. '9' ( '0' .. '9' )* )
-            // InternalMAL.g:2244:12: '1' .. '9' ( '0' .. '9' )*
+            // InternalMAL.g:2230:10: ( '1' .. '9' ( '0' .. '9' )* )
+            // InternalMAL.g:2230:12: '1' .. '9' ( '0' .. '9' )*
             {
             matchRange('1','9'); 
-            // InternalMAL.g:2244:21: ( '0' .. '9' )*
+            // InternalMAL.g:2230:21: ( '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1352,7 +1352,7 @@ public class InternalMALLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalMAL.g:2244:22: '0' .. '9'
+            	    // InternalMAL.g:2230:22: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1380,10 +1380,10 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2246:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalMAL.g:2246:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMAL.g:2232:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalMAL.g:2232:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalMAL.g:2246:11: ( '^' )?
+            // InternalMAL.g:2232:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1392,7 +1392,7 @@ public class InternalMALLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalMAL.g:2246:11: '^'
+                    // InternalMAL.g:2232:11: '^'
                     {
                     match('^'); 
 
@@ -1410,7 +1410,7 @@ public class InternalMALLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMAL.g:2246:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMAL.g:2232:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -1459,10 +1459,10 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2248:10: ( ( '0' .. '9' )+ )
-            // InternalMAL.g:2248:12: ( '0' .. '9' )+
+            // InternalMAL.g:2234:10: ( ( '0' .. '9' )+ )
+            // InternalMAL.g:2234:12: ( '0' .. '9' )+
             {
-            // InternalMAL.g:2248:12: ( '0' .. '9' )+
+            // InternalMAL.g:2234:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -1476,7 +1476,7 @@ public class InternalMALLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalMAL.g:2248:13: '0' .. '9'
+            	    // InternalMAL.g:2234:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1508,10 +1508,10 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2250:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalMAL.g:2250:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMAL.g:2236:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalMAL.g:2236:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalMAL.g:2250:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMAL.g:2236:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1529,10 +1529,10 @@ public class InternalMALLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalMAL.g:2250:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalMAL.g:2236:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalMAL.g:2250:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalMAL.g:2236:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1548,7 +1548,7 @@ public class InternalMALLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalMAL.g:2250:21: '\\\\' .
+                    	    // InternalMAL.g:2236:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1556,7 +1556,7 @@ public class InternalMALLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMAL.g:2250:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalMAL.g:2236:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1581,10 +1581,10 @@ public class InternalMALLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMAL.g:2250:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalMAL.g:2236:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalMAL.g:2250:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalMAL.g:2236:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1600,7 +1600,7 @@ public class InternalMALLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // InternalMAL.g:2250:54: '\\\\' .
+                    	    // InternalMAL.g:2236:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1608,7 +1608,7 @@ public class InternalMALLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMAL.g:2250:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalMAL.g:2236:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1651,12 +1651,12 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2252:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMAL.g:2252:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMAL.g:2238:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMAL.g:2238:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMAL.g:2252:24: ( options {greedy=false; } : . )*
+            // InternalMAL.g:2238:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1681,7 +1681,7 @@ public class InternalMALLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalMAL.g:2252:52: .
+            	    // InternalMAL.g:2238:52: .
             	    {
             	    matchAny(); 
 
@@ -1711,12 +1711,12 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2254:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMAL.g:2254:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMAL.g:2240:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMAL.g:2240:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMAL.g:2254:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMAL.g:2240:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1729,7 +1729,7 @@ public class InternalMALLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalMAL.g:2254:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMAL.g:2240:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1749,7 +1749,7 @@ public class InternalMALLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMAL.g:2254:40: ( ( '\\r' )? '\\n' )?
+            // InternalMAL.g:2240:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1758,9 +1758,9 @@ public class InternalMALLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalMAL.g:2254:41: ( '\\r' )? '\\n'
+                    // InternalMAL.g:2240:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMAL.g:2254:41: ( '\\r' )?
+                    // InternalMAL.g:2240:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1769,7 +1769,7 @@ public class InternalMALLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalMAL.g:2254:41: '\\r'
+                            // InternalMAL.g:2240:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1801,10 +1801,10 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2256:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMAL.g:2256:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMAL.g:2242:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMAL.g:2242:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMAL.g:2256:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMAL.g:2242:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1858,8 +1858,8 @@ public class InternalMALLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMAL.g:2258:16: ( . )
-            // InternalMAL.g:2258:18: .
+            // InternalMAL.g:2244:16: ( . )
+            // InternalMAL.g:2244:18: .
             {
             matchAny(); 
 

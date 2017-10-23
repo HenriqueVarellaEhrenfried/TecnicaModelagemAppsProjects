@@ -3,6 +3,7 @@
  */
 package org.xtext.trabalho.mAL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package org.xtext.trabalho.mAL;
  * @model
  * @generated
  */
-public interface Variable extends Factor
+public interface Variable extends EObject
 {
   /**
    * Returns the value of the '<em><b>Identifier</b></em>' attribute.

@@ -72,10 +72,10 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getFlowRule())
 			return getFlowToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getIDRule())
-			return getIDToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getLiteral_constantRule())
 			return getLiteral_constantToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getWRDRule())
+			return getWRDToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -91,15 +91,6 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-	 */
-	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
-	
-	/**
 	 * Literal_constant:
 	 * 	BIT | Bte | CHR | WRD | INT | OID | FLT | STR   ;
 	 */
@@ -107,6 +98,17 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "0";
+	}
+	
+	/**
+	 * terminal WRD:
+	 * 	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+	 * ;
+	 */
+	protected String getWRDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
 	}
 	
 	@Override
@@ -161,10 +163,10 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Ambiguous syntax:
-	 *     'BAT' | 'bat'
+	 *     'bat' | 'BAT'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) ':' (ambiguity) '[' ':' ':' identifier=ID
+	 *     (rule start) ':' (ambiguity) '[' ':' ':' identifier=WRD
 	 *     (rule start) ':' (ambiguity) '[' ':' type='any'
 	 */
 	protected void emit_ColumnType_BATKeyword_1_0_or_BatKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -173,7 +175,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ':' | (':' ('BAT' | 'bat') '[' ':')
+	 *     ':' | (':' ('bat' | 'BAT') '[' ':')
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) type='any'
@@ -184,10 +186,10 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (':' ('BAT' | 'bat') '[' ':')?
+	 *     (':' ('bat' | 'BAT') '[' ':')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) ':' identifier=ID
+	 *     (rule start) (ambiguity) ':' identifier=WRD
 	 */
 	protected void emit_ColumnType___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -198,7 +200,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'address' | 'ADDRESS'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     header=Header (ambiguity) identifier=ID
+	 *     header=Header (ambiguity) identifier=WRD
 	 */
 	protected void emit_Definition_ADDRESSKeyword_0_3_0_or_AddressKeyword_0_3_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -209,7 +211,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'address' | 'ADDRESS'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     header=Header (ambiguity) identifier=ID
+	 *     header=Header (ambiguity) identifier=WRD
 	 */
 	protected void emit_Definition_ADDRESSKeyword_1_3_0_or_AddressKeyword_1_3_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -217,10 +219,11 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'command' | 'COMMAND'
+	 *     'COMMAND' | 'command'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) ('UNSAFE' | 'unsafe')? (ambiguity) header=Header
+	 *     (rule start) ('unsafe' | 'UNSAFE')? (ambiguity) header=Header
 	 */
 	protected void emit_Definition_COMMANDKeyword_0_1_0_or_CommandKeyword_0_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -228,7 +231,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'END' | 'end'
+	 *     'end' | 'END'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     header=Header (ambiguity) function_name=Name
@@ -252,7 +255,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'factory' | 'FACTORY'
+	 *     'FACTORY' | 'factory'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) header=Header
@@ -267,6 +270,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) ('INLINE' | 'inline' | 'UNSAFE' | 'unsafe')? (ambiguity) header=Header
+	 *     (rule start) ('INLINE' | 'unsafe' | 'UNSAFE' | 'inline')? (ambiguity) header=Header
 	 */
 	protected void emit_Definition_FUNCTIONKeyword_2_1_0_or_FunctionKeyword_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -285,7 +289,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('INLINE' | 'inline' | 'UNSAFE' | 'unsafe')?
+	 *     ('INLINE' | 'unsafe' | 'UNSAFE' | 'inline')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) ('FUNCTION' | 'function') header=Header
@@ -296,11 +300,10 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('UNSAFE' | 'unsafe')?
+	 *     ('unsafe' | 'UNSAFE')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) ('COMMAND' | 'command') header=Header
-	 *     (rule start) (ambiguity) ('command' | 'COMMAND') header=Header
 	 */
 	protected void emit_Definition___UNSAFEKeyword_0_0_0_or_UnsafeKeyword_0_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -319,7 +322,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'NIL' | Literal_constant
+	 *     Literal_constant | 'NIL'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) ',' factor1+=Factor
@@ -342,10 +345,10 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'include' | 'INCLUDE'
+	 *     'INCLUDE' | 'include'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) identifier=ID
+	 *     (rule start) (ambiguity) identifier=WRD
 	 */
 	protected void emit_IncludeStmt_INCLUDEKeyword_0_0_0_or_IncludeKeyword_0_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -353,7 +356,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'INCLUDE' | 'include'
+	 *     'include' | 'INCLUDE'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) string_literal=STRING
@@ -364,10 +367,10 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'atom' | 'ATOM'
+	 *     'ATOM' | 'atom'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) ident=ID
+	 *     (rule start) (ambiguity) ident=WRD
 	 */
 	protected void emit_ModuleStmt_ATOMKeyword_1_0_0_or_AtomKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -375,10 +378,10 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'module' | 'MODULE'
+	 *     'MODULE' | 'module'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) ident=ID
+	 *     (rule start) (ambiguity) ident=WRD
 	 */
 	protected void emit_ModuleStmt_MODULEKeyword_0_0_0_or_ModuleKeyword_0_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

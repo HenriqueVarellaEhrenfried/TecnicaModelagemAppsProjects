@@ -3,21 +3,14 @@
  */
 package org.xtext.trabalho.mAL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.xtext.trabalho.mAL.MALPackage;
-import org.xtext.trabalho.mAL.ModuleName;
 import org.xtext.trabalho.mAL.Name;
 
 /**
@@ -28,7 +21,6 @@ import org.xtext.trabalho.mAL.Name;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.trabalho.mAL.impl.NameImpl#getMn <em>Mn</em>}</li>
  *   <li>{@link org.xtext.trabalho.mAL.impl.NameImpl#getId <em>Id</em>}</li>
  * </ul>
  *
@@ -36,16 +28,6 @@ import org.xtext.trabalho.mAL.Name;
  */
 public class NameImpl extends MinimalEObjectImpl.Container implements Name
 {
-  /**
-   * The cached value of the '{@link #getMn() <em>Mn</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMn()
-   * @generated
-   * @ordered
-   */
-  protected EList<ModuleName> mn;
-
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -92,20 +74,6 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ModuleName> getMn()
-  {
-    if (mn == null)
-    {
-      mn = new EObjectResolvingEList<ModuleName>(ModuleName.class, this, MALPackage.NAME__MN);
-    }
-    return mn;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getId()
   {
     return id;
@@ -134,8 +102,6 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
   {
     switch (featureID)
     {
-      case MALPackage.NAME__MN:
-        return getMn();
       case MALPackage.NAME__ID:
         return getId();
     }
@@ -147,16 +113,11 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MALPackage.NAME__MN:
-        getMn().clear();
-        getMn().addAll((Collection<? extends ModuleName>)newValue);
-        return;
       case MALPackage.NAME__ID:
         setId((String)newValue);
         return;
@@ -174,9 +135,6 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
   {
     switch (featureID)
     {
-      case MALPackage.NAME__MN:
-        getMn().clear();
-        return;
       case MALPackage.NAME__ID:
         setId(ID_EDEFAULT);
         return;
@@ -194,8 +152,6 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
   {
     switch (featureID)
     {
-      case MALPackage.NAME__MN:
-        return mn != null && !mn.isEmpty();
       case MALPackage.NAME__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
     }

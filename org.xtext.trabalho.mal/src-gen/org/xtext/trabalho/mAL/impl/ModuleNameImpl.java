@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.trabalho.mAL.MALPackage;
 import org.xtext.trabalho.mAL.ModuleName;
@@ -26,7 +25,7 @@ import org.xtext.trabalho.mAL.ModuleName;
  *
  * @generated
  */
-public class ModuleNameImpl extends MinimalEObjectImpl.Container implements ModuleName
+public class ModuleNameImpl extends NameImpl implements ModuleName
 {
   /**
    * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.

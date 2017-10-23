@@ -345,22 +345,13 @@ public interface MALPackage extends EPackage
   int NAME = 7;
 
   /**
-   * The feature id for the '<em><b>Mn</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME__MN = 0;
-
-  /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME__ID = 1;
+  int NAME__ID = 0;
 
   /**
    * The number of structural features of the '<em>Name</em>' class.
@@ -369,7 +360,7 @@ public interface MALPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAME_FEATURE_COUNT = 2;
+  int NAME_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.ResultImpl <em>Result</em>}' class.
@@ -652,53 +643,6 @@ public interface MALPackage extends EPackage
   int VARLIST_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.ArgsImpl <em>Args</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.trabalho.mAL.impl.ArgsImpl
-   * @see org.xtext.trabalho.mAL.impl.MALPackageImpl#getArgs()
-   * @generated
-   */
-  int ARGS = 22;
-
-  /**
-   * The number of structural features of the '<em>Args</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGS_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.FactorImpl <em>Factor</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.trabalho.mAL.impl.FactorImpl
-   * @see org.xtext.trabalho.mAL.impl.MALPackageImpl#getFactor()
-   * @generated
-   */
-  int FACTOR = 20;
-
-  /**
-   * The feature id for the '<em><b>Factor1</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__FACTOR1 = ARGS_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Factor</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR_FEATURE_COUNT = ARGS_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.VariableImpl <em>Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -709,22 +653,13 @@ public interface MALPackage extends EPackage
   int VARIABLE = 18;
 
   /**
-   * The feature id for the '<em><b>Factor1</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__FACTOR1 = FACTOR__FACTOR1;
-
-  /**
    * The feature id for the '<em><b>Identifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE__IDENTIFIER = FACTOR_FEATURE_COUNT + 0;
+  int VARIABLE__IDENTIFIER = 0;
 
   /**
    * The number of structural features of the '<em>Variable</em>' class.
@@ -733,7 +668,7 @@ public interface MALPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = FACTOR_FEATURE_COUNT + 1;
+  int VARIABLE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.ExprImpl <em>Expr</em>}' class.
@@ -780,6 +715,53 @@ public interface MALPackage extends EPackage
    * @ordered
    */
   int EXPR_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.ArgsImpl <em>Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.trabalho.mAL.impl.ArgsImpl
+   * @see org.xtext.trabalho.mAL.impl.MALPackageImpl#getArgs()
+   * @generated
+   */
+  int ARGS = 22;
+
+  /**
+   * The number of structural features of the '<em>Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.FactorImpl <em>Factor</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.trabalho.mAL.impl.FactorImpl
+   * @see org.xtext.trabalho.mAL.impl.MALPackageImpl#getFactor()
+   * @generated
+   */
+  int FACTOR = 20;
+
+  /**
+   * The feature id for the '<em><b>Factor1</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR__FACTOR1 = ARGS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Factor</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTOR_FEATURE_COUNT = ARGS_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.trabalho.mAL.impl.FcncallImpl <em>Fcncall</em>}' class.
@@ -865,13 +847,22 @@ public interface MALPackage extends EPackage
   int MODULE_NAME = 23;
 
   /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_NAME__ID = NAME__ID;
+
+  /**
    * The feature id for the '<em><b>Identifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_NAME__IDENTIFIER = 0;
+  int MODULE_NAME__IDENTIFIER = NAME_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Module Name</em>' class.
@@ -880,7 +871,7 @@ public interface MALPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE_NAME_FEATURE_COUNT = 1;
+  int MODULE_NAME_FEATURE_COUNT = NAME_FEATURE_COUNT + 1;
 
 
   /**
@@ -1138,17 +1129,6 @@ public interface MALPackage extends EPackage
    * @generated
    */
   EClass getName_();
-
-  /**
-   * Returns the meta object for the reference list '{@link org.xtext.trabalho.mAL.Name#getMn <em>Mn</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Mn</em>'.
-   * @see org.xtext.trabalho.mAL.Name#getMn()
-   * @see #getName_()
-   * @generated
-   */
-  EReference getName_Mn();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.trabalho.mAL.Name#getId <em>Id</em>}'.
@@ -1760,14 +1740,6 @@ public interface MALPackage extends EPackage
      * @generated
      */
     EClass NAME = eINSTANCE.getName_();
-
-    /**
-     * The meta object literal for the '<em><b>Mn</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME__MN = eINSTANCE.getName_Mn();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.

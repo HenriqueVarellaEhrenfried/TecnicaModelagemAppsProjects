@@ -129,7 +129,6 @@ public class MALParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHeaderAccess().getHeader_nameAssignment_0(), "rule__Header__Header_nameAssignment_0");
 					put(grammarAccess.getHeaderAccess().getParamsAssignment_2(), "rule__Header__ParamsAssignment_2");
 					put(grammarAccess.getHeaderAccess().getReturn_typeAssignment_4(), "rule__Header__Return_typeAssignment_4");
-					put(grammarAccess.getNameAccess().getMnAssignment_0_0(), "rule__Name__MnAssignment_0_0");
 					put(grammarAccess.getNameAccess().getIdAssignment_1(), "rule__Name__IdAssignment_1");
 					put(grammarAccess.getParamsAccess().getBindAssignment_0(), "rule__Params__BindAssignment_0");
 					put(grammarAccess.getParamsAccess().getBindAssignment_1_1(), "rule__Params__BindAssignment_1_1");

@@ -521,19 +521,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getName_Mn()
-  {
-    return (EReference)nameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getName_Id()
   {
-    return (EAttribute)nameEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)nameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -947,7 +937,6 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     createEReference(headerEClass, HEADER__RETURN_TYPE);
 
     nameEClass = createEClass(NAME);
-    createEReference(nameEClass, NAME__MN);
     createEAttribute(nameEClass, NAME__ID);
 
     resultEClass = createEClass(RESULT);
@@ -1043,9 +1032,9 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     anyTypeEClass.getESuperTypes().add(this.getTypeName());
     anyTypeEClass.getESuperTypes().add(this.getColElmType());
     stmtEClass.getESuperTypes().add(this.getStatement());
-    variableEClass.getESuperTypes().add(this.getFactor());
     factorEClass.getESuperTypes().add(this.getArgs());
     fcncallEClass.getESuperTypes().add(this.getExpr());
+    moduleNameEClass.getESuperTypes().add(this.getName_());
 
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1079,7 +1068,6 @@ public class MALPackageImpl extends EPackageImpl implements MALPackage
     initEReference(getHeader_Return_type(), this.getResult(), null, "return_type", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameEClass, Name.class, "Name", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getName_Mn(), this.getModuleName(), null, "mn", null, 0, -1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getName_Id(), ecorePackage.getEString(), "id", null, 0, 1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(resultEClass, Result.class, "Result", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
