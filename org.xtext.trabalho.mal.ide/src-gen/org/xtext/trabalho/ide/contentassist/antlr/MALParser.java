@@ -89,11 +89,10 @@ public class MALParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParamsAccess().getGroup(), "rule__Params__Group__0");
 					put(grammarAccess.getParamsAccess().getGroup_1(), "rule__Params__Group_1__0");
 					put(grammarAccess.getBindingAccess().getGroup(), "rule__Binding__Group__0");
-					put(grammarAccess.getTypeNameAccess().getGroup_2(), "rule__TypeName__Group_2__0");
 					put(grammarAccess.getScalarTypeAccess().getGroup(), "rule__ScalarType__Group__0");
 					put(grammarAccess.getColumnTypeAccess().getGroup(), "rule__ColumnType__Group__0");
 					put(grammarAccess.getAnyTypeAccess().getGroup(), "rule__AnyType__Group__0");
-					put(grammarAccess.getAnyTypeAccess().getGroup_1(), "rule__AnyType__Group_1__0");
+					put(grammarAccess.getAnyTypeAccess().getGroup_2(), "rule__AnyType__Group_2__0");
 					put(grammarAccess.getStmtAccess().getGroup(), "rule__Stmt__Group__0");
 					put(grammarAccess.getStmtAccess().getGroup_2(), "rule__Stmt__Group_2__0");
 					put(grammarAccess.getVarlistAccess().getGroup_1(), "rule__Varlist__Group_1__0");
@@ -135,8 +134,8 @@ public class MALParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBindingAccess().getIdentifierAssignment_0(), "rule__Binding__IdentifierAssignment_0");
 					put(grammarAccess.getBindingAccess().getTypeAssignment_1(), "rule__Binding__TypeAssignment_1");
 					put(grammarAccess.getScalarTypeAccess().getIdentifierAssignment_1(), "rule__ScalarType__IdentifierAssignment_1");
-					put(grammarAccess.getAnyTypeAccess().getTypeAssignment_0(), "rule__AnyType__TypeAssignment_0");
-					put(grammarAccess.getAnyTypeAccess().getDigitAssignment_1_1(), "rule__AnyType__DigitAssignment_1_1");
+					put(grammarAccess.getAnyTypeAccess().getTypeAssignment_1(), "rule__AnyType__TypeAssignment_1");
+					put(grammarAccess.getAnyTypeAccess().getDigitAssignment_2_1(), "rule__AnyType__DigitAssignment_2_1");
 					put(grammarAccess.getStmtAccess().getFlowAssignment_0(), "rule__Stmt__FlowAssignment_0");
 					put(grammarAccess.getStmtAccess().getList_of_variablesAssignment_1(), "rule__Stmt__List_of_variablesAssignment_1");
 					put(grammarAccess.getStmtAccess().getExpAssignment_2_1(), "rule__Stmt__ExpAssignment_2_1");

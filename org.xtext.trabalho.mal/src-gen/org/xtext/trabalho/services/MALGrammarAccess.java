@@ -700,16 +700,14 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cScalarTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cColumnTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cAnyTypeParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final RuleCall cAnyTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//TypeName:
-		//	ScalarType | ColumnType | ':' AnyType // TODO: any e digit são ID???? 
+		//	ScalarType | ColumnType | AnyType // TODO: any e digit são ID???? 
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ScalarType | ColumnType | ':' AnyType
+		//ScalarType | ColumnType | AnyType
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ScalarType
@@ -718,14 +716,8 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//ColumnType
 		public RuleCall getColumnTypeParserRuleCall_1() { return cColumnTypeParserRuleCall_1; }
 		
-		//':' AnyType
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//':'
-		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
-		
 		//AnyType
-		public RuleCall getAnyTypeParserRuleCall_2_1() { return cAnyTypeParserRuleCall_2_1; }
+		public RuleCall getAnyTypeParserRuleCall_2() { return cAnyTypeParserRuleCall_2; }
 	}
 	public class ScalarTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.ScalarType");
@@ -816,37 +808,41 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	public class AnyTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.AnyType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cTypeAnyKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword c_Keyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cDigitAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cDigitWRDTerminalRuleCall_1_1_0 = (RuleCall)cDigitAssignment_1_1.eContents().get(0);
+		private final Keyword cColonKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cTypeAnyKeyword_1_0 = (Keyword)cTypeAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword c_Keyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDigitAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDigitOIDTerminalRuleCall_2_1_0 = (RuleCall)cDigitAssignment_2_1.eContents().get(0);
 		
 		//AnyType:
-		//	type='any' ('_' digit=WRD)?;
+		//	':' type='any' ('_' digit=OID)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type='any' ('_' digit=WRD)?
+		//':' type='any' ('_' digit=OID)?
 		public Group getGroup() { return cGroup; }
 		
+		//':'
+		public Keyword getColonKeyword_0() { return cColonKeyword_0; }
+		
 		//type='any'
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
 		//'any'
-		public Keyword getTypeAnyKeyword_0_0() { return cTypeAnyKeyword_0_0; }
+		public Keyword getTypeAnyKeyword_1_0() { return cTypeAnyKeyword_1_0; }
 		
-		//('_' digit=WRD)?
-		public Group getGroup_1() { return cGroup_1; }
+		//('_' digit=OID)?
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//'_'
-		public Keyword get_Keyword_1_0() { return c_Keyword_1_0; }
+		public Keyword get_Keyword_2_0() { return c_Keyword_2_0; }
 		
-		//digit=WRD
-		public Assignment getDigitAssignment_1_1() { return cDigitAssignment_1_1; }
+		//digit=OID
+		public Assignment getDigitAssignment_2_1() { return cDigitAssignment_2_1; }
 		
-		//WRD
-		public RuleCall getDigitWRDTerminalRuleCall_1_1_0() { return cDigitWRDTerminalRuleCall_1_1_0; }
+		//OID
+		public RuleCall getDigitOIDTerminalRuleCall_2_1_0() { return cDigitOIDTerminalRuleCall_2_1_0; }
 	}
 	public class StmtElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.Stmt");
@@ -1598,7 +1594,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TypeName:
-	//	ScalarType | ColumnType | ':' AnyType // TODO: any e digit são ID???? 
+	//	ScalarType | ColumnType | AnyType // TODO: any e digit são ID???? 
 	//;
 	public TypeNameElements getTypeNameAccess() {
 		return pTypeName;
@@ -1640,7 +1636,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AnyType:
-	//	type='any' ('_' digit=WRD)?;
+	//	':' type='any' ('_' digit=OID)?;
 	public AnyTypeElements getAnyTypeAccess() {
 		return pAnyType;
 	}

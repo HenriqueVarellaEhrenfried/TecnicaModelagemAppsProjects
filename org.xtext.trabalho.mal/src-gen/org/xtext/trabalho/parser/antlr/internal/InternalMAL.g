@@ -1121,20 +1121,14 @@ ruleTypeName returns [EObject current=null]
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		(
-			otherlv_2=':'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getTypeNameAccess().getColonKeyword_2_0());
-			}
-			{
-				newCompositeNode(grammarAccess.getTypeNameAccess().getAnyTypeParserRuleCall_2_1());
-			}
-			this_AnyType_3=ruleAnyType
-			{
-				$current = $this_AnyType_3.current;
-				afterParserOrEnumRuleCall();
-			}
-		)
+		{
+			newCompositeNode(grammarAccess.getTypeNameAccess().getAnyTypeParserRuleCall_2());
+		}
+		this_AnyType_2=ruleAnyType
+		{
+			$current = $this_AnyType_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1285,30 +1279,34 @@ ruleAnyType returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0=':'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAnyTypeAccess().getColonKeyword_0());
+		}
 		(
 			(
-				lv_type_0_0='any'
+				lv_type_1_0='any'
 				{
-					newLeafNode(lv_type_0_0, grammarAccess.getAnyTypeAccess().getTypeAnyKeyword_0_0());
+					newLeafNode(lv_type_1_0, grammarAccess.getAnyTypeAccess().getTypeAnyKeyword_1_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAnyTypeRule());
 					}
-					setWithLastConsumed($current, "type", lv_type_0_0, "any");
+					setWithLastConsumed($current, "type", lv_type_1_0, "any");
 				}
 			)
 		)
 		(
-			otherlv_1='_'
+			otherlv_2='_'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getAnyTypeAccess().get_Keyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getAnyTypeAccess().get_Keyword_2_0());
 			}
 			(
 				(
-					lv_digit_2_0=RULE_WRD
+					lv_digit_3_0=RULE_OID
 					{
-						newLeafNode(lv_digit_2_0, grammarAccess.getAnyTypeAccess().getDigitWRDTerminalRuleCall_1_1_0());
+						newLeafNode(lv_digit_3_0, grammarAccess.getAnyTypeAccess().getDigitOIDTerminalRuleCall_2_1_0());
 					}
 					{
 						if ($current==null) {
@@ -1317,8 +1315,8 @@ ruleAnyType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"digit",
-							lv_digit_2_0,
-							"org.xtext.trabalho.MAL.WRD");
+							lv_digit_3_0,
+							"org.xtext.trabalho.MAL.OID");
 					}
 				)
 			)

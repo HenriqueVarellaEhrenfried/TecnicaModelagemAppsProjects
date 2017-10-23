@@ -145,7 +145,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AnyType returns AnyType
 	 *
 	 * Constraint:
-	 *     (type='any' digit=WRD?)
+	 *     (type='any' digit=OID?)
 	 */
 	protected void sequence_AnyType(ISerializationContext context, AnyType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

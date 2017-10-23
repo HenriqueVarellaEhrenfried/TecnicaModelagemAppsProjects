@@ -23,7 +23,6 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MALGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ColumnType_BATKeyword_1_0_or_BatKeyword_1_1;
-	protected AbstractElementAlias match_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__;
 	protected AbstractElementAlias match_ColumnType___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__q;
 	protected AbstractElementAlias match_Definition_ADDRESSKeyword_0_3_0_or_AddressKeyword_0_3_1;
 	protected AbstractElementAlias match_Definition_ADDRESSKeyword_1_3_0_or_AddressKeyword_1_3_1;
@@ -47,7 +46,6 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MALGrammarAccess) access;
 		match_ColumnType_BATKeyword_1_0_or_BatKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBATKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBatKeyword_1_1()));
-		match_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_0()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBATKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBatKeyword_1_1())), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getLeftSquareBracketKeyword_2()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_3())), new TokenAlias(false, false, grammarAccess.getTypeNameAccess().getColonKeyword_2_0()));
 		match_ColumnType___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_0()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBATKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getBatKeyword_1_1())), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getLeftSquareBracketKeyword_2()), new TokenAlias(false, false, grammarAccess.getColumnTypeAccess().getColonKeyword_3()));
 		match_Definition_ADDRESSKeyword_0_3_0_or_AddressKeyword_0_3_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getADDRESSKeyword_0_3_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getAddressKeyword_0_3_1()));
 		match_Definition_ADDRESSKeyword_1_3_0_or_AddressKeyword_1_3_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getADDRESSKeyword_1_3_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getAddressKeyword_1_3_1()));
@@ -119,8 +117,6 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_ColumnType_BATKeyword_1_0_or_BatKeyword_1_1.equals(syntax))
 				emit_ColumnType_BATKeyword_1_0_or_BatKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__.equals(syntax))
-				emit_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ColumnType___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__q.equals(syntax))
 				emit_ColumnType___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Definition_ADDRESSKeyword_0_3_0_or_AddressKeyword_0_3_1.equals(syntax))
@@ -163,11 +159,11 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Ambiguous syntax:
-	 *     'bat' | 'BAT'
+	 *     'BAT' | 'bat'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) ':' (ambiguity) '[' ':' ':' identifier=WRD
-	 *     (rule start) ':' (ambiguity) '[' ':' type='any'
+	 *     (rule start) ':' (ambiguity) '[' ':' ':' type='any'
 	 */
 	protected void emit_ColumnType_BATKeyword_1_0_or_BatKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -175,21 +171,11 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ':' | (':' ('bat' | 'BAT') '[' ':')
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) type='any'
-	 */
-	protected void emit_ColumnType_TypeName_ColonKeyword_2_0_or___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (':' ('bat' | 'BAT') '[' ':')?
+	 *     (':' ('BAT' | 'bat') '[' ':')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) ':' identifier=WRD
+	 *     (rule start) (ambiguity) ':' type='any'
 	 */
 	protected void emit_ColumnType___ColonKeyword_0___BATKeyword_1_0_or_BatKeyword_1_1___LeftSquareBracketKeyword_2_ColonKeyword_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
