@@ -51,7 +51,7 @@ Binding:
 ;
 
 TypeName:
-	ScalarType | ColumnType | ':' AnyType // TODO: any e digit são ID???? 
+	ScalarType | ColumnType | AnyType // TODO: any e digit são ID???? 
 ;
 
 ScalarType:
@@ -67,11 +67,11 @@ ColElmType:
 ;
 
 AnyType:
-	type='any' ('_' digit=WRD)?
+	':' type='any' ('_' digit=OID)?
 ;
 
 Stmt:
-	(flow?=Flow)? list_of_variables=Varlist (':=' exp=Expr)
+	(flow?=Flow)? list_of_variables=Varlist (':=' exp=Expr)?
 ;
 
 Flow:
@@ -127,8 +127,9 @@ terminal WRD:
 	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
 ;
 terminal OID:
-	('1'..'9') ('0'..'9')*
+	('0'..'9')+
 ;
+
 FLT:
 	INT'.'INT
 ;

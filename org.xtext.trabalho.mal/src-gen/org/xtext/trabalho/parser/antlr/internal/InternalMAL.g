@@ -1404,7 +1404,7 @@ ruleStmt returns [EObject current=null]
 					}
 				)
 			)
-		)
+		)?
 	)
 ;
 

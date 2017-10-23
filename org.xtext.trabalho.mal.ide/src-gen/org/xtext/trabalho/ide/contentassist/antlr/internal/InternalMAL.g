@@ -3715,7 +3715,7 @@ rule__Stmt__Group__2__Impl
 :
 (
 	{ before(grammarAccess.getStmtAccess().getGroup_2()); }
-	(rule__Stmt__Group_2__0)
+	(rule__Stmt__Group_2__0)?
 	{ after(grammarAccess.getStmtAccess().getGroup_2()); }
 )
 ;

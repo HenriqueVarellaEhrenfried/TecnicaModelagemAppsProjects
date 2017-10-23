@@ -5453,11 +5453,11 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
             if ( (LA36_0==RULE_WRD) ) {
                 int LA36_1 = input.LA(2);
 
-                if ( (LA36_1==61) ) {
-                    alt36=1;
-                }
-                else if ( (LA36_1==EOF||LA36_1==RULE_WRD||(LA36_1>=15 && LA36_1<=24)||(LA36_1>=27 && LA36_1<=36)||(LA36_1>=41 && LA36_1<=57)||LA36_1==59) ) {
+                if ( (LA36_1==EOF||LA36_1==RULE_WRD||(LA36_1>=15 && LA36_1<=24)||(LA36_1>=27 && LA36_1<=36)||(LA36_1>=41 && LA36_1<=57)||LA36_1==59) ) {
                     alt36=2;
+                }
+                else if ( (LA36_1==61) ) {
+                    alt36=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -12073,27 +12073,38 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Stmt__Group__2__Impl"
-    // InternalMAL.g:3711:1: rule__Stmt__Group__2__Impl : ( ( rule__Stmt__Group_2__0 ) ) ;
+    // InternalMAL.g:3711:1: rule__Stmt__Group__2__Impl : ( ( rule__Stmt__Group_2__0 )? ) ;
     public final void rule__Stmt__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMAL.g:3715:1: ( ( ( rule__Stmt__Group_2__0 ) ) )
-            // InternalMAL.g:3716:1: ( ( rule__Stmt__Group_2__0 ) )
+            // InternalMAL.g:3715:1: ( ( ( rule__Stmt__Group_2__0 )? ) )
+            // InternalMAL.g:3716:1: ( ( rule__Stmt__Group_2__0 )? )
             {
-            // InternalMAL.g:3716:1: ( ( rule__Stmt__Group_2__0 ) )
-            // InternalMAL.g:3717:2: ( rule__Stmt__Group_2__0 )
+            // InternalMAL.g:3716:1: ( ( rule__Stmt__Group_2__0 )? )
+            // InternalMAL.g:3717:2: ( rule__Stmt__Group_2__0 )?
             {
              before(grammarAccess.getStmtAccess().getGroup_2()); 
-            // InternalMAL.g:3718:2: ( rule__Stmt__Group_2__0 )
-            // InternalMAL.g:3718:3: rule__Stmt__Group_2__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Stmt__Group_2__0();
+            // InternalMAL.g:3718:2: ( rule__Stmt__Group_2__0 )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA52_0==66) ) {
+                alt52=1;
+            }
+            switch (alt52) {
+                case 1 :
+                    // InternalMAL.g:3718:3: rule__Stmt__Group_2__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Stmt__Group_2__0();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -12487,17 +12498,17 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVarlistAccess().getGroup_1_2()); 
             // InternalMAL.g:3854:2: ( rule__Varlist__Group_1_2__0 )*
-            loop52:
+            loop53:
             do {
-                int alt52=2;
-                int LA52_0 = input.LA(1);
+                int alt53=2;
+                int LA53_0 = input.LA(1);
 
-                if ( (LA52_0==62) ) {
-                    alt52=1;
+                if ( (LA53_0==62) ) {
+                    alt53=1;
                 }
 
 
-                switch (alt52) {
+                switch (alt53) {
             	case 1 :
             	    // InternalMAL.g:3854:3: rule__Varlist__Group_1_2__0
             	    {
@@ -12511,7 +12522,7 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop52;
+            	    break loop53;
                 }
             } while (true);
 
@@ -12815,9 +12826,9 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getExprAccess().getGroup_1_0()); 
             // InternalMAL.g:3962:2: ( rule__Expr__Group_1_0__0 )?
-            int alt53=2;
-            alt53 = dfa53.predict(input);
-            switch (alt53) {
+            int alt54=2;
+            alt54 = dfa54.predict(input);
+            switch (alt54) {
                 case 1 :
                     // InternalMAL.g:3962:3: rule__Expr__Group_1_0__0
                     {
@@ -13766,13 +13777,13 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getFcncallAccess().getArgsAssignment_4()); 
             // InternalMAL.g:4286:2: ( rule__Fcncall__ArgsAssignment_4 )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( ((LA54_0>=RULE_STRING && LA54_0<=RULE_OID)||LA54_0==67) ) {
-                alt54=1;
+            if ( ((LA55_0>=RULE_STRING && LA55_0<=RULE_OID)||LA55_0==67) ) {
+                alt55=1;
             }
-            switch (alt54) {
+            switch (alt55) {
                 case 1 :
                     // InternalMAL.g:4286:3: rule__Fcncall__ArgsAssignment_4
                     {
@@ -14006,17 +14017,17 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getArgsAccess().getGroup_1()); 
             // InternalMAL.g:4366:2: ( rule__Args__Group_1__0 )*
-            loop55:
+            loop56:
             do {
-                int alt55=2;
-                int LA55_0 = input.LA(1);
+                int alt56=2;
+                int LA56_0 = input.LA(1);
 
-                if ( (LA55_0==62) ) {
-                    alt55=1;
+                if ( (LA56_0==62) ) {
+                    alt56=1;
                 }
 
 
-                switch (alt55) {
+                switch (alt56) {
             	case 1 :
             	    // InternalMAL.g:4366:3: rule__Args__Group_1__0
             	    {
@@ -14030,7 +14041,7 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop55;
+            	    break loop56;
                 }
             } while (true);
 
@@ -16822,16 +16833,16 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
 
 
     protected DFA39 dfa39 = new DFA39(this);
-    protected DFA53 dfa53 = new DFA53(this);
+    protected DFA54 dfa54 = new DFA54(this);
     static final String dfa_1s = "\13\uffff";
-    static final String dfa_2s = "\1\uffff\1\7\2\uffff\1\12\6\uffff";
+    static final String dfa_2s = "\1\uffff\1\10\2\uffff\1\12\6\uffff";
     static final String dfa_3s = "\1\4\1\5\2\uffff\1\7\6\uffff";
     static final String dfa_4s = "\1\11\1\76\2\uffff\1\76\6\uffff";
-    static final String dfa_5s = "\2\uffff\1\3\1\4\1\uffff\1\6\1\10\1\1\1\2\1\7\1\5";
+    static final String dfa_5s = "\2\uffff\1\3\1\4\1\uffff\1\6\1\10\1\2\1\1\1\7\1\5";
     static final String dfa_6s = "\13\uffff}>";
     static final String[] dfa_7s = {
             "\1\6\1\1\1\2\1\3\1\4\1\5",
-            "\1\10\1\uffff\1\7\7\uffff\12\7\2\uffff\12\7\4\uffff\21\7\1\uffff\2\7\1\uffff\1\7",
+            "\1\7\1\uffff\1\10\7\uffff\12\10\2\uffff\12\10\4\uffff\21\10\1\uffff\2\10\1\uffff\1\10",
             "",
             "",
             "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\21\12\1\uffff\2\12\1\11\1\12",
@@ -16869,31 +16880,31 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_8s = "\23\uffff";
-    static final String dfa_9s = "\1\uffff\7\12\5\uffff\1\12\4\uffff\1\12";
-    static final String dfa_10s = "\1\4\1\5\6\7\1\uffff\1\5\1\uffff\1\10\1\5\1\7\4\5\1\7";
-    static final String dfa_11s = "\1\103\3\73\1\75\3\73\1\uffff\1\5\1\uffff\1\10\1\5\1\73\4\5\1\73";
-    static final String dfa_12s = "\10\uffff\1\1\1\uffff\1\2\10\uffff";
+    static final String dfa_9s = "\1\uffff\7\11\5\uffff\1\11\4\uffff\1\11";
+    static final String dfa_10s = "\1\4\1\5\6\7\2\uffff\1\5\1\10\1\5\1\7\4\5\1\7";
+    static final String dfa_11s = "\1\103\3\73\1\75\3\73\2\uffff\1\5\1\10\1\5\1\73\4\5\1\73";
+    static final String dfa_12s = "\10\uffff\1\1\1\2\11\uffff";
     static final String dfa_13s = "\23\uffff}>";
     static final String[] dfa_14s = {
             "\1\6\1\1\1\2\1\3\1\4\1\5\71\uffff\1\7",
-            "\1\11\1\uffff\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12\1\uffff\1\13",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12",
+            "\1\12\1\uffff\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11",
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11",
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11",
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11\1\uffff\1\13",
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11",
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11",
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11",
+            "",
             "",
             "\1\14",
-            "",
             "\1\15",
             "\1\16",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12",
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11",
             "\1\17",
             "\1\20",
             "\1\21",
             "\1\22",
-            "\1\12\7\uffff\12\12\2\uffff\12\12\4\uffff\14\12\4\10\1\12\1\uffff\1\12"
+            "\1\11\7\uffff\12\11\2\uffff\12\11\4\uffff\14\11\4\10\1\11\1\uffff\1\11"
     };
 
     static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
@@ -16904,11 +16915,11 @@ public class InternalMALParser extends AbstractInternalContentAssistParser {
     static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
     static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
 
-    class DFA53 extends DFA {
+    class DFA54 extends DFA {
 
-        public DFA53(BaseRecognizer recognizer) {
+        public DFA54(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 53;
+            this.decisionNumber = 54;
             this.eot = dfa_8;
             this.eof = dfa_9;
             this.min = dfa_10;

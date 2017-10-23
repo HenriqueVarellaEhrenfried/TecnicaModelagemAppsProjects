@@ -861,10 +861,10 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpExprParserRuleCall_2_1_0 = (RuleCall)cExpAssignment_2_1.eContents().get(0);
 		
 		//Stmt:
-		//	flow?=Flow? list_of_variables=Varlist (':=' exp=Expr);
+		//	flow?=Flow? list_of_variables=Varlist (':=' exp=Expr)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//flow?=Flow? list_of_variables=Varlist (':=' exp=Expr)
+		//flow?=Flow? list_of_variables=Varlist (':=' exp=Expr)?
 		public Group getGroup() { return cGroup; }
 		
 		//flow?=Flow?
@@ -879,7 +879,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//Varlist
 		public RuleCall getList_of_variablesVarlistParserRuleCall_1_0() { return cList_of_variablesVarlistParserRuleCall_1_0; }
 		
-		//':=' exp=Expr
+		//(':=' exp=Expr)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//':='
@@ -1650,7 +1650,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Stmt:
-	//	flow?=Flow? list_of_variables=Varlist (':=' exp=Expr);
+	//	flow?=Flow? list_of_variables=Varlist (':=' exp=Expr)?;
 	public StmtElements getStmtAccess() {
 		return pStmt;
 	}

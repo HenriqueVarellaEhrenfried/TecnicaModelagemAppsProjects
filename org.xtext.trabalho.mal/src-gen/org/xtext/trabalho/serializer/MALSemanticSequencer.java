@@ -448,7 +448,7 @@ public class MALSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Stmt returns Stmt
 	 *
 	 * Constraint:
-	 *     (flow?=Flow? list_of_variables=Varlist exp=Expr)
+	 *     (flow?=Flow? list_of_variables=Varlist exp=Expr?)
 	 */
 	protected void sequence_Stmt(ISerializationContext context, Stmt semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

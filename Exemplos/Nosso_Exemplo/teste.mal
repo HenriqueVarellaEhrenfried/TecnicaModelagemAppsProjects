@@ -1,0 +1,27 @@
+module states;
+
+module state2 comment "hello world";
+
+atom state3;
+
+atom state4 : substate;
+
+include state5;
+
+include "hello planet";
+
+unsafe pattern hello.world(param:int,param2:bat[::string])(result:any) 
+address whatever;
+
+
+function some(p1:int,p2:any_HSO):any
+return (x1,x2,x3)
+end some;
+
+ x1 := sys.some(x1);
+ 
+ x1 := NIL;
+ 
+ x1 := 22 + 5;
+ 
+ 

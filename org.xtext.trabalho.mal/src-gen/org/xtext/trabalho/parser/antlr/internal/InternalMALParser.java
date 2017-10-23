@@ -3892,7 +3892,7 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStmt"
-    // InternalMAL.g:1337:1: ruleStmt returns [EObject current=null] : ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) ) ) ;
+    // InternalMAL.g:1337:1: ruleStmt returns [EObject current=null] : ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )? ) ;
     public final EObject ruleStmt() throws RecognitionException {
         EObject current = null;
 
@@ -3908,11 +3908,11 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMAL.g:1343:2: ( ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) ) ) )
-            // InternalMAL.g:1344:2: ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) ) )
+            // InternalMAL.g:1343:2: ( ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )? ) )
+            // InternalMAL.g:1344:2: ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )? )
             {
-            // InternalMAL.g:1344:2: ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) ) )
-            // InternalMAL.g:1345:3: ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )
+            // InternalMAL.g:1344:2: ( ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )? )
+            // InternalMAL.g:1345:3: ( (lv_flow_0_0= ruleFlow ) )? ( (lv_list_of_variables_1_0= ruleVarlist ) ) (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )?
             {
             // InternalMAL.g:1345:3: ( (lv_flow_0_0= ruleFlow ) )?
             int alt36=2;
@@ -3987,44 +3987,55 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMAL.g:1383:3: (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )
-            // InternalMAL.g:1384:4: otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) )
-            {
-            otherlv_2=(Token)match(input,51,FOLLOW_28); 
+            // InternalMAL.g:1383:3: (otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) ) )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            				newLeafNode(otherlv_2, grammarAccess.getStmtAccess().getColonEqualsSignKeyword_2_0());
-            			
-            // InternalMAL.g:1388:4: ( (lv_exp_3_0= ruleExpr ) )
-            // InternalMAL.g:1389:5: (lv_exp_3_0= ruleExpr )
-            {
-            // InternalMAL.g:1389:5: (lv_exp_3_0= ruleExpr )
-            // InternalMAL.g:1390:6: lv_exp_3_0= ruleExpr
-            {
-
-            						newCompositeNode(grammarAccess.getStmtAccess().getExpExprParserRuleCall_2_1_0());
-            					
-            pushFollow(FOLLOW_2);
-            lv_exp_3_0=ruleExpr();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getStmtRule());
-            						}
-            						set(
-            							current,
-            							"exp",
-            							lv_exp_3_0,
-            							"org.xtext.trabalho.MAL.Expr");
-            						afterParserOrEnumRuleCall();
-            					
-
+            if ( (LA37_0==51) ) {
+                alt37=1;
             }
+            switch (alt37) {
+                case 1 :
+                    // InternalMAL.g:1384:4: otherlv_2= ':=' ( (lv_exp_3_0= ruleExpr ) )
+                    {
+                    otherlv_2=(Token)match(input,51,FOLLOW_28); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getStmtAccess().getColonEqualsSignKeyword_2_0());
+                    			
+                    // InternalMAL.g:1388:4: ( (lv_exp_3_0= ruleExpr ) )
+                    // InternalMAL.g:1389:5: (lv_exp_3_0= ruleExpr )
+                    {
+                    // InternalMAL.g:1389:5: (lv_exp_3_0= ruleExpr )
+                    // InternalMAL.g:1390:6: lv_exp_3_0= ruleExpr
+                    {
+
+                    						newCompositeNode(grammarAccess.getStmtAccess().getExpExprParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_exp_3_0=ruleExpr();
+
+                    state._fsp--;
 
 
-            }
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getStmtRule());
+                    						}
+                    						set(
+                    							current,
+                    							"exp",
+                    							lv_exp_3_0,
+                    							"org.xtext.trabalho.MAL.Expr");
+                    						afterParserOrEnumRuleCall();
+                    					
 
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -4101,72 +4112,72 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             // InternalMAL.g:1426:2: ( (kw= 'RETURN' | kw= 'return' ) | (kw= 'BARRIER' | kw= 'barrier' ) | (kw= 'CATCH' | kw= 'catch' ) | (kw= 'LEAVE' | kw= 'leave' ) | (kw= 'REDO' | kw= 'redo' ) | (kw= 'RAISE' | kw= 'raise' ) )
             {
             // InternalMAL.g:1426:2: ( (kw= 'RETURN' | kw= 'return' ) | (kw= 'BARRIER' | kw= 'barrier' ) | (kw= 'CATCH' | kw= 'catch' ) | (kw= 'LEAVE' | kw= 'leave' ) | (kw= 'REDO' | kw= 'redo' ) | (kw= 'RAISE' | kw= 'raise' ) )
-            int alt43=6;
+            int alt44=6;
             switch ( input.LA(1) ) {
             case 52:
             case 53:
                 {
-                alt43=1;
+                alt44=1;
                 }
                 break;
             case 54:
             case 55:
                 {
-                alt43=2;
+                alt44=2;
                 }
                 break;
             case 56:
             case 57:
                 {
-                alt43=3;
+                alt44=3;
                 }
                 break;
             case 58:
             case 59:
                 {
-                alt43=4;
+                alt44=4;
                 }
                 break;
             case 60:
             case 61:
                 {
-                alt43=5;
+                alt44=5;
                 }
                 break;
             case 62:
             case 63:
                 {
-                alt43=6;
+                alt44=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 43, 0, input);
+                    new NoViableAltException("", 44, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
                     // InternalMAL.g:1427:3: (kw= 'RETURN' | kw= 'return' )
                     {
                     // InternalMAL.g:1427:3: (kw= 'RETURN' | kw= 'return' )
-                    int alt37=2;
-                    int LA37_0 = input.LA(1);
+                    int alt38=2;
+                    int LA38_0 = input.LA(1);
 
-                    if ( (LA37_0==52) ) {
-                        alt37=1;
+                    if ( (LA38_0==52) ) {
+                        alt38=1;
                     }
-                    else if ( (LA37_0==53) ) {
-                        alt37=2;
+                    else if ( (LA38_0==53) ) {
+                        alt38=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 37, 0, input);
+                            new NoViableAltException("", 38, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt37) {
+                    switch (alt38) {
                         case 1 :
                             // InternalMAL.g:1428:4: kw= 'RETURN'
                             {
@@ -4199,22 +4210,22 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     // InternalMAL.g:1441:3: (kw= 'BARRIER' | kw= 'barrier' )
                     {
                     // InternalMAL.g:1441:3: (kw= 'BARRIER' | kw= 'barrier' )
-                    int alt38=2;
-                    int LA38_0 = input.LA(1);
+                    int alt39=2;
+                    int LA39_0 = input.LA(1);
 
-                    if ( (LA38_0==54) ) {
-                        alt38=1;
+                    if ( (LA39_0==54) ) {
+                        alt39=1;
                     }
-                    else if ( (LA38_0==55) ) {
-                        alt38=2;
+                    else if ( (LA39_0==55) ) {
+                        alt39=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 38, 0, input);
+                            new NoViableAltException("", 39, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt38) {
+                    switch (alt39) {
                         case 1 :
                             // InternalMAL.g:1442:4: kw= 'BARRIER'
                             {
@@ -4247,22 +4258,22 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     // InternalMAL.g:1455:3: (kw= 'CATCH' | kw= 'catch' )
                     {
                     // InternalMAL.g:1455:3: (kw= 'CATCH' | kw= 'catch' )
-                    int alt39=2;
-                    int LA39_0 = input.LA(1);
+                    int alt40=2;
+                    int LA40_0 = input.LA(1);
 
-                    if ( (LA39_0==56) ) {
-                        alt39=1;
+                    if ( (LA40_0==56) ) {
+                        alt40=1;
                     }
-                    else if ( (LA39_0==57) ) {
-                        alt39=2;
+                    else if ( (LA40_0==57) ) {
+                        alt40=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 39, 0, input);
+                            new NoViableAltException("", 40, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt39) {
+                    switch (alt40) {
                         case 1 :
                             // InternalMAL.g:1456:4: kw= 'CATCH'
                             {
@@ -4295,22 +4306,22 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     // InternalMAL.g:1469:3: (kw= 'LEAVE' | kw= 'leave' )
                     {
                     // InternalMAL.g:1469:3: (kw= 'LEAVE' | kw= 'leave' )
-                    int alt40=2;
-                    int LA40_0 = input.LA(1);
+                    int alt41=2;
+                    int LA41_0 = input.LA(1);
 
-                    if ( (LA40_0==58) ) {
-                        alt40=1;
+                    if ( (LA41_0==58) ) {
+                        alt41=1;
                     }
-                    else if ( (LA40_0==59) ) {
-                        alt40=2;
+                    else if ( (LA41_0==59) ) {
+                        alt41=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 40, 0, input);
+                            new NoViableAltException("", 41, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt40) {
+                    switch (alt41) {
                         case 1 :
                             // InternalMAL.g:1470:4: kw= 'LEAVE'
                             {
@@ -4343,22 +4354,22 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     // InternalMAL.g:1483:3: (kw= 'REDO' | kw= 'redo' )
                     {
                     // InternalMAL.g:1483:3: (kw= 'REDO' | kw= 'redo' )
-                    int alt41=2;
-                    int LA41_0 = input.LA(1);
+                    int alt42=2;
+                    int LA42_0 = input.LA(1);
 
-                    if ( (LA41_0==60) ) {
-                        alt41=1;
+                    if ( (LA42_0==60) ) {
+                        alt42=1;
                     }
-                    else if ( (LA41_0==61) ) {
-                        alt41=2;
+                    else if ( (LA42_0==61) ) {
+                        alt42=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 41, 0, input);
+                            new NoViableAltException("", 42, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt41) {
+                    switch (alt42) {
                         case 1 :
                             // InternalMAL.g:1484:4: kw= 'REDO'
                             {
@@ -4391,22 +4402,22 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     // InternalMAL.g:1497:3: (kw= 'RAISE' | kw= 'raise' )
                     {
                     // InternalMAL.g:1497:3: (kw= 'RAISE' | kw= 'raise' )
-                    int alt42=2;
-                    int LA42_0 = input.LA(1);
+                    int alt43=2;
+                    int LA43_0 = input.LA(1);
 
-                    if ( (LA42_0==62) ) {
-                        alt42=1;
+                    if ( (LA43_0==62) ) {
+                        alt43=1;
                     }
-                    else if ( (LA42_0==63) ) {
-                        alt42=2;
+                    else if ( (LA43_0==63) ) {
+                        alt43=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 42, 0, input);
+                            new NoViableAltException("", 43, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt42) {
+                    switch (alt43) {
                         case 1 :
                             // InternalMAL.g:1498:4: kw= 'RAISE'
                             {
@@ -4516,22 +4527,22 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             // InternalMAL.g:1528:2: ( ( (lv_variables_0_0= ruleVariable ) ) | (otherlv_1= '(' ( (lv_variables_2_0= ruleVariable ) ) (otherlv_3= ',' ( (lv_variables_4_0= ruleVariable ) ) )* otherlv_5= ')' ) )
             {
             // InternalMAL.g:1528:2: ( ( (lv_variables_0_0= ruleVariable ) ) | (otherlv_1= '(' ( (lv_variables_2_0= ruleVariable ) ) (otherlv_3= ',' ( (lv_variables_4_0= ruleVariable ) ) )* otherlv_5= ')' ) )
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA45_0==RULE_WRD) ) {
-                alt45=1;
+            if ( (LA46_0==RULE_WRD) ) {
+                alt46=1;
             }
-            else if ( (LA45_0==41) ) {
-                alt45=2;
+            else if ( (LA46_0==41) ) {
+                alt46=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
                     // InternalMAL.g:1529:3: ( (lv_variables_0_0= ruleVariable ) )
                     {
@@ -4611,17 +4622,17 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     }
 
                     // InternalMAL.g:1573:4: (otherlv_3= ',' ( (lv_variables_4_0= ruleVariable ) ) )*
-                    loop44:
+                    loop45:
                     do {
-                        int alt44=2;
-                        int LA44_0 = input.LA(1);
+                        int alt45=2;
+                        int LA45_0 = input.LA(1);
 
-                        if ( (LA44_0==44) ) {
-                            alt44=1;
+                        if ( (LA45_0==44) ) {
+                            alt45=1;
                         }
 
 
-                        switch (alt44) {
+                        switch (alt45) {
                     	case 1 :
                     	    // InternalMAL.g:1574:5: otherlv_3= ',' ( (lv_variables_4_0= ruleVariable ) )
                     	    {
@@ -4665,7 +4676,7 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop44;
+                    	    break loop45;
                         }
                     } while (true);
 
@@ -4854,35 +4865,35 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             // InternalMAL.g:1656:2: (this_Fcncall_0= ruleFcncall | ( ( ( (lv_left_factor_1_0= ruleFactor ) ) ( (lv_operator_2_0= ruleOperator ) ) )? ( (lv_right_factor_3_0= ruleFactor ) ) ) )
             {
             // InternalMAL.g:1656:2: (this_Fcncall_0= ruleFcncall | ( ( ( (lv_left_factor_1_0= ruleFactor ) ) ( (lv_operator_2_0= ruleOperator ) ) )? ( (lv_right_factor_3_0= ruleFactor ) ) ) )
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA47_0==RULE_WRD) ) {
-                int LA47_1 = input.LA(2);
+            if ( (LA48_0==RULE_WRD) ) {
+                int LA48_1 = input.LA(2);
 
-                if ( (LA47_1==43) ) {
-                    alt47=1;
+                if ( (LA48_1==EOF||LA48_1==RULE_WRD||(LA48_1>=15 && LA48_1<=19)||(LA48_1>=21 && LA48_1<=26)||(LA48_1>=29 && LA48_1<=38)||LA48_1==41||(LA48_1>=52 && LA48_1<=67)) ) {
+                    alt48=2;
                 }
-                else if ( (LA47_1==EOF||LA47_1==RULE_WRD||(LA47_1>=15 && LA47_1<=19)||(LA47_1>=21 && LA47_1<=26)||(LA47_1>=29 && LA47_1<=38)||LA47_1==41||(LA47_1>=52 && LA47_1<=67)) ) {
-                    alt47=2;
+                else if ( (LA48_1==43) ) {
+                    alt48=1;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 47, 1, input);
+                        new NoViableAltException("", 48, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( ((LA47_0>=RULE_STRING && LA47_0<=RULE_OID)||LA47_0==68) ) {
-                alt47=2;
+            else if ( ((LA48_0>=RULE_STRING && LA48_0<=RULE_OID)||LA48_0==68) ) {
+                alt48=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 47, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
                     // InternalMAL.g:1657:3: this_Fcncall_0= ruleFcncall
                     {
@@ -4908,9 +4919,9 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
                     // InternalMAL.g:1667:4: ( ( (lv_left_factor_1_0= ruleFactor ) ) ( (lv_operator_2_0= ruleOperator ) ) )? ( (lv_right_factor_3_0= ruleFactor ) )
                     {
                     // InternalMAL.g:1667:4: ( ( (lv_left_factor_1_0= ruleFactor ) ) ( (lv_operator_2_0= ruleOperator ) ) )?
-                    int alt46=2;
-                    alt46 = dfa46.predict(input);
-                    switch (alt46) {
+                    int alt47=2;
+                    alt47 = dfa47.predict(input);
+                    switch (alt47) {
                         case 1 :
                             // InternalMAL.g:1668:5: ( (lv_left_factor_1_0= ruleFactor ) ) ( (lv_operator_2_0= ruleOperator ) )
                             {
@@ -5092,36 +5103,36 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             // InternalMAL.g:1745:2: (kw= '+' | kw= '-' | kw= '*' | kw= '/' )
             {
             // InternalMAL.g:1745:2: (kw= '+' | kw= '-' | kw= '*' | kw= '/' )
-            int alt48=4;
+            int alt49=4;
             switch ( input.LA(1) ) {
             case 64:
                 {
-                alt48=1;
+                alt49=1;
                 }
                 break;
             case 65:
                 {
-                alt48=2;
+                alt49=2;
                 }
                 break;
             case 66:
                 {
-                alt48=3;
+                alt49=3;
                 }
                 break;
             case 67:
                 {
-                alt48=4;
+                alt49=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
+                    new NoViableAltException("", 49, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt48) {
+            switch (alt49) {
                 case 1 :
                     // InternalMAL.g:1746:3: kw= '+'
                     {
@@ -5239,22 +5250,22 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             // InternalMAL.g:1787:2: ( ( () ruleLiteral_constant ) | ( () otherlv_3= 'NIL' ) )
             {
             // InternalMAL.g:1787:2: ( ( () ruleLiteral_constant ) | ( () otherlv_3= 'NIL' ) )
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( ((LA49_0>=RULE_WRD && LA49_0<=RULE_OID)) ) {
-                alt49=1;
+            if ( ((LA50_0>=RULE_WRD && LA50_0<=RULE_OID)) ) {
+                alt50=1;
             }
-            else if ( (LA49_0==68) ) {
-                alt49=2;
+            else if ( (LA50_0==68) ) {
+                alt50=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
                     // InternalMAL.g:1788:3: ( () ruleLiteral_constant )
                     {
@@ -5470,13 +5481,13 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_3, grammarAccess.getFcncallAccess().getLeftParenthesisKeyword_3());
             		
             // InternalMAL.g:1883:3: ( (lv_args_4_0= ruleArgs ) )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( ((LA50_0>=RULE_WRD && LA50_0<=RULE_OID)||LA50_0==68) ) {
-                alt50=1;
+            if ( ((LA51_0>=RULE_WRD && LA51_0<=RULE_OID)||LA51_0==68) ) {
+                alt51=1;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
                     // InternalMAL.g:1884:4: (lv_args_4_0= ruleArgs )
                     {
@@ -5607,17 +5618,17 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             			afterParserOrEnumRuleCall();
             		
             // InternalMAL.g:1933:3: (otherlv_1= ',' ( (lv_factor1_2_0= ruleFactor ) ) )*
-            loop51:
+            loop52:
             do {
-                int alt51=2;
-                int LA51_0 = input.LA(1);
+                int alt52=2;
+                int LA52_0 = input.LA(1);
 
-                if ( (LA51_0==44) ) {
-                    alt51=1;
+                if ( (LA52_0==44) ) {
+                    alt52=1;
                 }
 
 
-                switch (alt51) {
+                switch (alt52) {
             	case 1 :
             	    // InternalMAL.g:1934:4: otherlv_1= ',' ( (lv_factor1_2_0= ruleFactor ) )
             	    {
@@ -5661,7 +5672,7 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop51;
+            	    break loop52;
                 }
             } while (true);
 
@@ -5843,9 +5854,9 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
             // InternalMAL.g:2011:2: (this_BIT_0= RULE_BIT | this_Bte_1= ruleBte | this_CHR_2= RULE_CHR | this_WRD_3= RULE_WRD | this_INT_4= RULE_INT | this_OID_5= RULE_OID | this_FLT_6= ruleFLT | this_STR_7= ruleSTR )
             {
             // InternalMAL.g:2011:2: (this_BIT_0= RULE_BIT | this_Bte_1= ruleBte | this_CHR_2= RULE_CHR | this_WRD_3= RULE_WRD | this_INT_4= RULE_INT | this_OID_5= RULE_OID | this_FLT_6= ruleFLT | this_STR_7= ruleSTR )
-            int alt52=8;
-            alt52 = dfa52.predict(input);
-            switch (alt52) {
+            int alt53=8;
+            alt53 = dfa53.predict(input);
+            switch (alt53) {
                 case 1 :
                     // InternalMAL.g:2012:3: this_BIT_0= RULE_BIT
                     {
@@ -6305,34 +6316,34 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA46 dfa46 = new DFA46(this);
-    protected DFA52 dfa52 = new DFA52(this);
+    protected DFA47 dfa47 = new DFA47(this);
+    protected DFA53 dfa53 = new DFA53(this);
     static final String dfa_1s = "\23\uffff";
-    static final String dfa_2s = "\1\uffff\7\11\5\uffff\1\11\4\uffff\1\11";
-    static final String dfa_3s = "\10\4\2\uffff\1\6\1\10\1\6\1\4\4\6\1\4";
-    static final String dfa_4s = "\1\104\7\103\2\uffff\1\6\1\10\1\6\1\103\4\6\1\103";
-    static final String dfa_5s = "\10\uffff\1\1\1\2\11\uffff";
+    static final String dfa_2s = "\1\uffff\7\12\5\uffff\1\12\4\uffff\1\12";
+    static final String dfa_3s = "\10\4\1\6\2\uffff\1\10\1\6\1\4\4\6\1\4";
+    static final String dfa_4s = "\1\104\7\103\1\6\2\uffff\1\10\1\6\1\103\4\6\1\103";
+    static final String dfa_5s = "\11\uffff\1\1\1\2\10\uffff";
     static final String dfa_6s = "\23\uffff}>";
     static final String[] dfa_7s = {
             "\1\3\1\6\1\1\1\2\1\4\1\5\72\uffff\1\7",
-            "\1\11\1\uffff\1\12\10\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\1\uffff\1\13\10\uffff\14\11\4\10",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10",
-            "",
-            "",
+            "\1\12\1\uffff\1\10\10\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\1\uffff\1\13\10\uffff\14\12\4\11",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11",
             "\1\14",
+            "",
+            "",
             "\1\15",
             "\1\16",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11",
             "\1\17",
             "\1\20",
             "\1\21",
             "\1\22",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\1\11\12\uffff\14\11\4\10"
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\1\12\12\uffff\14\12\4\11"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -6343,11 +6354,11 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA46 extends DFA {
+    class DFA47 extends DFA {
 
-        public DFA46(BaseRecognizer recognizer) {
+        public DFA47(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 46;
+            this.decisionNumber = 47;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -6361,17 +6372,17 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
         }
     }
     static final String dfa_8s = "\13\uffff";
-    static final String dfa_9s = "\1\uffff\1\7\2\uffff\1\11\6\uffff";
+    static final String dfa_9s = "\1\uffff\1\10\2\uffff\1\12\6\uffff";
     static final String dfa_10s = "\2\4\2\uffff\1\4\6\uffff";
     static final String dfa_11s = "\1\11\1\103\2\uffff\1\103\6\uffff";
-    static final String dfa_12s = "\2\uffff\1\3\1\4\1\uffff\1\6\1\10\1\1\1\2\1\5\1\7";
+    static final String dfa_12s = "\2\uffff\1\3\1\4\1\uffff\1\6\1\10\1\2\1\1\1\7\1\5";
     static final String dfa_13s = "\13\uffff}>";
     static final String[] dfa_14s = {
             "\1\3\1\6\1\1\1\2\1\4\1\5",
-            "\1\7\1\uffff\1\10\10\uffff\5\7\1\uffff\6\7\2\uffff\12\7\2\uffff\2\7\1\uffff\1\7\7\uffff\20\7",
+            "\1\10\1\uffff\1\7\10\uffff\5\10\1\uffff\6\10\2\uffff\12\10\2\uffff\2\10\1\uffff\1\10\7\uffff\20\10",
             "",
             "",
-            "\1\11\12\uffff\5\11\1\uffff\6\11\2\uffff\12\11\2\uffff\2\11\1\12\1\11\7\uffff\20\11",
+            "\1\12\12\uffff\5\12\1\uffff\6\12\2\uffff\12\12\2\uffff\2\12\1\11\1\12\7\uffff\20\12",
             "",
             "",
             "",
@@ -6388,11 +6399,11 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
     static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
     static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
 
-    class DFA52 extends DFA {
+    class DFA53 extends DFA {
 
-        public DFA52(BaseRecognizer recognizer) {
+        public DFA53(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 52;
+            this.decisionNumber = 53;
             this.eot = dfa_8;
             this.eof = dfa_9;
             this.min = dfa_10;
@@ -6433,7 +6444,7 @@ public class InternalMALParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0001000000000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0xFFF80267E7EF0010L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0008000000000002L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x00000000000003F0L,0x0000000000000010L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000140000000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000000L,0x000000000000000FL});
