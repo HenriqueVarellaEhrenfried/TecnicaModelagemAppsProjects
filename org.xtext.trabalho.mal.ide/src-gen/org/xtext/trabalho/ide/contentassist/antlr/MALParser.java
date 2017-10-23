@@ -68,6 +68,7 @@ public class MALParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExprAccess().getAlternatives(), "rule__Expr__Alternatives");
 					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 					put(grammarAccess.getFactorAccess().getAlternatives(), "rule__Factor__Alternatives");
+					put(grammarAccess.getFactorAccess().getAlternatives_1_1(), "rule__Factor__Alternatives_1_1");
 					put(grammarAccess.getLiteral_constantAccess().getAlternatives(), "rule__Literal_constant__Alternatives");
 					put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
 					put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");

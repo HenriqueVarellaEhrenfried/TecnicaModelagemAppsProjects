@@ -24,4 +24,10 @@ end some;
  
  x1 := 22 + 5;
  
- 
+ ia:=1;
+ barrier ifpart:= ia<1;
+ 	aa:=io.print("ok");
+ return ifpart;
+ barrier elsepart:= i>=1;
+    aa:= io.print("wrong");
+ return elsepart;

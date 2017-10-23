@@ -35,7 +35,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Definition___INLINEKeyword_2_0_0_0_or_InlineKeyword_2_0_0_1_or_UNSAFEKeyword_2_0_1_0_or_UnsafeKeyword_2_0_1_1__q;
 	protected AbstractElementAlias match_Definition___UNSAFEKeyword_0_0_0_or_UnsafeKeyword_0_0_1__q;
 	protected AbstractElementAlias match_Definition___UNSAFEKeyword_1_0_0_or_UnsafeKeyword_1_0_1__q;
-	protected AbstractElementAlias match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1;
+	protected AbstractElementAlias match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1_0_or_NilKeyword_1_1_1;
 	protected AbstractElementAlias match_Helpinfo_COMMENTKeyword_0_0_or_CommentKeyword_0_1;
 	protected AbstractElementAlias match_IncludeStmt_INCLUDEKeyword_0_0_0_or_IncludeKeyword_0_0_1;
 	protected AbstractElementAlias match_IncludeStmt_INCLUDEKeyword_1_0_0_or_IncludeKeyword_1_0_1;
@@ -58,7 +58,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Definition___INLINEKeyword_2_0_0_0_or_InlineKeyword_2_0_0_1_or_UNSAFEKeyword_2_0_1_0_or_UnsafeKeyword_2_0_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getINLINEKeyword_2_0_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getInlineKeyword_2_0_0_1()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_2_0_1_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUnsafeKeyword_2_0_1_1()));
 		match_Definition___UNSAFEKeyword_0_0_0_or_UnsafeKeyword_0_0_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUnsafeKeyword_0_0_1()));
 		match_Definition___UNSAFEKeyword_1_0_0_or_UnsafeKeyword_1_0_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUNSAFEKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionAccess().getUnsafeKeyword_1_0_1()));
-		match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getLiteral_constantParserRuleCall_0_1()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getNILKeyword_1_1()));
+		match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1_0_or_NilKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getLiteral_constantParserRuleCall_0_1()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getNILKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getNilKeyword_1_1_1()));
 		match_Helpinfo_COMMENTKeyword_0_0_or_CommentKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHelpinfoAccess().getCOMMENTKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getHelpinfoAccess().getCommentKeyword_0_1()));
 		match_IncludeStmt_INCLUDEKeyword_0_0_0_or_IncludeKeyword_0_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getIncludeStmtAccess().getINCLUDEKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getIncludeStmtAccess().getIncludeKeyword_0_0_1()));
 		match_IncludeStmt_INCLUDEKeyword_1_0_0_or_IncludeKeyword_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getIncludeStmtAccess().getINCLUDEKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getIncludeStmtAccess().getIncludeKeyword_1_0_1()));
@@ -100,7 +100,7 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * terminal WRD:
-	 * 	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+	 * 	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
 	 * ;
 	 */
 	protected String getWRDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -141,8 +141,8 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Definition___UNSAFEKeyword_0_0_0_or_UnsafeKeyword_0_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Definition___UNSAFEKeyword_1_0_0_or_UnsafeKeyword_1_0_1__q.equals(syntax))
 				emit_Definition___UNSAFEKeyword_1_0_0_or_UnsafeKeyword_1_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1.equals(syntax))
-				emit_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1_0_or_NilKeyword_1_1_1.equals(syntax))
+				emit_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1_0_or_NilKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Helpinfo_COMMENTKeyword_0_0_or_CommentKeyword_0_1.equals(syntax))
 				emit_Helpinfo_COMMENTKeyword_0_0_or_CommentKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IncludeStmt_INCLUDEKeyword_0_0_0_or_IncludeKeyword_0_0_1.equals(syntax))
@@ -308,13 +308,13 @@ public class MALSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     Literal_constant | 'NIL'
+	 *     Literal_constant | 'NIL' | 'nil'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) ',' factor1+=Factor
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Factor_Literal_constantParserRuleCall_0_1_or_NILKeyword_1_1_0_or_NilKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

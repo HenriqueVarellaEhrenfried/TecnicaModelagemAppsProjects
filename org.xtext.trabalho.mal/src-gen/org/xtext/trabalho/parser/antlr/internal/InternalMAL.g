@@ -1764,6 +1764,60 @@ ruleOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getOperatorAccess().getSolidusKeyword_3());
 		}
+		    |
+		kw='>'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getGreaterThanSignKeyword_4());
+		}
+		    |
+		kw='<'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getLessThanSignKeyword_5());
+		}
+		    |
+		kw='='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getEqualsSignKeyword_6());
+		}
+		    |
+		kw='<='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getLessThanSignEqualsSignKeyword_7());
+		}
+		    |
+		kw='>='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getGreaterThanSignEqualsSignKeyword_8());
+		}
+		    |
+		kw='!='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getExclamationMarkEqualsSignKeyword_9());
+		}
+		    |
+		kw='&&'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getAmpersandAmpersandKeyword_10());
+		}
+		    |
+		kw='||'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getVerticalLineVerticalLineKeyword_11());
+		}
+		    |
+		kw='!'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getOperatorAccess().getExclamationMarkKeyword_12());
+		}
 	)
 ;
 
@@ -1808,10 +1862,17 @@ ruleFactor returns [EObject current=null]
 						$current);
 				}
 			)
-			otherlv_3='NIL'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getFactorAccess().getNILKeyword_1_1());
-			}
+			(
+				otherlv_3='NIL'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getFactorAccess().getNILKeyword_1_1_0());
+				}
+				    |
+				otherlv_4='nil'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getFactorAccess().getNilKeyword_1_1_1());
+				}
+			)
 		)
 	)
 ;

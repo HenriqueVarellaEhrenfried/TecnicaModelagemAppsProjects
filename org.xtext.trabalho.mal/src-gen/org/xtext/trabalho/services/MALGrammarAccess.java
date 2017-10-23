@@ -1097,12 +1097,21 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		private final Keyword cAsteriskKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final Keyword cSolidusKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cLessThanSignKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cLessThanSignEqualsSignKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cGreaterThanSignEqualsSignKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cExclamationMarkEqualsSignKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cAmpersandAmpersandKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cVerticalLineVerticalLineKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cExclamationMarkKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
 		
 		//Operator:
-		//	'+' | '-' | '*' | '/';
+		//	'+' | '-' | '*' | '/' | '>' | '<' | '=' | '<=' | '>=' | '!=' | '&&' | '||' | '!';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'+' | '-' | '*' | '/'
+		//'+' | '-' | '*' | '/' | '>' | '<' | '=' | '<=' | '>=' | '!=' | '&&' | '||' | '!'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'+'
@@ -1116,6 +1125,33 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'/'
 		public Keyword getSolidusKeyword_3() { return cSolidusKeyword_3; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
+		
+		//'<'
+		public Keyword getLessThanSignKeyword_5() { return cLessThanSignKeyword_5; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
+		//'<='
+		public Keyword getLessThanSignEqualsSignKeyword_7() { return cLessThanSignEqualsSignKeyword_7; }
+		
+		//'>='
+		public Keyword getGreaterThanSignEqualsSignKeyword_8() { return cGreaterThanSignEqualsSignKeyword_8; }
+		
+		//'!='
+		public Keyword getExclamationMarkEqualsSignKeyword_9() { return cExclamationMarkEqualsSignKeyword_9; }
+		
+		//'&&'
+		public Keyword getAmpersandAmpersandKeyword_10() { return cAmpersandAmpersandKeyword_10; }
+		
+		//'||'
+		public Keyword getVerticalLineVerticalLineKeyword_11() { return cVerticalLineVerticalLineKeyword_11; }
+		
+		//'!'
+		public Keyword getExclamationMarkKeyword_12() { return cExclamationMarkKeyword_12; }
 	}
 	public class FactorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.Factor");
@@ -1125,14 +1161,15 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteral_constantParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cFactorAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cNILKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Keyword cNILKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cNilKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
 		
 		//Factor:
-		//	{Factor} Literal_constant | {Factor} 'NIL' // {Factor} foi colocado porque quando o retorno de uma regra é uma string tipo 'NIL' o objeto não é criado, então ele garante a criação 
-		//;
+		//	{Factor} Literal_constant | {Factor} ('NIL' | 'nil');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Factor} Literal_constant | {Factor} 'NIL'
+		//{Factor} Literal_constant | {Factor} ('NIL' | 'nil')
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{Factor} Literal_constant
@@ -1144,14 +1181,20 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 		//Literal_constant
 		public RuleCall getLiteral_constantParserRuleCall_0_1() { return cLiteral_constantParserRuleCall_0_1; }
 		
-		//{Factor} 'NIL'
+		//{Factor} ('NIL' | 'nil')
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{Factor}
 		public Action getFactorAction_1_0() { return cFactorAction_1_0; }
 		
+		//'NIL' | 'nil'
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		
 		//'NIL'
-		public Keyword getNILKeyword_1_1() { return cNILKeyword_1_1; }
+		public Keyword getNILKeyword_1_1_0() { return cNILKeyword_1_1_0; }
+		
+		//'nil'
+		public Keyword getNilKeyword_1_1_1() { return cNilKeyword_1_1_1; }
 	}
 	public class FcncallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.trabalho.MAL.Fcncall");
@@ -1698,7 +1741,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Operator:
-	//	'+' | '-' | '*' | '/';
+	//	'+' | '-' | '*' | '/' | '>' | '<' | '=' | '<=' | '>=' | '!=' | '&&' | '||' | '!';
 	public OperatorElements getOperatorAccess() {
 		return pOperator;
 	}
@@ -1708,8 +1751,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Factor:
-	//	{Factor} Literal_constant | {Factor} 'NIL' // {Factor} foi colocado porque quando o retorno de uma regra é uma string tipo 'NIL' o objeto não é criado, então ele garante a criação 
-	//;
+	//	{Factor} Literal_constant | {Factor} ('NIL' | 'nil');
 	public FactorElements getFactorAccess() {
 		return pFactor;
 	}

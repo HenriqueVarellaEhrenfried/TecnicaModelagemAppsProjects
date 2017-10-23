@@ -91,11 +91,11 @@ Expr:
 ;
 
 Operator:
-	'+' | '-' | '*' | '/'
+	'+' | '-' | '*' | '/' | '>' | '<' | '=' | '<=' | '>=' | '!=' | '&&' | '||' | '!'
 ;
 
 Factor:
-	{Factor}Literal_constant | {Factor}'NIL'  // {Factor} foi colocado porque quando o retorno de uma regra é uma string tipo 'NIL' o objeto não é criado, então ele garante a criação 
+	{Factor}Literal_constant | {Factor}('NIL'|'nil')  // {Factor} foi colocado porque quando o retorno de uma regra é uma string tipo 'NIL' o objeto não é criado, então ele garante a criação 
 ;
 
 Fcncall:
@@ -124,7 +124,7 @@ terminal CHR:
 	('a'..'z'|'A'..'Z'|'_'|'0'..'9')
 ;
 terminal WRD:
-	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
 ;
 terminal OID:
 	('1'..'9') ('0'..'9')*
