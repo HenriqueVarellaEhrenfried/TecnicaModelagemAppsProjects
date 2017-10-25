@@ -2282,7 +2282,7 @@ ruleSTR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 RULE_BIT : ('0'|'1');
 
-RULE_CHR : ('a'..'z'|'A'..'Z'|'_'|'0'..'9');
+RULE_CHR : '\'' ('a'..'z'|'A'..'Z'|'_'|'0'..'9') '\'';
 
 RULE_WRD : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -1819,7 +1819,7 @@ public class MALGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal CHR:
-	//	'a'..'z' | 'A'..'Z' | '_' | '0'..'9';
+	//	"'" ('a'..'z' | 'A'..'Z' | '_' | '0'..'9') "'";
 	public TerminalRule getCHRRule() {
 		return tCHR;
 	}
