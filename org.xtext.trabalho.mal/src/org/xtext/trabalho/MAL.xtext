@@ -18,6 +18,7 @@ IncludeStmt:
 	('INCLUDE' | 'include') identifier=WRD | ('INCLUDE' | 'include') string_literal=STRING
 ;
 
+// In the examples the unsafe part is in a different location, not in the beginning
 Definition:
 	(('UNSAFE' | 'unsafe'))? ('COMMAND' | 'command') header=Header ('ADDRESS' | 'address') identifier=WRD |
 	(('UNSAFE' | 'unsafe'))? ('PATTERN' | 'pattern') header=Header ('ADDRESS' | 'address') identifier=WRD |
@@ -58,6 +59,7 @@ ScalarType:
 	':' identifier=WRD
 ;
 
+// In the examples using ColumnType there is only one colon when defining the ColElmType, but using the provided grammar there will always be two colons 
 ColumnType:
 	':' ('BAT' | 'bat') '[' ':' ColElmType ']'
 ;
@@ -66,10 +68,12 @@ ColElmType:
 	ScalarType | AnyType
 ;
 
+// AnyType was not defined in the original rules
 AnyType:
 	':' type='any' ('_' digit=OID)?
 ;
 
+// The Stmt rule enforces that every function call needs to be assigned to a variable or a list of variables
 Stmt:
 	(flow?=Flow)? list_of_variables=Varlist (':=' exp=Expr)?
 ;
@@ -82,6 +86,7 @@ Varlist:
 	variables+=Variable | '(' variables+=Variable (',' variables+=Variable)* ')'
 ;
 
+// Identifier was not defined by the grammar, so we decided to use the WRD rule as an identifier. The ID rule provided by XTEXT was buggy, so we decided to create our own.
 Variable:
 	identifier=WRD
 ;
@@ -90,6 +95,7 @@ Expr:
 	Fcncall | (left_factor=Factor operator=Operator)? right_factor=Factor
 ;
 
+// Operator was not defined in the original rules
 Operator:
 	'+' | '-' | '*' | '/' | '>' | '<' | '=' | '<=' | '>=' | '!=' | '&&' | '||' | '!'
 ;
@@ -106,10 +112,12 @@ Args:
 	Factor (',' factor1+=Factor)*
 ;
 
+// ModuleName was not defined in the original rules
 ModuleName:
 	identifier=WRD
 ;
 
+// Literal_constant was not defined in the original rules, the same for everyone of its "children"
 Literal_constant:
 	BIT | Bte | CHR | WRD | INT | OID | FLT | STR
 ;
